@@ -1,3 +1,4 @@
+<?php /* ?>
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
@@ -249,3 +250,132 @@
 </div> <!-- inner conainer ends -->
 <div class="breadcrumb_wrapper"></div>
 <div id="notification" class="container"></div>
+<?php */ ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Вкусная Мебель</title>
+    <link rel="stylesheet" href="catalog/view/theme/cosyone/stylesheet/main.css">
+    <script src="catalog/view/theme/cosyone/js/libs.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="promo js-promo _hidden">
+        <a href="#" class="promo__close js-promo-close">
+            <svg class="promo__close-icon" width="17px" height="17px">
+                <path d="M16.017,13.966 L13.966,16.016 L8.498,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.498,6.448 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+            </svg>
+        </a>
+        <div class="promo__container container">
+            На Новый Год дарим скидки на все товары 3%
+        </div>
+    </div>
+    <div class="header__container container">
+        <div class="header__nav">
+            <div class="header__nav-contacts">
+                <a href="#mfp-callback" class="link _color-orange _font-sm js-popup-toggle">
+                    <i class="link__icon _phone"></i>
+                    <span class="link__text">Обратный Звонок</span>
+                </a>
+                <a href="#" class="link _color-orange _font-sm">
+                    <i class="link__icon _msg"></i>
+                    <span class="link__text">Консультация Онлайн</span>
+                </a>
+            </div>
+            <div class="header__nav-links">
+                <a class="link" href="#">О нас</a>
+                <a class="link" href="#">Полезное</a>
+                <a class="link" href="#">Доставка и Оплата</a>
+                <a class="link" href="/contacts.html">Контакт</a>
+            </div>
+        </div>
+        <a href="/" class="header__logo"></a>
+        <div class="header__contacts">
+            <div class="header__lang">
+                <a href="#" class="link _color-orange _font-sm">
+                    <span class="link__text">Укр</span>
+                </a>
+                <a href="#" class="link _font-sm">
+                    <span class="link__text">Рус</span>
+                </a>
+            </div>
+            <div class="header__city select-city__wrap js-select-city-wrap">
+                <a href="#" class="link _color-orange js-select-city-open">
+                    <span class="link__text js-select-city-value">Одесса</span>
+                </a>
+                <div class="select-city js-select-city">
+                    <span class="select-city__close js-select-city-close">
+                        <svg class="select-city__close-icon" width="17px" height="17px">
+                            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+                        </svg>
+                    </span>
+                    <div class="select-city__title">Выберите город</div>
+                    <div class="select-city__desc">Мы доставляем заказы по всей Украине!</div>
+                    <div class="select-city__items">
+                        <div class="select-city__column">
+                            <a href="#" class="select-city__item js-select-city-item" data-value="Киев">Киев</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Бровары">Бровары</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Борисполь">Борисполь</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Ирпень">Ирпень</a>
+                        </div>
+                        <div class="select-city__column">
+                            <a href="#" class="select-city__item js-select-city-item  _active" data-value="Одесса">Одесса</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Черноморск">Черноморск</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Николаев">Николаев</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Южный">Южный</a>
+                            <a href="#" class="select-city__item js-select-city-item _sm" data-value="Фонтанка">Фонтанка</a>
+                        </div>
+                        <div class="select-city__column">
+                            <a href="#" class="select-city__item js-select-city-item" data-value="Харьков">Харьков</a>
+                            <a href="#" class="select-city__item js-select-city-item" data-value="Днепр">Днепр</a>
+                            <a href="#" class="select-city__item js-select-city-item" data-value="Запорожье">Запорожье</a>
+                            <a href="#" class="select-city__item js-select-city-item" data-value="Львов">Львов</a>
+                        </div>
+                    </div>
+                    <div class="select-city__manual-input">
+                        <div class="select-city__manual-input-text">Или введите другой населенный пункт</div>
+                        <div class="select-city__manual-input-wrap">
+                            <input type="text" class="input js-select-city-input" placeholder="Введите ваш город">
+                            <button class="select-city__manual-input-send _disabled js-select-city-button"></button>
+                        </div>
+                        <div class="select-city__manual-input-example">
+                            Например:
+                            <a href="#" class="link _font-sm _color-orange js-select-city-item" data-value="Беляевка">
+                                <span class="link__text">Беляевка</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__contacts-row">
+                <div class="header__contacts-column">
+                    <a class="link" href="tel:0507555545">(050) 755-55-45</a>
+                    <span class="header__contacts-schedule">c 10:00 до 20:00</span>
+                </div>
+                <div class="header__contacts-column">
+                    <span class="header__contacts-address">ул. Семена Палия, 125, магазин 290</span>
+                    <span class="header__contacts-schedule">Вт - Вс, с 9:00 до 14:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__categories">
+        <div class="header__categories-container container">
+            <a class="header__categories-link" href="/catalogue.html">Комплекты</a>
+            <a class="header__categories-link" href="/catalogue.html">Шкафы</a>
+            <a class="header__categories-link" href="/catalogue.html">Комоды </a>
+            <a class="header__categories-link" href="/catalogue.html">Столы</a>
+            <a class="header__categories-link" href="/catalogue.html">Кресла</a>
+            <a class="header__categories-link" href="/catalogue.html">Стулья</a>
+            <a class="header__categories-link" href="/catalogue.html">Диваны</a>
+            <a class="header__categories-link" href="/catalogue.html">Кровати</a>
+            <a class="header__categories-link" href="/catalogue.html">Матрассы</a>
+            <a class="header__categories-link" href="/catalogue.html">Декор</a>
+            <a class="header__categories-link" href="/catalogue.html">Cвет</a>
+        </div>
+    </div>
+</header>
