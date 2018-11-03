@@ -363,19 +363,13 @@
             </div>
         </div>
     </div>
+    <?php if ($categories) { ?>
     <div class="header__categories">
         <div class="header__categories-container container">
-            <a class="header__categories-link" href="/catalogue.html">Комплекты</a>
-            <a class="header__categories-link" href="/catalogue.html">Шкафы</a>
-            <a class="header__categories-link" href="/catalogue.html">Комоды </a>
-            <a class="header__categories-link" href="/catalogue.html">Столы</a>
-            <a class="header__categories-link" href="/catalogue.html">Кресла</a>
-            <a class="header__categories-link" href="/catalogue.html">Стулья</a>
-            <a class="header__categories-link" href="/catalogue.html">Диваны</a>
-            <a class="header__categories-link" href="/catalogue.html">Кровати</a>
-            <a class="header__categories-link" href="/catalogue.html">Матрассы</a>
-            <a class="header__categories-link" href="/catalogue.html">Декор</a>
-            <a class="header__categories-link" href="/catalogue.html">Cвет</a>
+            <?php foreach ($categories as $category_1) { ?>
+               <a class="header__categories-link" href="<?php echo $category_1['href']; ?>"><?php echo $category_1['name']; ?></a>
+            <?php } ?>
         </div>
     </div>
+    <?php } ?>
 </header>

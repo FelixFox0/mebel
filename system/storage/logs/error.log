@@ -1060,3 +1060,12 @@
 2017-04-21 14:59:37 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\opencart-base.loc\catalog\view\theme\cosyone\template\account\order_list.tpl on line 48
 2017-04-21 14:59:38 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\opencart-base.loc\catalog\view\theme\cosyone\template\account\order_list.tpl on line 48
 2017-04-21 14:59:53 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\opencart-base.loc\catalog\view\theme\cosyone\template\account\order_list.tpl on line 48
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 263
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'text' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 263
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'text' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 263
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'text' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
