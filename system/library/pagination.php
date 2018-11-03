@@ -30,16 +30,16 @@ class Pagination {
 
 		$this->url = str_replace('%7Bpage%7D', '{page}', $this->url);
 
-		$output = '<ul class="pagination">';
+		$output = '<div class="pagination"><div class="pagination__container">';
 
-		if ($page > 1) {
+		/*if ($page > 1) {
 			$output .= '<li><a href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $this->text_first . '</a></li>';
 			if($page - 1 === 1){
 				$output .= '<li><a href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $this->text_prev . '</a></li>';
 			} else {
 				$output .= '<li><a href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
 			}
-		}
+		}*/
 
 		if ($num_pages > 1) {
 			if ($num_pages <= $num_links) {
@@ -62,22 +62,22 @@ class Pagination {
 
 			for ($i = $start; $i <= $end; $i++) {
 				if ($page == $i) {
-					$output .= '<li class="active"><span>' . $i . '</span></li>';
+					$output .= '<a href="#" class="pagination__item _active">' . $i . '</a>';
 				} else {if($i === 1){
-					$output .= '<li><a href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $i . '</a></li>';
+					$output .= '<a class="pagination__item" href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $i . '</a>';
 				} else {
-					$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+					$output .= '<a class="pagination__item"  href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a>';
 				}
 				}
 			}
 		}
 
-		if ($page < $num_pages) {
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
-		}
+//		if ($page < $num_pages) {
+//			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
+//			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
+//		}
 
-		$output .= '</ul>';
+		$output .= '</div></div>';
 
 		if ($num_pages > 1) {
 			return $output;
