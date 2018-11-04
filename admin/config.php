@@ -28,7 +28,7 @@ define('DIR_CATALOG', $server_document_root.'/catalog/');
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', '94.130.104.114');
 define('DB_USERNAME', 'mebel');
-define('DB_PASSWORD', 'HTURy2aSnpNs83$');
+define('DB_PASSWORD', 'HTURy2aSnpNs!$');
 define('DB_DATABASE', 'mebel');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
