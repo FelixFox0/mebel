@@ -373,6 +373,22 @@ class ControllerCatalogOption extends Controller {
 			$data['sort_order'] = '';
 		}
 
+        if (isset($this->request->post['large_samples'])) {
+            $data['large_samples'] = $this->request->post['large_samples'];
+        } elseif (!empty($option_info)) {
+            $data['large_samples'] = $option_info['large_samples'];
+        } else {
+            $data['large_samples'] = '';
+        }
+
+        if (isset($this->request->post['full_list'])) {
+            $data['full_list'] = $this->request->post['full_list'];
+        } elseif (!empty($option_info)) {
+            $data['full_list'] = $option_info['full_list'];
+        } else {
+            $data['full_list'] = '';
+        }
+
 		if (isset($this->request->post['option_value'])) {
 			$option_values = $this->request->post['option_value'];
 		} elseif (isset($this->request->get['option_id'])) {
