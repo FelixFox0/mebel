@@ -351,6 +351,7 @@ class ControllerProductProduct extends Controller {
 							'option_value_id'         => $option_value['option_value_id'],
 							'name'                    => $option_value['name'],
 							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 284),
 							'price'                   => $price,
 							'price_prefix'            => $option_value['price_prefix']
 						);
@@ -364,7 +365,9 @@ class ControllerProductProduct extends Controller {
 					'name'                 => $option['name'],
 					'type'                 => $option['type'],
 					'value'                => $option['value'],
-					'required'             => $option['required']
+					'required'             => $option['required'],
+					'large_samples'        => $option['large_samples'],
+					'full_list'            => $option['full_list']
 				);
 			}
 

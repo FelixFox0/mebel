@@ -109,6 +109,23 @@
               <input type="text" name="sort_order" value="<?php echo $sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" />
             </div>
           </div>
+
+          <div id="option-images">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="checkbox-large-samples">Крупные образцы</label>
+              <div class="col-sm-10">
+                <input type="checkbox" name="large_samples" value="1" <?php if($large_samples): ?> checked <?php endif; ?> placeholder="Крупные образцы" id="checkbox-large-samples" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-full-list">Полный список (ограничение)</label>
+              <div class="col-sm-10">
+                <input type="text" name="full_list" value="<?php echo $full_list; ?>" placeholder="Полный список (ограничение)" id="input-full-list" class="form-control" />
+              </div>
+            </div>
+          </div>
+
           <table id="option-value" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
@@ -157,6 +174,12 @@ $('select[name=\'type\']').on('change', function() {
 	} else {
 		$('#option-value').hide();
 	}
+    if (this.value == 'image') {
+        $('#option-images').show();
+    } else {
+        $('#option-images').hide();
+    }
+
 });
 
 $('select[name=\'type\']').trigger('change');
