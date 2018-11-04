@@ -1069,3 +1069,13 @@
 2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 263
 2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
 2018-11-03 19:39:37 - PHP Warning:  Illegal string offset 'text' in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 266
+2018-11-04 1:12:31 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 31
+2018-11-04 1:12:31 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 34
+2018-11-04 1:12:32 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 31
+2018-11-04 1:12:32 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 34
+2018-11-04 1:12:45 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 31
+2018-11-04 1:12:45 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 34
+2018-11-04 1:12:46 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 31
+2018-11-04 1:12:46 - PHP Notice:  Undefined variable: language in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\common\language.tpl on line 34
+2018-11-04 3:58:16 - PHP Notice:  Undefined variable: address in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 372
+2018-11-04 3:58:16 - PHP Notice:  Undefined variable: address in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 372

@@ -64,7 +64,7 @@
       </select>
     </div>
     <div class="sort"><?php echo $text_sort; ?>
-      <select id="input-sort" onchange="location = this.value;">
+      <select name="sort" id="input-sort">
         <?php foreach ($sorts as $sorts) { ?>
         <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
         <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
@@ -73,7 +73,9 @@
         <?php } ?>
         <?php } ?>
       </select>
-              
+        <sctipt>
+            
+        </sctipt>        
     </div>
      <div class="compare-link mobile_hide"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
   </div>

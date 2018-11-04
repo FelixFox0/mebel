@@ -1,3 +1,4 @@
+<?php if (false) { ?>
 <?php if (count($languages) > 1) { ?>
 <div class="language_current contrast_font">
 <?php foreach ($languages as $language) { ?>
@@ -22,4 +23,30 @@
   </div>
 </form>
 </div>
+<?php } ?>
+<?php } ?>
+<?php if (count($languages) > 1) { ?>
+<form class="header__lang" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="language">
+    <?php foreach ($languages as $language) { ?>
+    <?php if ($language['code'] == $code) { ?>
+    <a href="<?php echo $language['code']; ?>" class="link _color-orange _font-sm">
+        <span class="link__text"><?php echo $language['name']; ?></span>
+    </a>
+    <?php } else { ?>
+    <a href="<?php echo $language['code']; ?>" class="link _font-sm">
+        <span class="link__text"><?php echo $language['name']; ?></span>
+    </a>
+    <?php } ?>
+    <?php } ?>
+    <input type="hidden" name="code" value="" />
+  <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+
+</form>
+<script>
+$('#language a').on('click', function(e) {
+    e.preventDefault();
+    $('form#language').submit();
+});
+</script>
+
 <?php } ?>

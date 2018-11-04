@@ -132,10 +132,10 @@ p {
     height: 100%;
     transition: 0.2s opacity; }
   .ui-selectmenu-icon:before {
-    background-image: url("../images/icons/caret-gray.png");
+    background-image: url("/image/catalog/demo_content/icons/caret-gray.png");
     opacity: 1; }
   .ui-selectmenu-icon:after {
-    background-image: url("../images/icons/caret-orange.png");
+    background-image: url("/image/catalog/demo_content/icons/caret-orange.png");
     opacity: 0; }
 
 .ui-selectmenu-button:hover .ui-selectmenu-icon:before {
@@ -207,7 +207,7 @@ p {
   margin-top: -6px;
   margin-left: -3.5px;
   height: 12px;
-  background-image: url("../images/icons/gallery-arrow.png"); }
+  background-image: url("/image/catalog/demo_content/icons/gallery-arrow.png"); }
 
 .lg-actions .lg-prev {
   left: 0; }
@@ -324,7 +324,7 @@ p {
   height: 16px;
   margin-top: -8px;
   margin-left: -8px;
-  background-image: url("../images/icons/close-white.png");
+  background-image: url("/image/catalog/demo_content/icons/close-white.png");
   background-size: cover; }
 
 .lg-toolbar .lg-download:after {
@@ -953,7 +953,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   white-space: nowrap; }
 
 .lg-outer .lg-item {
-  background: url("../images/loading.gif") no-repeat scroll center center transparent;
+  background: url("/image/catalog/demo_content/loading.gif") no-repeat scroll center center transparent;
   display: none !important; }
 
 .lg-outer.lg-css3 .lg-prev-slide, .lg-outer.lg-css3 .lg-current, .lg-outer.lg-css3 .lg-next-slide {
@@ -1883,7 +1883,7 @@ img.mfp-img {
       width: 11px;
       height: 11px;
       transform: translate(-50%, -50%);
-      background-image: url("../images/icons/checkmark.png"); }
+      background-image: url("/image/catalog/demo_content/icons/checkmark.png"); }
   .checkbox__text {
     font-family: Calibri;
     font-weight: normal;
@@ -1902,17 +1902,17 @@ img.mfp-img {
   .checkbox._orange .checkbox__input:checked + .checkbox__icon {
     background-color: #FFFFFF; }
     .checkbox._orange .checkbox__input:checked + .checkbox__icon:before {
-      background-image: url("../images/icons/checkmark-orange.png"); }
+      background-image: url("/image/catalog/demo_content/icons/checkmark-orange.png"); }
 
 .dots-separator {
   display: inline-block;
   flex-grow: 1;
   width: 100%;
   height: 2px;
-  background-image: url("../images/dots-separator.png");
+  background-image: url("/image/catalog/demo_content/dots-separator.png");
   background-repeat: repeat-x; }
   .dots-separator._brown {
-    background-image: url("../images/dots-separator-brown.png"); }
+    background-image: url("/image/catalog/demo_content/dots-separator-brown.png"); }
 
 .hint {
   position: absolute;
@@ -1955,7 +1955,7 @@ img.mfp-img {
     height: 19px;
     left: 21px;
     bottom: -19px;
-    background-image: url("../images/hint-arrow.png"); }
+    background-image: url("/image/catalog/demo_content/hint-arrow.png"); }
   .hint__close {
     position: absolute;
     top: 10px;
@@ -1993,11 +1993,11 @@ img.mfp-img {
     .link__icon._phone {
       width: 19px;
       height: 19px;
-      background-image: url("../images/icons/phone-orange.png"); }
+      background-image: url("/image/catalog/demo_content/icons/phone-orange.png"); }
     .link__icon._msg {
       width: 17px;
       height: 17px;
-      background-image: url("../images/icons/msg-orange.png"); }
+      background-image: url("/image/catalog/demo_content/icons/msg-orange.png"); }
   .link:hover {
     color: #C28B65; }
   .link._color-orange {
@@ -2594,7 +2594,7 @@ img.mfp-img {
       height: 38px;
       display: inline-block;
       margin-right: 20px;
-      background-image: url("../images/icons/cart.png");
+      background-image: url("/image/catalog/demo_content/icons/cart.png");
       background-repeat: no-repeat;
       background-size: 32px 29px;
       background-position: left bottom; }
@@ -2705,10 +2705,10 @@ img.mfp-img {
           transform: translateY(-50%);
           transition: 0.2s opacity; }
         .catalogue__filters-clear-button:before {
-          background-image: url("../images/icons/close-white.png");
+          background-image: url("/image/catalog/demo_content/icons/close-white.png");
           opacity: 1; }
         .catalogue__filters-clear-button:after {
-          background-image: url("../images/icons/close-black.png");
+          background-image: url("/image/catalog/demo_content/icons/close-black.png");
           opacity: 0; }
         .catalogue__filters-clear-button:hover:after {
           opacity: 1; }
@@ -2791,7 +2791,7 @@ img.mfp-img {
         left: -90px;
         width: 380px;
         height: 380px;
-        background-image: url("../images/category-border.png");
+        background-image: url("/image/catalog/demo_content/category-border.png");
         pointer-events: none;
         z-index: 1; }
     .categories-view__content-title {
@@ -2878,15 +2878,15 @@ img.mfp-img {
       background-position: center;
       background-repeat: no-repeat; }
       .contact-us__socials-icon._viber {
-        background-image: url("../images/icons/viber-orange.png"); }
+        background-image: url("/image/catalog/demo_content/icons/viber-orange.png"); }
       .contact-us__socials-icon._telegram {
-        background-image: url("../images/icons/telegram-orange.png"); }
+        background-image: url("/image/catalog/demo_content/icons/telegram-orange.png"); }
       .contact-us__socials-icon._messenger {
-        background-image: url("../images/icons/messenger-orange.png"); }
+        background-image: url("/image/catalog/demo_content/icons/messenger-orange.png"); }
       .contact-us__socials-icon._whatsup {
-        background-image: url("../images/icons/whatsup-orange.png"); }
+        background-image: url("/image/catalog/demo_content/icons/whatsup-orange.png"); }
       .contact-us__socials-icon._chat {
-        background-image: url("../images/icons/chat-orange.png"); }
+        background-image: url("/image/catalog/demo_content/icons/chat-orange.png"); }
   .contact-us__address {
     width: calc(100% - 570px); }
     @media (max-width: 1620px) {
@@ -2927,7 +2927,7 @@ img.mfp-img {
       color: #C28B65;
       font-size: 16px; }
   .contact-us__map {
-    background-image: url("../images/map-temp.jpg");
+    background-image: url("/image/catalog/demo_content/map-temp.jpg");
     background-size: cover;
     width: 100%;
     height: 100%; }
@@ -2948,7 +2948,7 @@ img.mfp-img {
       bottom: 100px;
       left: 50%;
       margin-left: -28px;
-      background-image: url("../images/marker.png");
+      background-image: url("/image/catalog/demo_content/marker.png");
       z-index: 1; }
     .contact-us__map-overlay, .contacts__item-map-overlay {
       position: absolute;
@@ -2996,7 +2996,7 @@ img.mfp-img {
     margin-top: 5px;
     font-size: 16px; }
   .contacts__item-map {
-    background-image: url("../images/map-temp-big.jpg");
+    background-image: url("/image/catalog/demo_content/map-temp-big.jpg");
     width: 100%;
     height: 100%; }
     .contacts__item-map-wrap {
@@ -3090,7 +3090,7 @@ img.mfp-img {
   display: inline-block;
   width: 168px;
   height: 88px;
-  background-image: url("../images/logo.svg");
+  background-image: url("/image/catalog/demo_content/logo.svg");
   transform: translateX(-50%); }
 
 .header__contacts {
@@ -3333,7 +3333,7 @@ img.mfp-img {
     .product__color-more {
       width: 20px;
       height: 20px;
-      background-image: url("../images/colors/show-more.png");
+      background-image: url("/image/catalog/demo_content/colors/show-more.png");
       background-repeat: no-repeat;
       background-position: bottom 1px right 2px; }
   .product-page {
@@ -3681,7 +3681,7 @@ img.mfp-img {
     .product-page__responses {
       margin: 0 110px;
       padding: 40px 0 60px;
-      background-image: url("../images/line-separator.png");
+      background-image: url("/image/catalog/demo_content/line-separator.png");
       background-position: left top;
       background-repeat: repeat-x; }
       @media (max-width: 1620px) {
@@ -3725,7 +3725,7 @@ img.mfp-img {
           left: 0;
           width: 14px;
           height: 16px;
-          background-image: url("../images/icons/user.png"); }
+          background-image: url("/image/catalog/demo_content/icons/user.png"); }
       .product-page__responses-controls {
         display: flex;
         justify-content: space-between; }
@@ -3757,7 +3757,7 @@ img.mfp-img {
 .promo {
   position: relative;
   padding: 20.5px 0;
-  background-image: url("../images/promo-pattern.jpg"); }
+  background-image: url("/image/catalog/demo_content/promo-pattern.jpg"); }
   .promo__container {
     font-family: RobotoSlab;
     font-weight: 700;
@@ -3798,7 +3798,7 @@ img.mfp-img {
       top: 6px;
       width: 30px;
       height: 49px;
-      background-image: url("../images/label-backdrop.png");
+      background-image: url("/image/catalog/demo_content/label-backdrop.png");
       z-index: -1; }
     .recommended__label:before, .thank-you__label:before {
       left: -21px; }
@@ -3894,7 +3894,7 @@ img.mfp-img {
     height: 41px;
     margin-left: 10px;
     background-color: #FF7757;
-    background-image: url("../images/icons/send.png");
+    background-image: url("/image/catalog/demo_content/icons/send.png");
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;

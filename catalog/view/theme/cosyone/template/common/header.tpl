@@ -1,4 +1,4 @@
-<?php /* ?>
+<?php if(false){ ?>
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
@@ -250,10 +250,10 @@
 </div> <!-- inner conainer ends -->
 <div class="breadcrumb_wrapper"></div>
 <div id="notification" class="container"></div>
-<?php */ ?>
+<?php } ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -261,6 +261,8 @@
     <title>Вкусная Мебель</title>
     <link rel="stylesheet" href="catalog/view/theme/cosyone/stylesheet/main.css">
     <script src="catalog/view/theme/cosyone/js/libs.js"></script>
+    <script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
+    <script type="text/javascript" src="catalog/view/theme/default/js/common.js"></script>
 </head>
 <body>
 <header class="header">
@@ -287,22 +289,29 @@
                 </a>
             </div>
             <div class="header__nav-links">
-                <a class="link" href="#">О нас</a>
-                <a class="link" href="#">Полезное</a>
-                <a class="link" href="#">Доставка и Оплата</a>
-                <a class="link" href="/contacts.html">Контакт</a>
+                <?php if($cosyone_custom_menu_title1){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url1; ?>"><?php echo $cosyone_custom_menu_title1; ?></a>
+                <?php } ?>
+                <?php if($cosyone_custom_menu_title2){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url2; ?>"><?php echo $cosyone_custom_menu_title2; ?></a>
+                <?php } ?>
+                <?php if($cosyone_custom_menu_title3){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url3; ?>"><?php echo $cosyone_custom_menu_title3; ?></a>
+                <?php } ?>
+                <?php if($cosyone_custom_menu_title4){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url4; ?>"><?php echo $cosyone_custom_menu_title4; ?></a>
+                <?php } ?>
+                <?php if($cosyone_custom_menu_title5){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url5; ?>"><?php echo $cosyone_custom_menu_title5; ?></a>
+                <?php } ?>
+                <?php if($cosyone_custom_menu_title6){ ?>
+                    <a class="link" href="<?php echo $cosyone_custom_menu_url6; ?>"><?php echo $cosyone_custom_menu_title6; ?></a>
+                <?php } ?>
             </div>
         </div>
         <a href="/" class="header__logo"></a>
         <div class="header__contacts">
-            <div class="header__lang">
-                <a href="#" class="link _color-orange _font-sm">
-                    <span class="link__text">Укр</span>
-                </a>
-                <a href="#" class="link _font-sm">
-                    <span class="link__text">Рус</span>
-                </a>
-            </div>
+            <?php echo $language; ?>
             <div class="header__city select-city__wrap js-select-city-wrap">
                 <a href="#" class="link _color-orange js-select-city-open">
                     <span class="link__text js-select-city-value">Одесса</span>
@@ -353,12 +362,12 @@
             </div>
             <div class="header__contacts-row">
                 <div class="header__contacts-column">
-                    <a class="link" href="tel:0507555545">(050) 755-55-45</a>
-                    <span class="header__contacts-schedule">c 10:00 до 20:00</span>
+                    <a class="link" href="tel:<?=$telephone;?>"><?=$telephone;?></a>
+                    <span class="header__contacts-schedule"><?=$open;?></span>
                 </div>
                 <div class="header__contacts-column">
-                    <span class="header__contacts-address">ул. Семена Палия, 125, магазин 290</span>
-                    <span class="header__contacts-schedule">Вт - Вс, с 9:00 до 14:00</span>
+                    <span class="header__contacts-address"><?=$address;?></span>
+                    <span class="header__contacts-schedule"><?=$comment;?></span>
                 </div>
             </div>
         </div>

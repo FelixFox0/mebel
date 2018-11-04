@@ -34,7 +34,7 @@ class ControllerCommonFileManager extends Controller {
 		}
 
 		// Get files
-		$files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+		$files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF,svg,SVG}', GLOB_BRACE);
 
 		if (!$files) {
 			$files = array();
@@ -235,7 +235,8 @@ class ControllerCommonFileManager extends Controller {
 					'jpg',
 					'jpeg',
 					'gif',
-					'png'
+					'png',
+                                        'svg'
 				);
 
 				if (!in_array(utf8_strtolower(utf8_substr(strrchr($filename, '.'), 1)), $allowed)) {
@@ -248,7 +249,8 @@ class ControllerCommonFileManager extends Controller {
 					'image/pjpeg',
 					'image/png',
 					'image/x-png',
-					'image/gif'
+					'image/gif',
+                                        'image/svg+xml'
 				);
 
 				if (!in_array($this->request->files['file']['type'], $allowed)) {
