@@ -259,10 +259,10 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Вкусная Мебель</title>
-    <link rel="stylesheet" href="catalog/view/theme/cosyone/stylesheet/main.css">
-    <script src="catalog/view/theme/cosyone/js/libs.js"></script>
-    <script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
-    <script type="text/javascript" src="catalog/view/theme/default/js/common.js"></script>
+    <link rel="stylesheet" href="/catalog/view/theme/cosyone/stylesheet/main.css">
+    <script src="/catalog/view/theme/cosyone/js/libs.js"></script>
+    <script type="text/javascript" src="/catalog/view/theme/cosyone/js/cosyone_common.js"></script>
+    <script type="text/javascript" src="/catalog/view/theme/default/js/common.js"></script>
 </head>
 <body>
 <header class="header">

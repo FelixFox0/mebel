@@ -26,12 +26,20 @@ class ControllerModuleCategory extends Controller {
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
+                
+                $this->load->model('tool/image');
 
 		$data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
 
 		foreach ($categories as $category) {
+                    
+                        if ($category['image']) {
+				$thumb = $this->model_tool_image->resize($category['image'], 410, 410);
+			} else {
+				$thumb = '';
+			}
 			$children_data = array();
 
 			if ($category['category_id'] == $data['category_id']) {
@@ -56,7 +64,9 @@ class ControllerModuleCategory extends Controller {
 			$data['categories'][] = array(
 				'category_id' => $category['category_id'],
 				'name'        => $category['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-				'children'    => $children_data,
+				'description' => html_entity_decode($category['description']),
+                                'thumb'       => $thumb,
+                                'children'    => $children_data,
 				'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
 			);
 		}

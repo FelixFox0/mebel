@@ -56,12 +56,18 @@ slideSpeed:500
 <?php } ?>
 <?php } ?>
 
-<?php if(!empty($posts)){ ?>
+<?php if(!empty($posts)){ 
+$colors = array();
+$colors[0] = '_brown';
+$colors[1] = '_darkblue';
+$colors[2] = '_blue';
+?>
 <div class="news">
     
+    
     <div class="news__slider owl-carousel js-news-slider">
-        <?php foreach ($posts as $blog) { ?>
-        <a href="#" class="news__item _brown">
+        <?php foreach ($posts as $key => $blog) { ?>
+        <a href="#" class="news__item <?=$colors[$key%3];?>">
             <div class="news__item-text">
                 <div class="news__item-title"><?php echo $blog['title']; ?></div>
                 <div class="news__item-desc"><?php echo $blog['description']; ?></div>

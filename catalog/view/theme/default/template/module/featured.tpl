@@ -1,3 +1,4 @@
+<?php if(false){ ?>
 <h3><?php echo $heading_title; ?></h3>
 <div class="row">
   <?php foreach ($products as $product) { ?>
@@ -39,4 +40,55 @@
     </div>
   </div>
   <?php } ?>
+</div>
+<?php } ?>
+
+<div class="recommended">
+    <div class="recommended__container container">
+        <div class="recommended__title">
+            <h2 class="title">Самые Вкусные Предложения</h2>
+        </div>
+        <div class="recommended__label">Количество ограничено!</div>
+        <div class="recommended__items">
+<?php foreach ($products as $product) { ?>
+                    <a href="<?php echo $product['href']; ?>" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>">
+                                <img class="product__image-alt" src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>">
+                            </div>
+                            <h3 class="product__title"><?php echo $product['name']; ?></h3>
+                            <?php if($product['options']){ ?>
+                            <div class="product__colors">
+                               <?php foreach ($product['options'] as $options) { ?>
+                               
+                                <div class="product__colors-category">
+                                    <?php foreach ($options['product_option_value'] as $option) { ?>
+                                    <span class="product__color js-color-link" data-href="<?php echo (parse_url($product['href'], PHP_URL_QUERY) ? $product['href'].'&' : $product['href'].'?') . 'option_value_id='.$option['option_value_id']; ?>">
+                                        <img src="<?=$option['image']?>" alt="$option['name']">
+                                    </span>
+                                    <?php } ?>
+                                </div>
+                               <?php } ?>
+                            </div>
+                            <?php } ?>
+                            <div class="price__wrap">                           
+                                <?php if (!$product['special']) { ?>
+                                <div class="price">
+                                    <span class="price__value"><?php echo $product['price']; ?> </span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                                <?php } else { ?>
+                                <div class="price _discount">
+                                    <span class="price__old-value"><?php echo $product['price']; ?></span>
+                                    <span class="price__value"><?php echo $product['special']; ?></span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </a>
+<?php } ?> 
+        </div>
+    </div>
 </div>

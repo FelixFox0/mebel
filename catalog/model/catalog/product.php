@@ -359,6 +359,8 @@ class ModelCatalogProduct extends Model {
 				'required'             => $product_option['required'],
 				'large_samples'        => (int)$product_option['large_samples'],
 				'full_list'            => (int)$product_option['full_list'],
+                                'view'                 => (int)$product_option['view'],
+                            
 			);
 		}
 

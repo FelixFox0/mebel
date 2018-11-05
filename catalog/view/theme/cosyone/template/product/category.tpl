@@ -273,67 +273,20 @@ $(document).ready(function() {
                                 <img class="product__image-alt" src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>">
                             </div>
                             <h3 class="product__title"><?php echo $product['name']; ?></h3>
+                            <?php if($product['options']){ ?>
                             <div class="product__colors">
+                               <?php foreach ($product['options'] as $options) { ?>
+                               
                                 <div class="product__colors-category">
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    <?php foreach ($options['product_option_value'] as $option) { ?>
+                                    <span class="product__color js-color-link" data-href="<?php echo (parse_url($product['href'], PHP_URL_QUERY) ? $product['href'].'&' : $product['href'].'?') . 'option_value_id='.$option['option_value_id']; ?>">
+                                        <img src="<?=$option['image']?>" alt="$option['name']">
                                     </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-2.jpg" alt="col-2">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-3.jpg" alt="col-3">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-4.jpg" alt="col-4">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-5.jpg" alt="col-5">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-6.jpg" alt="col-6">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-7.jpg" alt="col-7">
-                                    </span>
-                                    <span class="product__color-more"></span>
+                                    <?php } ?>
                                 </div>
-                                <div class="product__colors-category _sm">
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-8.jpg" alt="col-8">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-9.jpg" alt="col-9">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-10.jpg" alt="col-10">
-                                    </span>
-                                </div>
-                                <div class="product__colors-category">
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-11.jpg" alt="col-11">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-12.jpg" alt="col-12">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-13.jpg" alt="col-13">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-14.jpg" alt="col-14">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-15.jpg" alt="col-15">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-16.jpg" alt="col-16">
-                                    </span>
-                                    <span class="product__color js-color-link" data-href="product.html">
-                                        <img src="images/colors/col-17.jpg" alt="col-17">
-                                    </span>
-                                    <span class="product__color-more"></span>
-                                </div>
+                               <?php } ?>
                             </div>
+                            <?php } ?>
                             <div class="price__wrap">                           
                                 <?php if (!$product['special']) { ?>
                                 <div class="price">

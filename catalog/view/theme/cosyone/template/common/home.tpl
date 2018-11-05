@@ -1,9 +1,5 @@
 <?php echo $header; ?>
-<script type="text/javascript">
-	$("li.home").addClass("current");
-	$(".breadcrumb_wrapper").hide();
-</script>
-<div class="container main">
+
   <?php echo $home_top_top; ?>
   <div class="home_top_wrapper">
 <?php echo $home_top_left; ?><?php echo $home_top_center; ?><?php echo $home_top_right; ?>

@@ -3,7 +3,7 @@ class ModelCatalogOption extends Model {
 	public function addOption($data) {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "'");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', view = '" . (int)$data['view'] . "'");
 
 		$option_id = $this->db->getLastId();
 
@@ -29,7 +29,7 @@ class ModelCatalogOption extends Model {
 	public function editOption($option_id, $data) {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
-		$this->db->query("UPDATE `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "' WHERE option_id = '" . (int)$option_id . "'");
+		$this->db->query("UPDATE `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', view = '" . (int)$data['view'] . "' WHERE option_id = '" . (int)$option_id . "'");
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "option_description WHERE option_id = '" . (int)$option_id . "'");
 
