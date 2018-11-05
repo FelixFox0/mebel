@@ -117,6 +117,13 @@
                 <input type="checkbox" name="large_samples" value="1" <?php if($large_samples): ?> checked <?php endif; ?> placeholder="Крупные образцы" id="checkbox-large-samples" class="form-control" />
               </div>
             </div>
+              
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-view">Показывать в каталоге</label>
+              <div class="col-sm-10">
+                <input type="checkbox" name="view" value="1" <?=($view)?'checked':'';?> placeholder="Показывать в каталоге" id="input-view" class="form-control" />
+              </div>
+            </div>
 
             <div class="form-group">
               <label class="col-sm-2 control-label" for="input-full-list">Полный список (ограничение)</label>

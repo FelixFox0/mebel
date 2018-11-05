@@ -380,6 +380,14 @@ class ControllerCatalogOption extends Controller {
         } else {
             $data['large_samples'] = '';
         }
+        
+        if (isset($this->request->post['view'])) {
+            $data['view'] = $this->request->post['view'];
+        } elseif (!empty($option_info)) {
+            $data['view'] = $option_info['view'];
+        } else {
+            $data['view'] = '';
+        }
 
         if (isset($this->request->post['full_list'])) {
             $data['full_list'] = $this->request->post['full_list'];
