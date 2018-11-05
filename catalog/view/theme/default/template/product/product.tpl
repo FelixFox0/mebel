@@ -150,8 +150,7 @@
             <li><?php echo $text_tax; ?> <?php echo $tax; ?></li>
             <?php } ?>
             <?php if ($points) { ?>
-            <li><?php echo $text_points; ?> <?php echo $points; ?></li>
-            <?php } ?>
+             <?php } ?>
             <?php if ($discounts) { ?>
             <li>
               <hr>

@@ -51,7 +51,7 @@
                                 <?php if ($option['type'] == 'image') { ?>
                                     <div class="product-page__constructor-block js-constructor-block">
                                         <div class="product-page__constructor-label">
-                                            Цвет профиля: <span class="js-constructor-label-value">Серебро</span>
+                                            <?php echo $option['name']; ?>: <span class="js-constructor-label-value"></span>
                                         </div>
                                         <div class="product-page__constructor-content">
                                             <?php
@@ -320,13 +320,23 @@
                         15-20 рабочих дней
                     </div>
                     <div class="product-page__order-row">
-                        <div class="price__wrap">
-                            <div class="price">
-                                <span class="price__value">5899</span>
-                                <span class="price__period">грн</span>
+                        <?php if ($price) { ?>
+                            <div class="price__wrap">
+                                <?php if (!$special) { ?>
+                                    <div class="price">
+                                        <span class="price__value"><?php echo $price; ?></span>
+                                        <span class="price__period">грн</span>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="price _discount">
+                                        <span class="price__old-value"><?php echo $price; ?></span>
+                                        <span class="price__value"><?php echo $special; ?></span>
+                                        <span class="price__period">грн</span>
+                                    </div>
+                                <?php } ?>
                             </div>
-                        </div>
-                        <button class="button">Заказать</button>
+                        <?php } ?>
+                        <button class="button" id="button-cart">Заказать</button>
                         <a href="#mfp-how-to-order" class="link _color-orange _font-sm js-popup-toggle">
                             <span class="link__text">Как происходит заказ?</span>
                         </a>
@@ -1261,17 +1271,7 @@
 </div>
 
 
-<div class="cart__collapsed js-cart-collapsed">
-    <div class="cart__collapsed-row">
-        <span class="cart__collapsed-icon">
-            <div class="cart__collapsed-icon-count">3</div>
-        </span>
-        <span class="cart__collapsed-price">
-            12 696
-            <span class="cart__collapsed-price-currency">грн</span>
-        </span>
-    </div>
-</div>
+
 <div class="popup _size-md _bg-black mfp-hide js-popup" id="mfp-callback">
     <i class="mfp-close popup__close">
         <svg class="popup__close-icon" width="17px" height="17px">
@@ -2335,5 +2335,66 @@ $('#button-review').on('click', function() {
 
 
 <?php endif; ?>
+
+<script type="text/javascript">
+    $('#button-cart').on('click', function() {
+        $.ajax({
+            url: 'index.php?route=checkout/cart/add',
+            type: 'post',
+            data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+            dataType: 'json',
+            beforeSend: function() {
+                //$('#button-cart').button('loading');
+            },
+            complete: function() {
+                //$('#button-cart').button('reset');
+            },
+            success: function(json) {
+                $('.alert, .text-danger').remove();
+                $('.form-group').removeClass('has-error');
+
+                if (json['error']) {
+                    if (json['error']['option']) {
+                        for (i in json['error']['option']) {
+                            var element = $('#input-option' + i.replace('_', '-'));
+
+                            if (element.parent().hasClass('input-group')) {
+                                element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            } else {
+                                element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            }
+                        }
+                    }
+
+                    if (json['error']['recurring']) {
+                        $('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+                    }
+
+                    // Highlight any found errors
+                    $('.text-danger').parent().addClass('has-error');
+                }
+
+                if (json['success']) {
+
+                    $.colorbox({
+                        html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="btn btn-default" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="btn btn-primary" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+                        className: "notification",
+                        initialHeight:50,
+                        initialWidth:50,
+                        width:"90%",
+                        maxWidth:400,
+                        height:"90%",
+                        maxHeight:200
+                    });
+
+                    $('#cart-total').html(json['total']);
+
+                    $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+                }
+            }
+        });
+    });
+</script>
+
 
 <?php echo $footer; ?>
