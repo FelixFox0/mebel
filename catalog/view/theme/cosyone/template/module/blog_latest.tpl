@@ -1,3 +1,4 @@
+<?php if(false){ ?>
 <div class="box">
 	<div class="box-heading"><?php echo $heading_title_latest; ?></div>
     <div class="box-content latest">
@@ -52,4 +53,22 @@ navigationText: [
 slideSpeed:500
 }); });
 </script>
+<?php } ?>
+<?php } ?>
+
+<?php if(!empty($posts)){ ?>
+<div class="news">
+    
+    <div class="news__slider owl-carousel js-news-slider">
+        <?php foreach ($posts as $blog) { ?>
+        <a href="#" class="news__item _brown">
+            <div class="news__item-text">
+                <div class="news__item-title"><?php echo $blog['title']; ?></div>
+                <div class="news__item-desc"><?php echo $blog['description']; ?></div>
+            </div>
+            <img class="news__item-img" alt="post-1" src="<?php echo $blog['image']; ?>">
+        </a>
+        <?php } ?>
+    </div>
+</div>
 <?php } ?>
