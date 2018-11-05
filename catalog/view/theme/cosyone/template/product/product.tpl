@@ -79,6 +79,34 @@
                                     </div>
                                 <?php } ?>
                             <?php } ?>
+                            <div class="product-page__constructor-block">
+                                <div class="product-page__constructor-label">
+                                    Размер, мм
+                                    <div class="hint__wrap js-size-hint-wrap">
+                                        <i class="product-page__constructor-help js-size-hint-open">?</i>
+                                        <div class="hint">
+                                            <svg class="hint__close js-size-hint-close" width="12px" height="11px">
+                                                <path d="M11.418,9.326 L9.983,10.761 L6.155,6.933 L2.328,10.761 L0.892,9.326 L4.720,5.498 L0.892,1.671 L2.328,0.235 L6.155,4.063 L9.983,0.235 L11.418,1.671 L7.591,5.498 L11.418,9.326 Z"/>
+                                            </svg>
+                                            <span class="hint__content">
+                                            Выберите размер, кликнув на число.
+                                            Размер влияет на стоимость.
+                                        </span>
+                                            <span class="hint__arrow"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-page__constructor-sizes">
+                                    <div class="product-page__constructor-sizes-row">
+                                        <span class="product-page__constructor-sizes-char">Высота</span>
+                                        <span class="dots-separator"></span>
+                                        <a href="#" class="link _color-orange js-size-link">
+                                            <span class="link__text js-size-value" data-value="2400">2400</span>
+                                        </a>
+                                        <input type="text" maxlength="4" class="product-page__constructor-sizes-input js-size-input _hidden">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!--<div class="product-page__constructor-column">
@@ -350,63 +378,52 @@
                             Описание товара
                         </div>
                         <div class="product-page__data-desc">
-                            Шкаф-купе двухдверный с фасадами из ДСП (цвет ДСП на выбор).
-                            По Вашему желанию цвета ДСП могут комбинироваться.
-                            Шкафы-купе давно стали неотъемлемой частью современного интерьера,
-                            открывая и расширяя пространство нашего дома, они отличаются
-                            отличной функциональностью, эргономичными данными и возможностью
-                            выбрать наружное оформление
+                            <?php echo $short_description; ?>
                         </div>
-                        <div class="product-page__data-column-wrapper">
-                            <div class="product-page__data-column _size">
-                                <div class="product-page__data-column-title">Размер, мм</div>
-                                <div class="product-page__data-column-row">
-                                    <span class="product-page__data-column-char">Длина</span>
-                                    <span class="dots-separator"></span>
-                                    <span class="product-page__data-column-value">1300</span>
-                                </div>
-                                <div class="product-page__data-column-row">
-                                    <span class="product-page__data-column-char">Высота</span>
-                                    <span class="dots-separator"></span>
-                                    <span class="product-page__data-column-value">2600</span>
-                                </div>
-                                <div class="product-page__data-column-row">
-                                    <span class="product-page__data-column-char">Ширина</span>
-                                    <span class="dots-separator"></span>
-                                    <span class="product-page__data-column-value">540</span>
+                        <?php if ($attribute_groups) { ?>
+                            <div class="product-page__data-column-wrapper">
+
+                                    <div class="product-page__data-column _size">
+                                        <div class="product-page__data-column-title">Размер, мм</div>
+                                        <div class="product-page__data-column-row">
+                                            <span class="product-page__data-column-char">Длина</span>
+                                            <span class="dots-separator"></span>
+                                            <span class="product-page__data-column-value">1300</span>
+                                        </div>
+                                        <div class="product-page__data-column-row">
+                                            <span class="product-page__data-column-char">Высота</span>
+                                            <span class="dots-separator"></span>
+                                            <span class="product-page__data-column-value">2600</span>
+                                        </div>
+                                        <div class="product-page__data-column-row">
+                                            <span class="product-page__data-column-char">Ширина</span>
+                                            <span class="dots-separator"></span>
+                                            <span class="product-page__data-column-value">540</span>
+                                        </div>
+                                    </div>
+
+                                <div class="product-page__data-column">
+                                    <div class="product-page__data-column-title">Материалы</div>
+                                    <div class="product-page__data-column-row">
+                                        <span class="product-page__data-column-char">Корпус</span>
+                                        <span class="dots-separator"></span>
+                                        <span class="product-page__data-column-value">
+                                        Ламинированное ДСП, Алюминий, Зеркало
+                                    </span>
+                                    </div>
+                                    <div class="product-page__data-column-row">
+                                        <span class="product-page__data-column-char">Кромка</span>
+                                        <span class="dots-separator"></span>
+                                        <span class="product-page__data-column-value">ПВХ 0,5 мм</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product-page__data-column">
-                                <div class="product-page__data-column-title">Материалы</div>
-                                <div class="product-page__data-column-row">
-                                    <span class="product-page__data-column-char">Корпус</span>
-                                    <span class="dots-separator"></span>
-                                    <span class="product-page__data-column-value">
-                                    Ламинированное ДСП, Алюминий, Зеркало
-                                </span>
-                                </div>
-                                <div class="product-page__data-column-row">
-                                    <span class="product-page__data-column-char">Кромка</span>
-                                    <span class="dots-separator"></span>
-                                    <span class="product-page__data-column-value">ПВХ 0,5 мм</span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                         <div class="product-page__data-column-wrapper">
                             <div class="product-page__data-column">
                                 <div class="product-page__data-column-title">Дополнительно</div>
                                 <div class="product-page__data-list-wrap">
-                                    <ul class="product-page__data-list">
-                                        <li class="product-page__data-list-item">Доводчики на фасадах</li>
-                                        <li class="product-page__data-list-item">Телескопические направляющие</li>
-                                        <li class="product-page__data-list-item">Анодированная фурнитура</li>
-                                        <li class="product-page__data-list-item">Внутренняя светодиодная подсветка</li>
-                                    </ul>
-                                    <ul class="product-page__data-list">
-                                        <li class="product-page__data-list-item">Выдвижные вешалки</li>
-                                        <li class="product-page__data-list-item">Корзина для обуви, мм: 500 х 350 х 200</li>
-                                        <li class="product-page__data-list-item">Гарантия 12 месяцев</li>
-                                    </ul>
+                                    <?php echo $additional_description; ?>
                                 </div>
                             </div>
                         </div>
@@ -414,95 +431,13 @@
                 </div>
                 <div class="product-page__column">
                     <div class="product-page__delivery">
-                        <div class="product-page__delivery-price-row">
-                            <span class="product-page__delivery-price-char">Доставка по Одессе </span>
-                            <span class="dots-separator"></span>
-                            <span class="product-page__delivery-price-value">Бесплатно</span>
-                        </div>
-                        <div class="product-page__delivery-price-row">
-                            <span class="product-page__delivery-price-char">Самовывоз из магазина </span>
-                            <span class="dots-separator"></span>
-                            <span class="product-page__delivery-price-value">Бесплатно</span>
-                        </div>
-                        <div class="product-page__delivery-price-row">
-                            <span class="product-page__delivery-price-char">Выезд дизайнера</span>
-                            <span class="dots-separator"></span>
-                            <span class="product-page__delivery-price-value">Бесплатно</span>
-                        </div>
-                        <div class="product-page__delivery-price-row">
-                            <span class="product-page__delivery-price-char">Сборка и Установка</span>
-                            <span class="dots-separator"></span>
-                            <span class="product-page__delivery-price-value">Бесплатно</span>
-                        </div>
-                        <div class="product-page__delivery-price-row">
-                            <span class="product-page__delivery-price-char">Предоплата</span>
-                            <span class="dots-separator"></span>
-                            <span class="product-page__delivery-price-value">50%</span>
-                        </div>
-                        <p class="product-page__delivery-text">
-                            При заказе на сумму 3500 грн и выше,
-                            действует бесплатная доставки,
-                            бесплатный выезд дизайнера,
-                            а также бесплатная сборка и установка.
-                        </p>
-                        <p class="product-page__delivery-text">
-                            Заказ отправляется в работу после
-                            оформления договора и предоплаты 50%
-                        </p>
-                        <a href="#" class="link _color-orange _font-sm">
-                            <span class="link__text">Детальная информация</span>
-                        </a>
+                        <?php echo $delivery_description; ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="product-page__description">
-            <div class="product-page__description-block">
-                <img class="product-page__description-img _left" src="images/product-1-desc.jpg" alt="product desc">
-                <div class="product-page__description-text">
-                    <h3 class="product-page__description-title">Надежная раздвижная система</h3>
-                    <p>
-                        Основной отличительной особенностью шкафа-купе от обычного шкафа (
-                        с распашными дверями) являются раздвижные двери. Чаще всего шкафы-купе
-                        можно увидеть в интерьере спальни, гостиной или прихожей. За счет своей
-                        конструкции они экономят свободное пространство и позволяют хранить множество
-                        нужных вещей. Шкафы-купе бывают встроенные и корпусные.
-                    </p>
-                </div>
-            </div>
-
-            <div class="product-page__description-block">
-                <img class="product-page__description-img _right" src="images/product-2-desc.jpg" alt="product desc">
-                <div class="product-page__description-text">
-                    <h3 class="product-page__description-title">Максимальное использование полезной емкости</h3>
-                    <p>
-                        Система раздвижных дверей для шкафа-купе может включать в себя дверную раму
-                        (стальной или алюминиевый профиль, обрамляющий дверное полотно по периметру
-                        и придающий ему жёсткость), направляющие (треки, рельсы), ролики и некоторые
-                        другие элементы (поворотные механизмы, демпферы, упоры и пр.). В совокупности
-                        эти элементы образуют систему раздвижных дверей шкафа-купе, от качества которой
-                        зависит плавность и лёгкость хода, и в конечном итоге, срок службы изделия.
-                    </p>
-                    <p>
-                        Существуют системы, где ролики или упоры могут крепится к дверному полотну
-                        из натурального дерева или других материалов без металлического обрамления
-                        Все системы раздвижных дверей можно поделить на две группы — двери с опорой
-                        на нижние направляющие и двери, подвешенные на верхний трек. Дверное полотно
-                        шкафа-купе может иметь деления на части, которые в свою очередь могут быть из
-                        различных материалов: стекло, оргстекло, лакобель, зеркало, ламинированного ДсТП, МДФ и т. д.
-                    </p>
-                </div>
-            </div>
-            <img src="images/product-desc-full.jpg" class="product-page__description-img" alt="product desc">
-            <div class="product-page__installation">
-                <h3 class="product-page__description-title">Сборка и установка</h3>
-                <p>
-                    При использовании шкафа купе нет необходимости в дополнительном пространстве
-                    перед шкафом для открытия,  как в шкафу с распашными дверями, но двери шкафа-купе
-                    уменьшают на 70—120 мм его полезную глубину, также система шкафа-купе налагает дополнительные
-                    ограничения на расположение выдвижных и откидных элементов.
-                </p>
-            </div>
+            <?php echo $description; ?>
         </div>
 
         <div class="product-page__responses">
@@ -690,338 +625,90 @@
 <div class="recommended">
     <div class="recommended__container container">
         <div class="recommended__title">
-            <h2 class="title">Похожие товары</h2>
+            <h2 class="title"><?php echo $text_related; ?></h2>
         </div>
         <div class="recommended__items">
-            <a class="product" href="/product.html">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Купе Checkstar
-                        с рисунком пескоструй ...
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-1.jpg" alt="col-1">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-2.jpg" alt="col-2">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-3.jpg" alt="col-3">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-4.jpg" alt="col-4">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-5.jpg" alt="col-5">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-6.jpg" alt="col-6">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-7.jpg" alt="col-7">
-                            </span>
-                            <span class="product__color-more"></span>
+            <?php foreach ($products as $product) { ?>
+                <a class="product" href="/product.html">
+                    <div class="product__content">
+                        <div class="product__image-wrap">
+                            <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                            <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
                         </div>
-                        <div class="product__colors-category _sm">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-8.jpg" alt="col-8">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-9.jpg" alt="col-9">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-10.jpg" alt="col-10">
-                            </span>
+                        <h3 class="product__title">
+                            Шкаф Купе Checkstar
+                            с рисунком пескоструй ...
+                        </h3>
+                        <div class="product__colors">
+                            <div class="product__colors-category">
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-1.jpg" alt="col-1">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-2.jpg" alt="col-2">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-3.jpg" alt="col-3">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-4.jpg" alt="col-4">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-5.jpg" alt="col-5">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-6.jpg" alt="col-6">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-7.jpg" alt="col-7">
+                                </span>
+                                <span class="product__color-more"></span>
+                            </div>
+                            <div class="product__colors-category _sm">
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-8.jpg" alt="col-8">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-9.jpg" alt="col-9">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-10.jpg" alt="col-10">
+                                </span>
+                            </div>
+                            <div class="product__colors-category">
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-11.jpg" alt="col-11">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-12.jpg" alt="col-12">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-13.jpg" alt="col-13">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-14.jpg" alt="col-14">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-15.jpg" alt="col-15">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-16.jpg" alt="col-16">
+                                </span>
+                                <span class="product__color js-color-link">
+                                    <img src="images/colors/col-17.jpg" alt="col-17">
+                                </span>
+                                <span class="product__color-more"></span>
+                            </div>
                         </div>
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-11.jpg" alt="col-11">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-12.jpg" alt="col-12">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-13.jpg" alt="col-13">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-14.jpg" alt="col-14">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-15.jpg" alt="col-15">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-16.jpg" alt="col-16">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-17.jpg" alt="col-17">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price">
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="/product.html" class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-1.jpg" alt="product-1">
-                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
-                    </div>
-                    <h3 class="product__title">
-                        Купе Шкаф Класик 004, матовые двери
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-1.jpg" alt="col-1">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-2.jpg" alt="col-2">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-3.jpg" alt="col-3">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-4.jpg" alt="col-4">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-5.jpg" alt="col-5">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-6.jpg" alt="col-6">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-7.jpg" alt="col-7">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-8.jpg" alt="col-8">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-9.jpg" alt="col-9">
-                            </span>
-                        </div>
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-11.jpg" alt="col-11">
-                            </span>
+                        <div class="price__wrap">
+                            <div class="price">
+                                <span class="price__value">4050</span>
+                                <span class="price__period">грн</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="price__wrap">
-                        <div class="price _discount">
-                            <span class="price__old-value">4500</span>
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="/product.html" class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Класик 001 с зеркальными дверями
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-1.jpg" alt="col-1">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-2.jpg" alt="col-2">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-3.jpg" alt="col-3">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-4.jpg" alt="col-4">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-5.jpg" alt="col-5">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-6.jpg" alt="col-6">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-7.jpg" alt="col-7">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-8.jpg" alt="col-8">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-9.jpg" alt="col-9">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-10.jpg" alt="col-10">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price _sold-out">
-                            <span class="price__old-value">4500</span>
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                        <span class="price__label">Продано</span>
-                    </div>
-                </div>
-            </a>
-            <a href="/product.html" class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Купе Checkstar
-                        с рисунком пескоструй ...
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-1.jpg" alt="col-1">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-2.jpg" alt="col-2">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-3.jpg" alt="col-3">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-4.jpg" alt="col-4">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-5.jpg" alt="col-5">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-6.jpg" alt="col-6">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-7.jpg" alt="col-7">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-8.jpg" alt="col-8">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-9.jpg" alt="col-9">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-10.jpg" alt="col-10">
-                            </span>
-                        </div>
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-11.jpg" alt="col-11">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-12.jpg" alt="col-12">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-13.jpg" alt="col-13">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-14.jpg" alt="col-14">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-15.jpg" alt="col-15">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-16.jpg" alt="col-16">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-17.jpg" alt="col-17">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price">
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/product.html" class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-1.jpg" alt="product-1">
-                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
-                    </div>
-                    <h3 class="product__title">
-                        Купе Шкаф Класик 004, матовые двери
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-1.jpg" alt="col-1">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-2.jpg" alt="col-2">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-3.jpg" alt="col-3">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-4.jpg" alt="col-4">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-5.jpg" alt="col-5">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-6.jpg" alt="col-6">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-7.jpg" alt="col-7">
-                            </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-8.jpg" alt="col-8">
-                            </span>
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-9.jpg" alt="col-9">
-                            </span>
-                        </div>
-                        <div class="product__colors-category">
-                            <span class="product__color js-color-link">
-                                <img src="images/colors/col-11.jpg" alt="col-11">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price _discount">
-                            <span class="price__old-value">4500</span>
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+                </a>
+            <?php } ?>
         </div>
     </div>
 </div>
