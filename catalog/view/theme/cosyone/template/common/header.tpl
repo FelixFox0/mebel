@@ -381,4 +381,5 @@
         </div>
     </div>
     <?php } ?>
+    <?php if ($cosyone_header_cart) { echo $cart; } ?>
 </header>
