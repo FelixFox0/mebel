@@ -16,3 +16,60 @@
 2018-11-05 11:20:16 - PHP Notice:  Undefined variable: short_description in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 381
 2018-11-05 11:20:16 - PHP Notice:  Undefined variable: additional_description in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 422
 2018-11-05 11:20:16 - PHP Notice:  Undefined variable: delivery_description in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 430
+2018-11-06 3:20:58 - PHP Notice:  Undefined variable: group_by in D:\OSPanel\domains\mebel\www\admin\view\template\catalog\option_form.tpl on line 152
+2018-11-06 3:27:40 - PHP Notice:  Undefined index: view in D:\OSPanel\domains\mebel\www\admin\model\catalog\option.php on line 7
+2018-11-06 3:27:40 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OSPanel\domains\mebel\www\admin\controller\startup\error.php:34) in D:\OSPanel\domains\mebel\www\system\library\response.php on line 12
+2018-11-06 3:28:00 - PHP Notice:  Undefined index: view in D:\OSPanel\domains\mebel\www\admin\model\catalog\option.php on line 7
+2018-11-06 3:28:00 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OSPanel\domains\mebel\www\admin\controller\startup\error.php:34) in D:\OSPanel\domains\mebel\www\system\library\response.php on line 12
+2018-11-06 3:28:17 - PHP Notice:  Undefined index: view in D:\OSPanel\domains\mebel\www\admin\model\catalog\option.php on line 7
+2018-11-06 3:28:17 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OSPanel\domains\mebel\www\admin\controller\startup\error.php:34) in D:\OSPanel\domains\mebel\www\system\library\response.php on line 12
+2018-11-06 3:31:36 - PHP Notice:  Undefined index: description in D:\OSPanel\domains\mebel\www\admin\view\template\catalog\option_form.tpl on line 46
+2018-11-06 3:31:36 - PHP Notice:  Undefined index: description in D:\OSPanel\domains\mebel\www\admin\view\template\catalog\option_form.tpl on line 46
+2018-11-11 16:04:28 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 51
+2018-11-11 16:04:28 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1008
+2018-11-11 16:04:28 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1041
+2018-11-11 16:06:07 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 51
+2018-11-11 16:06:07 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1008
+2018-11-11 16:06:07 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1041
+2018-11-11 16:21:17 - PHP Notice:  Undefined index: product_option_id in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 104
+2018-11-11 16:21:17 - PHP Notice:  Undefined index: product_option_id in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 104
+2018-11-11 16:21:17 - PHP Notice:  Undefined index: product_option_id in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 104
+2018-11-11 16:54:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1023
+2018-11-11 16:54:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1056
+2018-11-11 16:54:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1023
+2018-11-11 16:54:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1056
+2018-11-11 17:14:53 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:14:53 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:14:53 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:14:53 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:15:33 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:15:33 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:15:33 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:15:33 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:16:52 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:16:52 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:16:52 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:16:52 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:17:25 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:17:25 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:17:25 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:17:25 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:18:02 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1024
+2018-11-11 17:18:02 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1057
+2018-11-11 17:18:02 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1024
+2018-11-11 17:18:02 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1057
+2018-11-11 17:18:44 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:18:44 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-11 17:18:44 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1039
+2018-11-11 17:18:44 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 1072
+2018-11-14 23:43:33 - PHP Notice:  Undefined variable: major in D:\OSPanel\domains\mebel\www\admin\view\template\localisation\zone_form.tpl on line 74
+2018-11-15 0:00:12 - PHP Notice:  Undefined variable: languages in D:\OSPanel\domains\mebel\www\admin\view\template\localisation\zone_form.tpl on line 41
+2018-11-15 0:00:12 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\admin\view\template\localisation\zone_form.tpl on line 41
+2018-11-15 1:51:45 - PHP Warning:  array_chunk() expects parameter 1 to be array, object given in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 596
+2018-11-15 1:51:52 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 159
+2018-11-15 1:52:42 - PHP Notice:  Undefined index:  in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 162
+2018-11-15 1:53:40 - PHP Notice:  Undefined index:  in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 162
+2018-11-15 1:53:40 - PHP Notice:  Undefined index:  in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 162
+2018-11-15 1:53:40 - PHP Notice:  Undefined index:  in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 162
+2018-11-15 1:53:40 - PHP Notice:  Undefined index:  in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 162
+2018-11-15 2:13:13 - PHP Notice:  Undefined index: group_name in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 85

@@ -338,6 +338,7 @@ class ControllerProductProduct extends Controller {
 
 			$data['options'] = array();
 
+			$optionsGroup = [];
 			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
 				$product_option_value_data = array();
 
@@ -353,6 +354,7 @@ class ControllerProductProduct extends Controller {
 							'product_option_value_id' => $option_value['product_option_value_id'],
 							'option_value_id'         => $option_value['option_value_id'],
 							'name'                    => $option_value['name'],
+							'name'                    => $option_value['name'],
 							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
 							'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 284),
 							'price'                   => $price,
@@ -361,18 +363,35 @@ class ControllerProductProduct extends Controller {
 					}
 				}
 
-				$data['options'][] = array(
+                $option = array(
 					'product_option_id'    => $option['product_option_id'],
 					'product_option_value' => $product_option_value_data,
 					'option_id'            => $option['option_id'],
 					'name'                 => $option['name'],
+					'description'          => $option['description'],
+					'group_name'           => $option['group_name'],
 					'type'                 => $option['type'],
 					'value'                => $option['value'],
 					'required'             => $option['required'],
 					'large_samples'        => $option['large_samples'],
-					'full_list'            => $option['full_list']
+					'full_list'            => $option['full_list'],
+					'group_by'            => $option['group_by']
 				);
+				if (!empty($option['group_by']) && $option['type'] == 'text') {
+				    if (!isset($optionsGroup[$option['group_by']])) {
+                        $optionsGroup[$option['group_by']]['description'] = $option['description'];
+                        $optionsGroup[$option['group_by']]['group_name'] = $option['group_name'];
+                        $optionsGroup[$option['group_by']]['type'] = 'group';
+                    }
+                    $optionsGroup[$option['group_by']]['options'][] = $option;
+                } else {
+                    $data['options'][] = $option;
+                }
 			}
+			if (!empty($optionsGroup)) {
+                $data['options'] = array_merge($data['options'], $optionsGroup);
+            }
+
 
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
@@ -406,7 +425,8 @@ class ControllerProductProduct extends Controller {
 
 			$data['share'] = $this->url->link('product/product', 'product_id=' . (int)$this->request->get['product_id']);
 
-			$data['attribute_groups'] = array_chunk($this->model_catalog_product->getProductAttributes($this->request->get['product_id']), 2);
+            $attributeGroups = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+			$data['attribute_groups'] = array_chunk($attributeGroups, ceil(count($attributeGroups) / 2));
 
 			$data['products'] = array();
 
@@ -470,7 +490,17 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 
-			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
+			if (isset($this->session->data['selected_zone'])) {
+                $data['selected_zone'] = $this->session->data['selected_zone'];
+            } else {
+                $data['selected_zone'] = null;
+            }
+
+            $data['mojor_zones'] = $this->model_catalog_product->getMajorZones();
+
+            $data['mojor_zones'] = array_chunk($data['mojor_zones'], ceil(count($data['mojor_zones']) / 3));
+            //print_r($data['mojor_zones']);die;
+            $data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
 

@@ -373,6 +373,14 @@ class ControllerCatalogOption extends Controller {
 			$data['sort_order'] = '';
 		}
 
+        if (isset($this->request->post['group_by'])) {
+            $data['group_by'] = $this->request->post['group_by'];
+        } elseif (!empty($option_info)) {
+            $data['group_by'] = $option_info['group_by'];
+        } else {
+            $data['group_by'] = '';
+        }
+
         if (isset($this->request->post['large_samples'])) {
             $data['large_samples'] = $this->request->post['large_samples'];
         } elseif (!empty($option_info)) {

@@ -354,13 +354,16 @@ class ModelCatalogProduct extends Model {
 				'product_option_value' => $product_option_value_data,
 				'option_id'            => $product_option['option_id'],
 				'name'                 => $product_option['name'],
+				'description'          => $product_option['description'],
+				'group_name'          => $product_option['group_name'],
 				'type'                 => $product_option['type'],
 				'value'                => $product_option['value'],
 				'required'             => $product_option['required'],
 				'large_samples'        => (int)$product_option['large_samples'],
 				'full_list'            => (int)$product_option['full_list'],
-                                'view'                 => (int)$product_option['view'],
-                            
+                'view'                 => (int)$product_option['view'],
+                'group_by'             => $product_option['group_by'],
+
 			);
 		}
 
@@ -516,4 +519,8 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+
+	public function getMajorZones() {
+        return $this->db->query("SELECT z.*, zd.name as name FROM `" . DB_PREFIX . "zone` `z` JOIN `" . DB_PREFIX . "zone_description` `zd` ON `zd`.`zone_id` = `z`.`zone_id` AND `zd`.`language_id` = " . (int)$this->config->get('config_language_id') . " AND `z`.`major` = 1 ")->rows;
+    }
 }

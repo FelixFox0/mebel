@@ -1,7 +1,7 @@
----------- Date: 2016-07-19 15:54:00 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /index.php?route=common/home
+---------- Date: 2018-11-06 01:49:06 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\testtheme.net\vqmod/xml/all.install.ocmod.xml
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
    id        : 
    version   : OpenCart Version 2.2
    vqmver    : 2.0.0

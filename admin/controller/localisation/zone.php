@@ -290,6 +290,12 @@ class ControllerLocalisationZone extends Controller {
 			$data['error_name'] = '';
 		}
 
+        if (isset($this->error['name_desc'])) {
+            $data['error_name_desc'] = $this->error['name_desc'];
+        } else {
+            $data['error_name_desc'] = '';
+        }
+
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {
@@ -360,7 +366,26 @@ class ControllerLocalisationZone extends Controller {
 			$data['country_id'] = '';
 		}
 
+        if (isset($this->request->post['major'])) {
+            $data['major'] = $this->request->post['major'];
+        } elseif (!empty($zone_info)) {
+            $data['major'] = $zone_info['major'];
+        } else {
+            $data['major'] = '';
+        }
+
+        if (isset($this->request->post['zone_description'])) {
+            $data['zone_description'] = $this->request->post['zone_description'];
+        } elseif (isset($this->request->get['zone_id'])) {
+            $data['zone_description'] = $this->model_localisation_zone->getZoneDescriptions($this->request->get['zone_id']);
+        } else {
+            $data['zone_description'] = array();
+        }
+
 		$this->load->model('localisation/country');
+
+        $this->load->model('localisation/language');
+        $data['languages'] = $this->model_localisation_language->getLanguages();
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
 
@@ -379,6 +404,12 @@ class ControllerLocalisationZone extends Controller {
 		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 64)) {
 			$this->error['name'] = $this->language->get('error_name');
 		}
+
+        foreach ($this->request->post['zone_description'] as $language_id => $value) {
+            if ((utf8_strlen($value['name']) < 2) || (utf8_strlen($value['name']) > 255)) {
+                $this->error['name_desc'][$language_id] = $this->language->get('error_name');
+            }
+        }
 
 		return !$this->error;
 	}
