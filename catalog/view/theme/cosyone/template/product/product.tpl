@@ -965,7 +965,9 @@
                 }
 
                 if (json['success']) {
-
+                    $('#cart-collapsed-count').text(json['count']);
+                    $('#cart-collapsed-total').text(json['total']);
+                    $('.cart__collapsed.js-cart-collapsed').show();
                     /*$.colorbox({
                         html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="btn btn-default" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="btn btn-primary" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
                         className: "notification",
