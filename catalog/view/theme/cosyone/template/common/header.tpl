@@ -309,7 +309,7 @@
                 <?php } ?>
             </div>
         </div>
-        <a href="/" class="header__logo"></a>
+        <a href="<?php echo $home; ?>" class="header__logo"></a>
         <div class="header__contacts">
             <?php echo $language; ?>
             <div class="header__city select-city__wrap js-select-city-wrap">
