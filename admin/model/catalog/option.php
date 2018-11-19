@@ -3,12 +3,14 @@ class ModelCatalogOption extends Model {
 	public function addOption($data) {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', view = '" . (int)$data['view'] . "'");
+        $data['group_by'] = !empty($data['group_by']) ? (int)$data['group_by'] : null;
+        $data['view'] = !empty($data['view']) ? (int)$data['view'] : 0;
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', group_by = '" . $data['group_by'] . "', view = '" . (int)$data['view'] . "'");
 
 		$option_id = $this->db->getLastId();
 
 		foreach ($data['option_description'] as $language_id => $value) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "option_description SET option_id = '" . (int)$option_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "option_description SET option_id = '" . (int)$option_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', group_name = '" . $this->db->escape($value['group_name']) . "'");
 		}
 
 		if (isset($data['option_value'])) {
@@ -29,12 +31,14 @@ class ModelCatalogOption extends Model {
 	public function editOption($option_id, $data) {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
-		$this->db->query("UPDATE `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', view = '" . (int)$data['view'] . "' WHERE option_id = '" . (int)$option_id . "'");
+        $data['group_by'] = !empty($data['group_by']) ? (int)$data['group_by'] : null;
+        $data['view'] = !empty($data['view']) ? (int)$data['view'] : 0;
+		$this->db->query("UPDATE `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', group_by = '" . $data['group_by'] . "', view = '" . (int)$data['view'] . "' WHERE option_id = '" . (int)$option_id . "'");
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "option_description WHERE option_id = '" . (int)$option_id . "'");
 
 		foreach ($data['option_description'] as $language_id => $value) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "option_description SET option_id = '" . (int)$option_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
+			$this->db->query("INSERT INTO " . DB_PREFIX . "option_description SET option_id = '" . (int)$option_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', group_name = '" . $this->db->escape($value['group_name']) . "'");
 		}
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "option_value WHERE option_id = '" . (int)$option_id . "'");
@@ -119,7 +123,7 @@ class ModelCatalogOption extends Model {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option_description WHERE option_id = '" . (int)$option_id . "'");
 
 		foreach ($query->rows as $result) {
-			$option_data[$result['language_id']] = array('name' => $result['name']);
+			$option_data[$result['language_id']] = array('name' => $result['name'], 'description' => $result['description'], 'group_name' => $result['group_name']);
 		}
 
 		return $option_data;

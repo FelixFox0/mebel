@@ -966,18 +966,6 @@ $(document).ready(function() {
     </div>
 </div>
 
-
-<div class="cart__collapsed js-cart-collapsed">
-    <div class="cart__collapsed-row">
-        <span class="cart__collapsed-icon">
-            <div class="cart__collapsed-icon-count">3</div>
-        </span>
-        <span class="cart__collapsed-price">
-            12 696
-            <span class="cart__collapsed-price-currency">грн</span>
-        </span>
-    </div>
-</div>
 <div class="popup _size-md _bg-black mfp-hide js-popup" id="mfp-callback">
     <i class="mfp-close popup__close">
         <svg class="popup__close-icon" width="17px" height="17px">

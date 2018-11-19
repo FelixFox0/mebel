@@ -39,6 +39,16 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-sm-2 control-label">Описание</label>
+            <div class="col-sm-10">
+              <?php foreach ($languages as $language) { ?>
+              <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>
+                <textarea  class="form-control" name="option_description[<?php echo $language['language_id']; ?>][description]"><?php echo isset($option_description[$language['language_id']]) ? $option_description[$language['language_id']]['description'] : ''; ?></textarea>
+              </div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-sm-2 control-label" for="input-type"><?php echo $entry_type; ?></label>
             <div class="col-sm-10">
               <select name="type" id="input-type" class="form-control">
@@ -133,6 +143,26 @@
             </div>
           </div>
 
+          <div id="option-text">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Название группы</label>
+              <div class="col-sm-10">
+                <?php foreach ($languages as $language) { ?>
+                <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>
+                  <input type="text" class="form-control" name="option_description[<?php echo $language['language_id']; ?>][group_name]" value="<?php echo isset($option_description[$language['language_id']]) ? $option_description[$language['language_id']]['group_name'] : ''; ?>">
+                </div>
+                <?php } ?>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-sort-order">Группировать по</label>
+              <div class="col-sm-10">
+                <input type="text" name="group_by" value="<?php echo $group_by; ?>" placeholder="Группировать по" id="input-group-by" class="form-control" />
+              </div>
+            </div>
+          </div>
+
           <table id="option-value" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
@@ -185,6 +215,11 @@ $('select[name=\'type\']').on('change', function() {
         $('#option-images').show();
     } else {
         $('#option-images').hide();
+    }
+    if (this.value == 'text') {
+        $('#option-text').show();
+    } else {
+        $('#option-text').hide();
     }
 
 });

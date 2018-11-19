@@ -34,6 +34,21 @@
               <?php } ?>
             </div>
           </div>
+
+          <div class="form-group required">
+            <label class="col-sm-2 control-label">Название (перевод)</label>
+            <div class="col-sm-10">
+              <?php foreach ($languages as $language) { ?>
+              <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>
+                <input type="text" name="zone_description[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($zone_description[$language['language_id']]) ? $zone_description[$language['language_id']]['name'] : ''; ?>" placeholder="Название (перевод)" class="form-control" />
+              </div>
+              <?php if (isset($error_name_desc[$language['language_id']])) { ?>
+              <div class="text-danger"><?php echo $error_name_desc[$language['language_id']]; ?></div>
+              <?php } ?>
+              <?php } ?>
+            </div>
+          </div>
+
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-code"><?php echo $entry_code; ?></label>
             <div class="col-sm-10">
@@ -66,6 +81,12 @@
                 <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
                 <?php } ?>
               </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-major">Основной</label>
+            <div class="col-sm-10">
+              <input type="checkbox" name="major" value="1" <?php if($major): ?> checked <?php endif; ?> placeholder="Основной" id="input-major" class="form-control" />
             </div>
           </div>
         </form>

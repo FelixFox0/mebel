@@ -1,23 +1,170 @@
----------- Date: 2018-11-01 23:31:32 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2018-11-15 01:51:52 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_blog.xml
-   id        : OPENCART BLOG
-   version   : 1.0
-   vqmver    : 2.5.0
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
    author    : Karl Pers - openthemer@gmail.com
 
-File Name    : catalog/controller/startup/seo_url.php(4)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): ($data['route'] == 'information/information' && $key == 'information_id'))
-MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
-   vqmver    : 2.0.0
-   author    : Rupak Nepali
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
 
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 01:57:19 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:00:10 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:13:13 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:22:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:23:43 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:27:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:29:47 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:35:38 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-15 02:50:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
+   vqmver    : 2.0.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
 ----------------------------------------------------------------------
 
 
