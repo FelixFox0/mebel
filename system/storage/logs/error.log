@@ -115,3 +115,13 @@
 2018-11-20 22:52:49 - PHP Notice:  Undefined index: image in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_checkout_cart.php on line 120
 2018-11-20 22:52:49 - PHP Notice:  Undefined index: image in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_checkout_cart.php on line 120
 2018-11-20 22:52:49 - PHP Notice:  Undefined index: image in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_checkout_cart.php on line 120
+2018-11-20 23:59:29 - PHP Notice:  Undefined variable: all_reviews in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 273
+2018-11-20 23:59:29 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 273
+2018-11-21 0:01:26 - PHP Notice:  Undefined variable: all_reviews in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 270
+2018-11-21 0:46:54 - PHP Notice:  Undefined index: name in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 759
+2018-11-21 0:46:54 - PHP Notice:  Undefined index: text in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 763
+2018-11-21 0:53:31 - PHP Notice:  Undefined index: name in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 759
+2018-11-21 0:53:31 - PHP Notice:  Undefined index: text in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 763
+2018-11-21 1:00:52 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4
+2018-11-21 1:03:29 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4
+2018-11-21 1:07:29 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4

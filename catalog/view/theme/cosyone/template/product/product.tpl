@@ -262,113 +262,39 @@
             <?php echo $description; ?>
         </div>
 
-        <div class="product-page__responses">
-            <h2 class="product-page__title">Отзывы</h2>
-            <div class="product-page__responses-content js-responses">
-                <div class="product-page__responses-item js-responses-item">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Мастера приветливые, все подняли на четвертый этаж,
-                        собрали шкаф но из-за нового щитка он не поместился в нишу.
-                        Пришлось подрезать стенку, сделали акуратно.
-                        Отдельное спасибо дизайнеру что отговорил сделать
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Светлана</span>
+
+            <div class="product-page__responses">
+                <h2 class="product-page__title">Отзывы</h2>
+                <div class="product-page__responses-content js-responses">
+                    <?php foreach($all_reviews as $all_reviews): ?>
+                        <div class="product-page__responses-item js-responses-item">
+                            <div class="product-page__responses-item-text js-responses-item-text">
+                                <?php echo $all_reviews['text']; ?>
+                            </div>
+                            <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                                <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                                <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                            </a>
+                            <span class="product-page__responses-author"><?php echo $all_reviews['author']; ?></span>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="product-page__responses-item js-responses-item ">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
+                <div class="product-page__responses-controls">
+                    <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
+                    <div class="product-page__responses-nav _hidden js-responses-nav">
+                        <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
+                            <svg class="product-page__responses-nav-icon" width="7px" height="12px">
+                                <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
+                            <svg class="product-page__responses-nav-icon" width="7px" height="12px">
+                                <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Анна</span>
-                </div>
-                <div class="product-page__responses-item js-responses-item">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Заказывала шкаф купе, предыдущий покупала
-                        в сетевом магазине но он не продержался и трех лет.
-                        Новый шкаф выглядит отлично и создает впечатление
-                        качественого и крепкого. Надеюсь прослужит не один год.
-                        Спасибо за работу.
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Татьяна</span>
-                </div>
-                <div class="product-page__responses-item js-responses-item">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Мастера приветливые, все подняли на четвертый этаж,
-                        собрали шкаф но из-за нового щитка он не поместился в нишу.
-                        Пришлось подрезать стенку, сделали акуратно.
-                        Отдельное спасибо дизайнеру что отговорил сделать
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Светлана 2</span>
-                </div>
-                <div class="product-page__responses-item js-responses-item ">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Анна 2</span>
-                </div>
-                <div class="product-page__responses-item js-responses-item">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Заказывала шкаф купе, предыдущий покупала
-                        в сетевом магазине но он не продержался и трех лет.
-                        Новый шкаф выглядит отлично и создает впечатление
-                        качественого и крепкого. Надеюсь прослужит не один год.
-                        Спасибо за работу.
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Татьяна 2</span>
-                </div>
-                <div class="product-page__responses-item js-responses-item">
-                    <div class="product-page__responses-item-text js-responses-item-text">
-                        Мастера приветливые, все подняли на четвертый этаж,
-                        собрали шкаф но из-за нового щитка он не поместился в нишу.
-                        Пришлось подрезать стенку, сделали акуратно.
-                        Отдельное спасибо дизайнеру что отговорил сделать
-                    </div>
-                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
-                    </a>
-                    <span class="product-page__responses-author">Светлана 3</span>
                 </div>
             </div>
-            <div class="product-page__responses-controls">
-                <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
-                <div class="product-page__responses-nav _hidden js-responses-nav">
-                    <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
-                        <svg class="product-page__responses-nav-icon" width="7px" height="12px">
-                            <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
-                        <svg class="product-page__responses-nav-icon" width="7px" height="12px">
-                            <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -656,24 +582,20 @@
     </i>
     <div class="popup__container">
         <div class="popup__title">Написать Отзыв</div>
-        <div class="popup__form">
-            <div class="popup__form-item">
-                <label class="popup__form-label">Ваше Имя</label>
-                <input class="input" type="text">
-            </div>
-            <div class="popup__form-item">
-                <label class="popup__form-label">Отзыв</label>
-                <textarea class="textarea"></textarea>
-            </div>
-            <label class="popup__form-image-upload">
-                <span class="link _color-orange _font-sm">
-                    <span class="link__text">Прикрепить фото</span>
-                </span>
-                <input type="file" class="_hidden">
-            </label>
-            <div class="popup__form-action">
-                <button class="button js-send-response">Отправить</button>
-            </div>
+        <div >
+            <form class="popup__form"  id="form-review">
+                <div class="popup__form-item">
+                    <label class="popup__form-label">Ваше Имя</label>
+                    <input class="input" type="text" name="name">
+                </div>
+                <div class="popup__form-item">
+                    <label class="popup__form-label">Отзыв</label>
+                    <textarea class="textarea" name="text"></textarea>
+                </div>
+                <div class="popup__form-action">
+                    <button class="button js-send-response">Отправить</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -727,6 +649,33 @@
                     $('#cart-collapsed-total').text(json['total']);
                     $('.cart__collapsed.js-cart-collapsed').show();
                     //$('#mfp-cart').load('index.php?route=checkout/cart'); //Added
+                }
+            }
+        });
+    });
+
+    $('#form-review .js-send-response').on('click', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
+            type: 'post',
+            dataType: 'json',
+            data: $("#form-review").serialize(),
+            beforeSend: function() {
+            },
+            complete: function() {
+            },
+            success: function(json) {
+                if (json['error']) {
+                    alert(json['error']);
+                }
+                if (json['success']) {
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#mfp-response-success'
+                        },
+                        type: 'inline'
+                    })
                 }
             }
         });

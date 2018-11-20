@@ -511,6 +511,17 @@ class ControllerProductProduct extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+            $results = $this->model_catalog_review->getAllReviews();
+            $data['all_reviews'] = [];
+            foreach ($results as $result) {
+                $data['all_reviews'][] = array(
+                    'author'     => $result['author'],
+                    'text'       => nl2br($result['text']),
+                    'rating'     => (int)$result['rating'],
+                    'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
+                );
+            }
+
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';
@@ -646,9 +657,9 @@ class ControllerProductProduct extends Controller {
 				$json['error'] = $this->language->get('error_text');
 			}
 
-			if (empty($this->request->post['rating']) || $this->request->post['rating'] < 0 || $this->request->post['rating'] > 5) {
+			/*if (empty($this->request->post['rating']) || $this->request->post['rating'] < 0 || $this->request->post['rating'] > 5) {
 				$json['error'] = $this->language->get('error_rating');
-			}
+			}*/
 
 			// Captcha
 			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('review', (array)$this->config->get('config_captcha_page'))) {

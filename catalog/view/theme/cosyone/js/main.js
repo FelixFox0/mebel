@@ -443,12 +443,12 @@
         },
 
         sendResponse: function () {
-            $.magnificPopup.open({
+            /*$.magnificPopup.open({
                 items: {
                     src: '#mfp-response-success'
                 },
                 type: 'inline'
-            })
+            })*/
         },
 
         toggleSizeHintVisibility: function (event) {
