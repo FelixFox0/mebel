@@ -426,7 +426,11 @@ class ControllerProductProduct extends Controller {
 			$data['share'] = $this->url->link('product/product', 'product_id=' . (int)$this->request->get['product_id']);
 
             $attributeGroups = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
-			$data['attribute_groups'] = array_chunk($attributeGroups, ceil(count($attributeGroups) / 2));
+            if (count($attributeGroups)) {
+                $data['attribute_groups'] = array_chunk($attributeGroups, ceil(count($attributeGroups) / 2));
+            } else {
+                $data['attribute_groups'] = $attributeGroups;
+            }
 
 			$data['products'] = array();
 
@@ -463,6 +467,46 @@ class ControllerProductProduct extends Controller {
 					$rating = false;
 				}
 
+                $options = array();
+                foreach ($this->model_catalog_product->getProductOptions($result['product_id']) as $option) {
+                    if ($option['view']) {
+                        $product_option_value_data = array();
+
+                        foreach ($option['product_option_value'] as $option_value) {
+                            if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+                                if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+                                    $price = $this->currency->format($this->tax->calculate($option_value['price'], $result['tax_class_id'], $this->config->get('config_tax') ? 'P' : false), $this->session->data['currency']);
+                                } else {
+                                    $price = false;
+                                }
+
+                                $product_option_value_data[] = array(
+                                    'product_option_value_id' => $option_value['product_option_value_id'],
+                                    'option_value_id' => $option_value['option_value_id'],
+                                    'name' => $option_value['name'],
+                                    'image' => $this->model_tool_image->resize($option_value['image'], 20, 20),
+//                                                                'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 284),
+                                    'price' => $price,
+                                    'price_prefix' => $option_value['price_prefix']
+                                );
+                            }
+                        }
+
+                        $options[] = array(
+                            'product_option_id' => $option['product_option_id'],
+                            'product_option_value' => $product_option_value_data,
+                            'option_id' => $option['option_id'],
+                            'name' => $option['name'],
+                            'type' => $option['type'],
+                            'value' => $option['value'],
+                            'required' => $option['required'],
+                            'large_samples' => $option['large_samples'],
+                            'full_list' => $option['full_list'],
+                            'view' => $option['view']
+                        );
+                    }
+                }
+
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -473,6 +517,7 @@ class ControllerProductProduct extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
+                    'options'     => $options,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
 				);
 			}
@@ -496,9 +541,14 @@ class ControllerProductProduct extends Controller {
                 $data['selected_zone'] = null;
             }
 
+            $data['sku'] = $product_info['sku'];
+
             $data['mojor_zones'] = $this->model_catalog_product->getMajorZones();
 
-            $data['mojor_zones'] = array_chunk($data['mojor_zones'], ceil(count($data['mojor_zones']) / 3));
+            if (count($data['mojor_zones'])) {
+                $data['mojor_zones'] = array_chunk($data['mojor_zones'], ceil(count($data['mojor_zones']) / 3));
+            }
+
             //print_r($data['mojor_zones']);die;
             $data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 

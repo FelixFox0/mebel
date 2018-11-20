@@ -125,3 +125,96 @@
 2018-11-21 1:00:52 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4
 2018-11-21 1:03:29 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4
 2018-11-21 1:07:29 - PHP Notice:  Undefined index: rating in D:\OSPanel\domains\mebel\www\catalog\model\catalog\review.php on line 4
+2018-11-21 1:47:38 - PHP Notice:  Undefined variable: sku in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 21
+2018-11-21 1:49:48 - PHP Notice:  Undefined variable: sku in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 21
+2018-11-21 1:55:42 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 1:55:42 - PHP Notice:  Undefined index: options in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 397
+2018-11-21 1:55:42 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 1:55:42 - PHP Notice:  Undefined index: options in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 397
+2018-11-21 1:57:10 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 497
+2018-11-21 1:57:16 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 1:57:16 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 1:57:16 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 1:57:16 - PHP Notice:  Undefined index: options in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 397
+2018-11-21 1:57:19 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 497
+2018-11-21 1:57:25 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 1:57:25 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 1:57:25 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 1:57:25 - PHP Notice:  Undefined index: options in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 397
+2018-11-21 2:00:23 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 497
+2018-11-21 2:00:30 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 2:00:30 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 2:00:30 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:00:30 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:00:58 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 497
+2018-11-21 2:01:05 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 2:01:05 - PHP Warning:  Invalid argument supplied for foreach() in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 49
+2018-11-21 2:01:05 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 394
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 487
+2018-11-21 2:01:05 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 521
+2018-11-21 2:04:22 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 396
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:04:22 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 396
+2018-11-21 2:06:57 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 396
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Notice:  Undefined index: type in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Notice:  Uninitialized string offset: 0 in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 489
+2018-11-21 2:06:57 - PHP Warning:  Illegal string offset 'type' in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 523
+2018-11-21 2:10:47 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 396
+2018-11-21 2:10:47 - PHP Notice:  Undefined index: thumb_hover in D:\OSPanel\domains\mebel\www\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 396

@@ -18,7 +18,7 @@
 <div class="product-page">
     <div class="container">
         <div class="product-page__title"><?php echo $heading_title; ?></div>
-        <div class="product-page__code">Код Товара: 95078</div>
+        <div class="product-page__code">Код Товара: <?php echo $sku; ?></div>
         <div class="product-page__card">
             <div class="product-page__row">
                 <div class="product-page__column">
@@ -46,6 +46,7 @@
                 </div>
                 <div class="product-page__column">
                     <div class="product-page__constructor">
+                        <?php if(count($options)): ?>
                         <?php foreach (array_chunk($options, ceil(count($options) / 2)) as $optionsColunm) { ?>
                             <div class="product-page__constructor-column">
                                 <?php foreach ($optionsColunm as $option) { ?>
@@ -139,6 +140,7 @@
                                 <?php } ?>
                             </div>
                         <?php } ?>
+                        <?php endif; ?>
                         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
                     </div>
                     <div class="product-page__delivery-row">
@@ -279,21 +281,23 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="product-page__responses-controls">
-                    <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
-                    <div class="product-page__responses-nav _hidden js-responses-nav">
-                        <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
-                            <svg class="product-page__responses-nav-icon" width="7px" height="12px">
-                                <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
-                            <svg class="product-page__responses-nav-icon" width="7px" height="12px">
-                                <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
-                            </svg>
-                        </a>
+                <?php if ($review_status) { ?>
+                    <div class="product-page__responses-controls">
+                        <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
+                        <div class="product-page__responses-nav _hidden js-responses-nav">
+                            <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
+                                <svg class="product-page__responses-nav-icon" width="7px" height="12px">
+                                    <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
+                                <svg class="product-page__responses-nav-icon" width="7px" height="12px">
+                                    <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
     </div>
 </div>
@@ -377,85 +381,52 @@
         </div>
         <div class="recommended__items">
             <?php foreach ($products as $product) { ?>
-                <a class="product" href="/product.html">
-                    <div class="product__content">
-                        <div class="product__image-wrap">
-                            <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                            <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
-                        </div>
-                        <h3 class="product__title">
-                            Шкаф Купе Checkstar
-                            с рисунком пескоструй ...
-                        </h3>
-                        <div class="product__colors">
-                            <div class="product__colors-category">
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-1.jpg" alt="col-1">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-2.jpg" alt="col-2">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-3.jpg" alt="col-3">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-4.jpg" alt="col-4">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-5.jpg" alt="col-5">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-6.jpg" alt="col-6">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-7.jpg" alt="col-7">
-                                </span>
-                                <span class="product__color-more"></span>
-                            </div>
-                            <div class="product__colors-category _sm">
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-8.jpg" alt="col-8">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-9.jpg" alt="col-9">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-10.jpg" alt="col-10">
-                                </span>
-                            </div>
-                            <div class="product__colors-category">
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-11.jpg" alt="col-11">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-12.jpg" alt="col-12">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-13.jpg" alt="col-13">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-14.jpg" alt="col-14">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-15.jpg" alt="col-15">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-16.jpg" alt="col-16">
-                                </span>
-                                <span class="product__color js-color-link">
-                                    <img src="images/colors/col-17.jpg" alt="col-17">
-                                </span>
-                                <span class="product__color-more"></span>
-                            </div>
-                        </div>
-                        <div class="price__wrap">
-                            <div class="price">
-                                <span class="price__value">4050</span>
-                                <span class="price__period">грн</span>
-                            </div>
-                        </div>
+
+
+
+            <a href="<?php echo $product['href']; ?>" class="product">
+                <div class="product__content">
+                    <div class="product__image-wrap">
+                        <img class="product__image" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>">
+                        <img class="product__image-alt" src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>">
                     </div>
-                </a>
+                    <h3 class="product__title"><?php echo $product['name']; ?></h3>
+                    <?php if($product['options']){ ?>
+                    <div class="product__colors">
+                        <?php foreach ($product['options'] as $productOptions) { ?>
+
+                        <div class="product__colors-category">
+                            <?php foreach ($productOptions['product_option_value'] as $option) { ?>
+                            <span class="product__color js-color-link" data-href="<?php echo (parse_url($product['href'], PHP_URL_QUERY) ? $product['href'].'&' : $product['href'].'?') . 'option_value_id='.$option['option_value_id']; ?>">
+                                        <img src="<?=$option['image']?>" alt="$option['name']">
+                                    </span>
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <?php } ?>
+                    <div class="price__wrap">
+                        <?php if (!$product['special']) { ?>
+                        <div class="price">
+                            <span class="price__value"><?php echo $product['price']; ?> </span>
+                            <span class="price__period">грн</span>
+                        </div>
+                        <?php } else { ?>
+                        <div class="price _discount">
+                            <span class="price__old-value"><?php echo $product['price']; ?></span>
+                            <span class="price__value"><?php echo $product['special']; ?></span>
+                            <span class="price__period">грн</span>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </a>
+
+
+
+
+
+
             <?php } ?>
         </div>
     </div>
@@ -582,20 +553,25 @@
     </i>
     <div class="popup__container">
         <div class="popup__title">Написать Отзыв</div>
-        <div >
-            <form class="popup__form"  id="form-review">
-                <div class="popup__form-item">
-                    <label class="popup__form-label">Ваше Имя</label>
-                    <input class="input" type="text" name="name">
-                </div>
-                <div class="popup__form-item">
-                    <label class="popup__form-label">Отзыв</label>
-                    <textarea class="textarea" name="text"></textarea>
-                </div>
-                <div class="popup__form-action">
-                    <button class="button js-send-response">Отправить</button>
-                </div>
-            </form>
+        <div>
+            <?php if ($review_guest) { ?>
+                <form class="popup__form"  id="form-review">
+                    <div class="popup__form-item">
+                        <label class="popup__form-label">Ваше Имя</label>
+                        <input class="input" type="text" name="name">
+                    </div>
+                    <div class="popup__form-item">
+                        <label class="popup__form-label">Отзыв</label>
+                        <textarea class="textarea" name="text"></textarea>
+                    </div>
+                    <?php echo $captcha; ?>
+                    <div class="popup__form-action">
+                        <button class="button js-send-response">Отправить</button>
+                    </div>
+                </form>
+            <?php } else { ?>
+                <?php echo $text_login; ?>
+            <?php } ?>
         </div>
     </div>
 </div>
