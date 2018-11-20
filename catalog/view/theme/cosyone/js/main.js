@@ -178,7 +178,8 @@
                 callbacks: {
 
                     open: function () {
-                        $(this.SELECTORS.collapsedCart).addClass(this.CLASSES.hidden);
+                        //$(this.SELECTORS.collapsedCart).addClass(this.CLASSES.hidden);
+                        $('#mfp-cart').load('index.php?route=checkout/cart');
                     }.bind(this),
 
                     close: function () {
@@ -329,9 +330,9 @@
 
         selectImageFromPopup: function (event) {
             // most of this could be replaced with ajax
-
+            //var _constructorImagesList =
             var $self = $(event.currentTarget),
-                $imagesList = $(this.SELECTORS.constructorImagesList),
+                $imagesList = $(this.SELECTORS.constructorImagesList + '-' + $self.data('option-id')),
                 $addedImg = $imagesList.find(this.SELECTORS.constructorNewImg),
                 elem = document.createElement('a'),
                 img = document.createElement('img');

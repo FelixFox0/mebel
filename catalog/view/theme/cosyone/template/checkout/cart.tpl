@@ -1,3 +1,248 @@
+<div class="cart__content">
+    <?php foreach ($products as $product) { ?>
+      <div class="cart__item">
+        <div class="cart__item-title">
+          <div class="tooltip__wrap js-delete-item-tooltip">
+            <div class="cart__item-delete js-delete-item">
+              <svg class="cart__item-delete-icon" width="19px" height="21px">
+                <path d="M-0.000,4.999 L-0.000,4.000 L5.191,4.000 C5.728,1.696 7.443,-0.000 9.500,-0.000 C11.557,-0.000 13.272,1.696 13.809,4.000 L19.000,4.000 L19.000,4.999 L-0.000,4.999 ZM9.500,0.999 C7.738,0.999 6.295,2.306 6.050,4.000 L12.950,4.000 C12.705,2.306 11.262,0.999 9.500,0.999 ZM17.000,17.999 C17.000,19.656 15.657,20.999 14.000,20.999 L5.000,20.999 C3.343,20.999 2.000,19.656 2.000,17.999 L2.000,5.999 L17.000,5.999 L17.000,17.999 ZM16.000,6.000 L3.000,6.000 L3.000,18.000 C3.000,19.104 3.895,20.000 5.000,20.000 L14.000,20.000 C15.105,20.000 16.000,19.104 16.000,18.000 L16.000,6.000 ZM12.000,8.000 L13.000,8.000 L13.000,16.999 L12.000,16.999 L12.000,8.000 ZM9.000,8.000 L10.000,8.000 L10.000,16.999 L9.000,16.999 L9.000,8.000 ZM6.000,8.000 L7.000,8.000 L7.000,16.999 L6.000,16.999 L6.000,8.000 Z"/>
+              </svg>
+            </div>
+            <div class="tooltip">
+              <div class="tooltip__content">
+                Вы точно хотите удалить товар из корзины?
+              </div>
+              <div class="tooltip__actions">
+                <button class="button _inverted js-delete-item-action">Отмена</button>
+                <button class="button js-delete-item-action">удалить</button>
+              </div>
+            </div>
+          </div>
+          <span class="cart__item-title-text">
+                      <?php echo $product['name']; ?>
+                  </span>
+        </div>
+        <div class="cart__item-card">
+          <div class="cart__item-img-wrap">
+            <?php if ($product['thumb']) { ?>
+              <img class="cart__item-img" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>">
+            <?php } ?></td>
+          </div>
+          <div class="cart__item-info">
+              <div class="cart__item-info-sizes">
+                <?php if ($product['option_group']) { ?>
+                  <?php foreach ($product['option_group'] as $option_group) { ?>
+                    <div class="cart__item-info-label"><?php echo $option_group['group_name']; ?></div>
+                    <?php foreach ($option_group['options'] as $option_group_options) { ?>
+                      <div class="cart__item-info-row">
+                        <span class="cart__item-info-char"><?php echo $option_group_options['name']; ?></span>
+                        <span class="dots-separator"></span>
+                        <span class="cart__item-info-value"><?php echo $option_group_options['value']; ?></span>
+                      </div>
+                    <?php } ?>
+                  <?php } ?>
+                <?php } ?>
+              </div>
+              <?php if ($product['option']) { ?>
+                <div class="cart__item-info-data">
+                  <?php foreach ($product['option'] as $option) { ?>
+                    <div class="cart__item-info-row">
+                      <span class="cart__item-info-char"><?php echo $option['name']; ?></span>
+                      <span class="dots-separator"></span>
+                      <span class="cart__item-info-value">
+                          <?php echo $option['value']; ?>
+                          <img class="cart__item-info-thumb" src="<?php echo $option['image']; ?>" alt="colour">
+                      </span>
+                    </div>
+                  <?php } ?>
+                </div>
+              <?php } ?>
+              <div class="cart__item-price">
+                <div class="cart__item-price-block">
+                  <div class="cart__item-price-label">Цена:</div>
+                  <div class="cart__item-price-value">5 899 грн</div>
+                </div>
+                <div class="cart__item-price-block">
+                  <div class="cart__item-price-label">Кол-во:</div>
+                  <div class="cart__item-qty">
+                    <button class="cart__item-qty-control _minus _disabled"></button>
+                    <span class="cart__item-qty-value">1</span>
+                    <button class="cart__item-qty-control _plus"></button>
+                  </div>
+                </div>
+                <div class="cart__item-price-block">
+                  <div class="cart__item-price-label">Сумма:</div>
+                  <div class="cart__item-price-value">11 798 грн</div>
+                </div>
+              </div>
+              <div class="cart__item-delivery">
+                <label class="checkbox _orange _inline">
+                  <input type="checkbox" class="checkbox__input">
+                  <i class="checkbox__icon"></i>
+                  <span class="checkbox__text">Сборка изделия</span>
+                </label>
+                <span class="dots-separator"></span>
+                <span class="cart__item-delivery-price">80 грн</span>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    <?php } ?>
+  </div>
+  <div class="cart__info">
+    <i class="cart__close js-cart-close">
+      <svg class="cart__close-icon">
+        <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+      </svg>
+    </i>
+    <div class="cart__info-content">
+      <div class="cart__info-title">Оформление заказа</div>
+      <div class="cart__info-phone">
+        <label class="cart__info-phone-label">Ваш телефон</label>
+        <div class="hint__wrap">
+          <input class="input js-phone-number-input" type="text">
+        </div>
+      </div>
+      <div class="cart__info-delivery">
+        <span class="cart__info-delivery-label">Доставка в:</span>
+        <div class="select-city__wrap js-select-city-wrap">
+          <a href="#" class="link _color-orange _font-sm js-select-city-open">
+            <span class="link__text js-select-city-value">Одесса</span>
+          </a>
+          <div class="select-city _pos-right js-select-city">
+                        <span class="select-city__close js-select-city-close">
+                            <svg class="select-city__close-icon" width="17px" height="17px">
+                                <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+                            </svg>
+                        </span>
+            <div class="select-city__title">Выберите город</div>
+            <div class="select-city__desc">Мы доставляем заказы по всей Украине!</div>
+            <div class="select-city__items">
+              <div class="select-city__column">
+                <a href="#" class="select-city__item js-select-city-item" data-value="Киев">Киев</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Бровары">Бровары</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Борисполь">Борисполь</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Ирпень">Ирпень</a>
+              </div>
+              <div class="select-city__column">
+                <a href="#" class="select-city__item js-select-city-item  _active" data-value="Одесса">Одесса</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Черноморск">Черноморск</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Николаев">Николаев</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Южный">Южный</a>
+                <a href="#" class="select-city__item js-select-city-item _sm" data-value="Фонтанка">Фонтанка</a>
+              </div>
+              <div class="select-city__column">
+                <a href="#" class="select-city__item js-select-city-item" data-value="Харьков">Харьков</a>
+                <a href="#" class="select-city__item js-select-city-item" data-value="Днепр">Днепр</a>
+                <a href="#" class="select-city__item js-select-city-item" data-value="Запорожье">Запорожье</a>
+                <a href="#" class="select-city__item js-select-city-item" data-value="Львов">Львов</a>
+              </div>
+            </div>
+            <div class="select-city__manual-input">
+              <div class="select-city__manual-input-text">Или введите другой населенный пункт</div>
+              <div class="select-city__manual-input-wrap">
+                <input type="text" class="input js-select-city-input" placeholder="Введите ваш город">
+                <button class="select-city__manual-input-send _disabled js-select-city-button"></button>
+              </div>
+              <div class="select-city__manual-input-example">
+                Например:
+                <a href="#" class="link _font-sm _color-orange js-select-city-item" data-value="Беляевка">
+                  <span class="link__text">Беляевка</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart__info-delivery-methods">
+        <div class="cart__info-delivery-wrap">
+          <div class="cart__info-row">
+            <label class="radio">
+              <input type="radio" name="delivery-method" class="radio__input">
+              <i class="radio__icon"></i>
+              <span class="radio__text">На дом</span>
+            </label>
+            <span class="dots-separator _brown"></span>
+            <span class="cart__info-price">120 грн</span>
+          </div>
+        </div>
+
+        <div class="cart__info-delivery-wrap">
+          <div class="cart__info-row">
+            <label class="radio">
+              <input type="radio" name="delivery-method" class="radio__input">
+              <i class="radio__icon"></i>
+              <span class="radio__text">Новой Почтой</span>
+            </label>
+            <span class="dots-separator _brown"></span>
+            <span class="cart__info-price">190 грн</span>
+          </div>
+        </div>
+
+        <div class="cart__info-delivery-wrap">
+          <div class="cart__info-row">
+            <label class="radio">
+              <input type="radio" name="delivery-method" class="radio__input">
+              <i class="radio__icon"></i>
+              <span class="radio__text">Самовывоз</span>
+            </label>
+            <span class="dots-separator _brown"></span>
+            <span class="cart__info-price">Бесплатно</span>
+          </div>
+          <div class="cart__info-delivery-note">
+            Самовывоз из нашего магазина: Одесса, ул. Семена Палия,
+            125, магазин 290, Вт - Вс, с 9:00 до 14:00
+          </div>
+        </div>
+      </div>
+      <div class="cart__payment">
+        <div class="cart__info-row">
+          <span class="cart__info-char">1 товар на сумму</span>
+          <span class="dots-separator _brown"></span>
+          <span class="cart__info-price">5 899 грн</span>
+        </div>
+        <div class="cart__info-row">
+          <span class="cart__info-char">Доставка</span>
+          <span class="dots-separator _brown"></span>
+          <span class="cart__info-price">120 грн</span>
+        </div>
+        <div class="cart__info-row">
+          <span class="cart__info-char">Сборка</span>
+          <span class="dots-separator _brown"></span>
+          <span class="cart__info-price">80 грн</span>
+        </div>
+        <div class="cart__info-row _total">
+          <span class="cart__info-char">К оплате</span>
+          <span class="dots-separator _brown"></span>
+          <span class="cart__info-price">
+                        6 099
+                        <span class="cart__info-price-currency">грн</span>
+                    </span>
+        </div>
+      </div>
+    </div>
+    <div class="cart__info-actions">
+      <a href="/thank-you.html" class="button">Оформить заказ</a>
+      <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if(false): ?>
 <?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">
@@ -143,4 +388,5 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>
+<?php endif; ?>

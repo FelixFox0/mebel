@@ -10,3 +10,6 @@
         </span>
   </div>
 </div>
+<div class="cart mfp-hide js-cart" id="mfp-cart">
+
+</div>

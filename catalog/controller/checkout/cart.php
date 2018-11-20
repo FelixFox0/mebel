@@ -74,7 +74,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['products'] = array();
 
 			$products = $this->cart->getProducts();
-
+//print_r($products);die;
 			foreach ($products as $product) {
 				$product_total = 0;
 
@@ -96,6 +96,7 @@ class ControllerCheckoutCart extends Controller {
 
 				$option_data = array();
 
+                $optionsGroup = [];
 				foreach ($product['option'] as $option) {
 					if ($option['type'] != 'file') {
 						$value = $option['value'];
@@ -109,12 +110,30 @@ class ControllerCheckoutCart extends Controller {
 						}
 					}
 
-					$option_data[] = array(
+					/*$option_data[] = array(
 						'name'  => $option['name'],
 						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
-					);
+					);*/
+                    $tempOptionData = array(
+                        'name'  => $option['name'],
+                        'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+                        'image' => !empty($option['image']) ? $this->model_tool_image->resize($option['image'], 20, 20) : null,
+                    );
+                    if (!empty($option['group_by']) && $option['type'] == 'text') {
+                        if (!isset($optionsGroup[$option['group_by']])) {
+                            $optionsGroup[$option['group_by']]['group_name'] = $option['group_name'];
+                            $optionsGroup[$option['group_by']]['type'] = 'group';
+                        }
+                        $optionsGroup[$option['group_by']]['options'][] = $tempOptionData;
+                    } else {
+                        $option_data[] = $tempOptionData;
+                    }
 				}
 
+                /*if (!empty($optionsGroup)) {
+                    $option_data = array_merge($option_data, $optionsGroup);
+                }*/
+                //print_r($option_data);die;
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
@@ -157,6 +176,7 @@ class ControllerCheckoutCart extends Controller {
 					'name'      => $product['name'],
 					'model'     => $product['model'],
 					'option'    => $option_data,
+					'option_group'    => $optionsGroup,
 					'recurring' => $recurring,
 					'quantity'  => $product['quantity'],
 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
@@ -165,6 +185,8 @@ class ControllerCheckoutCart extends Controller {
 					'total'     => $total,
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
+
+				//print_r($data['products']);die;
 			}
 
 			// Gift Voucher
