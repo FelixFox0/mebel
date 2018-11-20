@@ -259,10 +259,9 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Вкусная Мебель</title>
-    <link rel="stylesheet" href="/catalog/view/theme/cosyone/stylesheet/main.css">
-    <script src="/catalog/view/theme/cosyone/js/libs.js"></script>
-    <script type="text/javascript" src="/catalog/view/theme/cosyone/js/cosyone_common.js"></script>
-    <script type="text/javascript" src="/catalog/view/theme/default/js/common.js"></script>
+    <link rel="stylesheet" href="catalog/view/theme/cosyone/stylesheet/main.css">
+    <script src="catalog/view/theme/cosyone/js/libs.js"></script>
+    <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 </head>
 <body>
 <header class="header">
@@ -309,7 +308,7 @@
                 <?php } ?>
             </div>
         </div>
-        <a href="/" class="header__logo"></a>
+        <a href="<?php echo $home; ?>" class="header__logo"></a>
         <div class="header__contacts">
             <?php echo $language; ?>
             <div class="header__city select-city__wrap js-select-city-wrap">

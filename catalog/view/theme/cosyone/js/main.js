@@ -484,19 +484,19 @@
         },
 
         showPromo: function () {
-            var currentDay = new Date().getDay().toString();
-            localStorage.setItem('currentDay', currentDay);
+//            var currentDay = new Date().getDay().toString();
+//            localStorage.setItem('currentDay', currentDay);
 
-            if (currentDay !== localStorage.getItem('promoShownDay')) {
+//            if (currentDay !== localStorage.getItem('promoShownDay')) {
                 $(this.SELECTORS.promo).removeClass(this.CLASSES.hidden);
-            }
+//            }
         },
 
         closePromo: function () {
-            var shownDay = new Date().getDay();
-            localStorage.setItem('promoShownDay', shownDay.toString());
+//            var shownDay = new Date().getDay();
+//            localStorage.setItem('promoShownDay', shownDay.toString());
             $(this.SELECTORS.promo).addClass(this.CLASSES.hidden);
-            $(window).trigger('resize').trigger('scroll');
+//            $(window).trigger('resize').trigger('scroll');
         },
 
         openCitySelect: function (event) {

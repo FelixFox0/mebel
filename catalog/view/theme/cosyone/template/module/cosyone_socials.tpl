@@ -1,3 +1,4 @@
+<?php if(false){ ?>
 <div class="box">
 <?php if ($module_title){ ?>
 <div class="box-heading"><?php echo $module_title; ?></div>
@@ -8,4 +9,13 @@
 <?php } ?>
 <div class="clearfix"></div>
 </div>
+</div>
+<?php } ?>
+
+<div class="footer__socials">
+    <?php foreach($sections as $section){ ?>
+        <a href="<?php echo $section['link']; ?>" class="footer__socials-link">
+            <?php echo html_entity_decode($section['tooltip']); ?>
+        </a>
+    <?php } ?>
 </div>
