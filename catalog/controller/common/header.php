@@ -131,6 +131,9 @@ class ControllerCommonHeader extends Controller {
 		$data['cart'] = $this->load->controller('common/cart');
         $data['zone'] = $this->load->controller('common/zone');
 
+        $this->load->model('localisation/zone');
+        $data['selected_zone'] = $this->model_localisation_zone->getCurrentZoneName();
+
 		// For page specific css
 		if (isset($this->request->get['route'])) {
 			if (isset($this->request->get['product_id'])) {

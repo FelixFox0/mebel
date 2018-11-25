@@ -313,7 +313,7 @@
             <?php echo $language; ?>
             <div class="header__city select-city__wrap js-select-city-wrap">
                 <a href="#" class="link _color-orange js-select-city-open">
-                    <span class="link__text js-select-city-value">Одесса</span>
+                    <span class="link__text js-select-city-value"><?php echo $selected_zone; ?></span>
                 </a>
                 <?php echo $zone; ?>
                 <!--<div class="select-city js-select-city">

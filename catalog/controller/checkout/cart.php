@@ -17,6 +17,9 @@ class ControllerCheckoutCart extends Controller {
 			'text' => $this->language->get('heading_title')
 		);
 
+        $this->load->model('localisation/zone');
+        $data['selected_zone'] = $this->model_localisation_zone->getCurrentZoneName();
+
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
 			$data['heading_title'] = $this->language->get('heading_title');
 

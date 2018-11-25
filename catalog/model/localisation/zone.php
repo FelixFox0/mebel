@@ -29,4 +29,22 @@ class ModelLocalisationZone extends Model {
 
         return $query->rows;
     }
+
+    public function getCurrentZone() {
+        if (empty($this->session->data['selected_zone'])) {
+            $zone_id = $this->config->get('config_zone_id');
+            $zone = $this->addZone($zone_id);
+            $this->session->data['selected_zone'] = $zone;
+        } else {
+            $zone = $this->session->data['selected_zone'];
+        }
+        return $zone;
+    }
+
+    public function getCurrentZoneName() {
+        $currentZone = $this->getCurrentZone();
+
+        return $currentZone['name'];
+    }
+
 }

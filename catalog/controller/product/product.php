@@ -534,12 +534,8 @@ class ControllerProductProduct extends Controller {
 					);
 				}
 			}
-
-			if (isset($this->session->data['selected_zone'])) {
-                $data['selected_zone'] = $this->session->data['selected_zone'];
-            } else {
-                $data['selected_zone'] = null;
-            }
+            $this->load->model('localisation/zone');
+            $data['selected_zone'] = $this->model_localisation_zone->getCurrentZoneName();
 
             $data['sku'] = $product_info['sku'];
 

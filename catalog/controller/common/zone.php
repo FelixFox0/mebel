@@ -16,7 +16,7 @@ class ControllerCommonZone extends Controller {
         if (count($data['mojor_zones'])) {
             $data['mojor_zones'] = array_chunk($data['mojor_zones'], ceil(count($data['mojor_zones']) / 3));
         }
-
+        $this->model_localisation_zone->getCurrentZone();
         return $this->load->view('common/zone', $data);
     }
 

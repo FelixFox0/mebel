@@ -88,7 +88,8 @@ class ControllerProductCategory extends Controller {
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
-
+        $this->load->model('localisation/zone');
+        $data['selected_zone'] = $this->model_localisation_zone->getCurrentZoneName();
 		if ($category_info) {
 			$this->document->setTitle($category_info['meta_title']);
 			$this->document->setDescription($category_info['meta_description']);

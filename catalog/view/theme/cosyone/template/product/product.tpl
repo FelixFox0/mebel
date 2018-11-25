@@ -148,11 +148,7 @@
                         <div class="select-city__wrap js-select-city-wrap">
                             <a href="#" class="link _color-orange js-select-city-open">
                                 <span class="link__text js-select-city-value">
-                                    <?php if ($selected_zone) { ?>
-                                        <?php echo $selected_zone['name']; ?>
-                                    <?php } else { ?>
-                                        Выберите город
-                                    <?php } ?>
+                                    <?php echo $selected_zone; ?>
                                 </span>
                             </a>
                         </div>
