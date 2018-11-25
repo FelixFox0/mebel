@@ -500,7 +500,7 @@
         },
 
         openCitySelect: function (event) {
-            var $wrapper = $(event.currentTarget).closest(this.SELECTORS.selectCityWrap),
+            var $wrapper = $('.js-select-city-wrap'),
                 $activeItem = $wrapper.find(this.SELECTORS.selectCityItem + '.' + this.CLASSES.active),
                 currentValue = $wrapper.find(this.SELECTORS.selectCityValue).text();
 
@@ -512,40 +512,111 @@
 
         closeCitySelect: function () {
             $(this.SELECTORS.selectCityWrap).removeClass(this.CLASSES.active);
+            $('.select-city__items-search').remove();
         },
 
         selectCityFromList: function (event) {
             var $self = $(event.currentTarget),
                 value = $self.data('value'),
-                $wrapper = $self.closest(this.SELECTORS.selectCityWrap);
-
+                id = $self.data('id'),
+                $wrapper = $('.js-select-city-wrap'),
+                selectCityValue = this.SELECTORS.selectCityValue,
+                selectCityItem = this.SELECTORS.selectCityItem,
+                active = this.CLASSES.active;
             event.preventDefault();
-            $wrapper.find(this.SELECTORS.selectCityValue).text(value);
-            $wrapper.find(this.SELECTORS.selectCityItem).removeClass(this.CLASSES.active);
-            $self.addClass(this.CLASSES.active);
-            this.closeCitySelect();
+            $.ajax({
+                url: 'index.php?route=common/zone/change',
+                type: 'post',
+                dataType: 'json',
+                data: {zone_id: id},
+                beforeSend: function() {
+                },
+                complete: function() {
+                },
+                success: function(json) {
+                    if (json['error']) {
+                        alert(json['error']);
+                    }
+                    if (json['success']) {
+                        $(selectCityValue).text(value);
+                        $wrapper.find(selectCityItem).removeClass(active);
+                        $self.addClass(active);
+                        app.closeCitySelect();
+                    }
+                }
+            });
         },
-
         handleCityInputChange: function (event) {
             var $self = $(event.currentTarget),
-                $sendButton = $self.closest(this.SELECTORS.selectCityWrap).find(this.SELECTORS.selectCityButton);
-
+                $wrapper = $('.js-select-city-wrap'),
+                $sendButton = $self.closest(this.SELECTORS.selectCityWrap).find(this.SELECTORS.selectCityButton),
+                $input = $wrapper.find(this.SELECTORS.selectCityInput),
+                disabled = this.CLASSES.disabled;
             if ($self.val() !== '') {
-                $sendButton.removeClass(this.CLASSES.disabled)
+                $.ajax({
+                    url: 'index.php?route=common/zone/search',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {search: $self.val()},
+                    beforeSend: function() {
+                        $sendButton.addClass(disabled);
+                    },
+                    complete: function() {
+                    },
+                    success: function(json) {
+                        $('.select-city__items-search').remove();
+                        if (json['error']) {
+                            alert(json['error']);
+                        }
+                        if (json['success']) {
+                            var html = '<div class="select-city__items select-city__items-search"><div class="select-city__column">';
+                            for (i in json['zones']) {
+                                html += '<a href="#" class="select-city__item js-select-city-item" data-value="' + json['zones'][i]['name'] + '" data-id="' + json['zones'][i]['zone_id'] + '">' + json['zones'][i]['name'] + '</a>';
+                            }
+                            html += '</div></div>';
+                            $('.select-city__manual-input').after(html);
+                            if (json['selected_zone']) {
+                                $input.val(json['selected_zone']['name']);
+                                $input.data('id', json['selected_zone']['zone_id']);
+                                $sendButton.removeClass(disabled)
+                            }
+                        }
+                    }
+                });
+                //$sendButton.removeClass(this.CLASSES.disabled)
             } else {
-                $sendButton.addClass(this.CLASSES.disabled);
+                $('.select-city__items-search').remove();
             }
         },
 
         updateCityValueFromInput: function (event) {
             var $self = $(event.currentTarget),
-                $wrapper = $self.closest(this.SELECTORS.selectCityWrap),
-                $input = $wrapper.find(this.SELECTORS.selectCityInput);
-
-                $wrapper.find(this.SELECTORS.selectCityValue).text($input.val());
-                this.closeCitySelect();
-                $input.val('');
-                $self.addClass(this.CLASSES.disabled);
+                $wrapper = $('.js-select-city-wrap'),
+                $input = $wrapper.find(this.SELECTORS.selectCityInput),
+                disabled = this.CLASSES.disabled,
+                selectCityValue = this.SELECTORS.selectCityValue,
+                id = $input.data('id');
+            $.ajax({
+                url: 'index.php?route=common/zone/change',
+                type: 'post',
+                dataType: 'json',
+                data: {zone_id: id},
+                beforeSend: function() {
+                },
+                complete: function() {
+                },
+                success: function(json) {
+                    if (json['error']) {
+                        alert(json['error']);
+                    }
+                    if (json['success']) {
+                        $(selectCityValue).text($input.val());
+                        app.closeCitySelect();
+                        $input.val('');
+                        $self.addClass(disabled);
+                    }
+                }
+            });
         },
 
         handleCollapsedCartClick: function (event) {

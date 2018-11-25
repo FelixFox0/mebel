@@ -543,11 +543,6 @@ class ControllerProductProduct extends Controller {
 
             $data['sku'] = $product_info['sku'];
 
-            $data['mojor_zones'] = $this->model_catalog_product->getMajorZones();
-
-            if (count($data['mojor_zones'])) {
-                $data['mojor_zones'] = array_chunk($data['mojor_zones'], ceil(count($data['mojor_zones']) / 3));
-            }
 
             //print_r($data['mojor_zones']);die;
             $data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);

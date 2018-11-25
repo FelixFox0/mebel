@@ -1,5 +1,14 @@
----------- Date: 2018-11-11 22:44:11 ~ IP : 127.0.0.1 ----------
+---------- Date: 2018-11-25 16:12:59 ~ IP : 127.0.0.1 ----------
 REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
 MOD DETAILS:
    modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
    id        : Product Questions
@@ -12,6 +21,20 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
 
 File Name    : catalog/view/theme/*/template/product/product.tpl(2)
 VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-11-25 17:05:51 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+MOD DETAILS:
+   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
 ----------------------------------------------------------------------
 
 

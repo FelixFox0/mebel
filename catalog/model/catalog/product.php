@@ -519,8 +519,4 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
-
-	public function getMajorZones() {
-        return $this->db->query("SELECT z.*, zd.name as name FROM `" . DB_PREFIX . "zone` `z` JOIN `" . DB_PREFIX . "zone_description` `zd` ON `zd`.`zone_id` = `z`.`zone_id` AND `zd`.`language_id` = " . (int)$this->config->get('config_language_id') . " AND `z`.`major` = 1 ")->rows;
-    }
 }
