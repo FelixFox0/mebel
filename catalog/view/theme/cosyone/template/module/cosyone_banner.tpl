@@ -1,4 +1,4 @@
-
+<?php if(false){ ?>
 <?php if ($module_title){ ?>
 <div class="box-heading"><?php echo $module_title; ?></div>
 <?php } ?>
@@ -11,3 +11,20 @@
 </div>
 <?php } ?>
 </div>
+<?php } ?>
+
+<?php foreach($sections as $section){ ?>
+<div class="showcase js-parallax">
+    
+    <?php echo $section['description']; ?>
+</div>
+
+<script>
+
+    $('.js-parallax').parallax({
+        imageSrc: "<?php echo $section['image']; ?>",
+        speed: 0.05
+    });
+
+</script>
+<?php } ?>

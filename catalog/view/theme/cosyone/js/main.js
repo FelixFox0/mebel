@@ -144,13 +144,7 @@
             });
         },
 
-        initParallax: function () {
-
-            $(this.SELECTORS.parallaxContainer).parallax({
-                imageSrc: '../images/parallax.jpg',
-                speed: 0.05
-            });
-        },
+       
 
         initSlider: function () {
 
