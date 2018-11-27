@@ -33,7 +33,7 @@ class ModelLocalisationZone extends Model {
     public function getCurrentZone() {
         if (empty($this->session->data['selected_zone'])) {
             $zone_id = $this->config->get('config_zone_id');
-            $zone = $this->addZone($zone_id);
+            $zone = $this->getZone($zone_id);
             $this->session->data['selected_zone'] = $zone;
         } else {
             $zone = $this->session->data['selected_zone'];
