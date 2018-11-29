@@ -48,7 +48,7 @@ class Cart {
 				$option_data = array();
 
 				foreach (json_decode($cart['option']) as $product_option_id => $value) {
-					$option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, od.group_name, o.type, o.group_by FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$cart['product_id'] . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+					$option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, od.group_name, o.type, o.group_by, o.show_in_cart FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$cart['product_id'] . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
 					if ($option_query->num_rows) {
 						if ($option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio' || $option_query->row['type'] == 'image') {
@@ -86,6 +86,7 @@ class Cart {
 									'value'                   => $option_value_query->row['name'],
 									'type'                    => $option_query->row['type'],
 									'group_by'                    => $option_query->row['group_by'],
+                                    'show_in_cart'                    => $option_query->row['show_in_cart'],
 									'group_name'                    => $option_query->row['group_name'],
 									'quantity'                => $option_value_query->row['quantity'],
 									'subtract'                => $option_value_query->row['subtract'],
@@ -134,6 +135,7 @@ class Cart {
 										'value'                   => $option_value_query->row['name'],
 										'type'                    => $option_query->row['type'],
                                         'group_by'                    => $option_query->row['group_by'],
+                                        'show_in_cart'                    => $option_query->row['show_in_cart'],
                                         'group_name'                    => $option_query->row['group_name'],
 										'quantity'                => $option_value_query->row['quantity'],
 										'subtract'                => $option_value_query->row['subtract'],
@@ -156,6 +158,7 @@ class Cart {
 								'value'                   => $value,
 								'type'                    => $option_query->row['type'],
                                 'group_by'                    => $option_query->row['group_by'],
+                                'show_in_cart'                    => $option_query->row['show_in_cart'],
                                 'group_name'                    => $option_query->row['group_name'],
 								'quantity'                => '',
 								'subtract'                => '',
@@ -289,6 +292,19 @@ class Cart {
 	public function update($cart_id, $quantity) {
 		$this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
 	}
+
+    public function updateOption($cart_id, $option, $add = true) {
+        $query =  $this->db->query("SELECT `option` FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+        if ($query->row['option']) {
+            $oldOption = json_decode($query->row['option'], true);
+            if ($add) {
+                $option = $option + $oldOption;
+            } else {
+                $option = array_diff($oldOption, $option);
+            }
+            $this->db->query("UPDATE " . DB_PREFIX . "cart SET `option` = '" . json_encode($option) . "' WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+        }
+    }
 
 	public function remove($cart_id) {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");

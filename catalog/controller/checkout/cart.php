@@ -81,6 +81,9 @@ class ControllerCheckoutCart extends Controller {
 			foreach ($products as $product) {
 				$product_total = 0;
 
+                $data['cart_options'] = $this->getCartOptions($product['product_id']);
+                //print_r($data['cart_options']);die;
+
 				foreach ($products as $product_2) {
 					if ($product_2['product_id'] == $product['product_id']) {
 						$product_total += $product_2['quantity'];
@@ -100,7 +103,13 @@ class ControllerCheckoutCart extends Controller {
 				$option_data = array();
 
                 $optionsGroup = [];
+                $show_in_cart_options = [];
+                //var_dump($product['option']);die;
 				foreach ($product['option'] as $option) {
+				    if (!empty($option['show_in_cart'])) {
+                        $show_in_cart_options[$option['product_option_id']] = $option['product_option_id'];
+				        continue;
+                    }
 					if ($option['type'] != 'file') {
 						$value = $option['value'];
 					} else {
@@ -186,10 +195,11 @@ class ControllerCheckoutCart extends Controller {
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 					'price'     => $price,
 					'total'     => $total,
-					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id']),
+                    'show_in_cart_options' => $show_in_cart_options,
 				);
 
-				//print_r($data['products']);die;
+				//var_dump($show_in_cart_options);die;
 			}
 
 			// Gift Voucher
@@ -525,4 +535,54 @@ class ControllerCheckoutCart extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+	private function getCartOptions($product_id) {
+        $cart_options = [];
+        $this->load->model('catalog/product');
+        foreach ($this->model_catalog_product->getProductOptions($product_id, true) as $option) {
+            $product_option_value_data = array();
+            if ($option['type'] != 'checkbox') {
+                continue;
+            }
+            foreach ($option['product_option_value'] as $option_value) {
+                if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+                    if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+                        $price = $option_value['price'];
+                    } else {
+                        $price = false;
+                    }
+
+                    $product_option_value_data[] = array(
+                        'product_option_value_id' => $option_value['product_option_value_id'],
+                        'option_value_id'         => $option_value['option_value_id'],
+                        'name'                    => $option_value['name'],
+                        'price'                   => $price,
+                        'price_prefix'            => $option_value['price_prefix']
+                    );
+                }
+            }
+
+            $cart_options[] = array(
+                'product_option_id'    => $option['product_option_id'],
+                'product_option_value' => $product_option_value_data,
+                'option_id'            => $option['option_id'],
+                'name'                 => $option['name'],
+                'type'                 => $option['type'],
+                'value'                => $option['value'],
+                'required'             => $option['required']
+            );
+        }
+        return $cart_options;
+    }
+
+    public function updateOption()
+    {
+        if (isset($this->request->post['option'])) {
+            $option = array_filter($this->request->post['option']);
+        } else {
+            $option = array();
+        }
+        $action = $this->request->post['action'] == 'add' ? true : false;
+        $this->cart->updateOption($this->request->post['cart_id'], $option, $action);
+    }
 }

@@ -340,6 +340,9 @@ class ControllerProductProduct extends Controller {
 
 			$optionsGroup = [];
 			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
+			    if ($option['show_in_cart']) {
+			        continue;
+                }
 				$product_option_value_data = array();
 
 				foreach ($option['product_option_value'] as $option_value) {

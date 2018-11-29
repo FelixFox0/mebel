@@ -381,6 +381,14 @@ class ControllerCatalogOption extends Controller {
             $data['group_by'] = '';
         }
 
+        if (isset($this->request->post['show_in_cart'])) {
+            $data['show_in_cart'] = $this->request->post['show_in_cart'];
+        } elseif (!empty($option_info)) {
+            $data['show_in_cart'] = $option_info['show_in_cart'];
+        } else {
+            $data['show_in_cart'] = '';
+        }
+
         if (isset($this->request->post['large_samples'])) {
             $data['large_samples'] = $this->request->post['large_samples'];
         } elseif (!empty($option_info)) {

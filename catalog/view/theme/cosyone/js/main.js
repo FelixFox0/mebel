@@ -98,7 +98,6 @@
 
         init: function () {
             this.initEventListeners();
-            this.initParallax();
             this.initSlider();
             this.initGallery();
             this.initPopups();

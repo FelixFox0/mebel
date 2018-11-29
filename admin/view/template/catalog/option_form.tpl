@@ -163,6 +163,15 @@
             </div>
           </div>
 
+          <div id="option-checkbox">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-show-in-cart">Показывать в корзине</label>
+              <div class="col-sm-10">
+                <input type="checkbox" name="show_in_cart" value="1" <?=($show_in_cart)?'checked':'';?> placeholder="Показывать в корзине" id="input-show-in-cart" class="form-control" />
+              </div>
+            </div>
+          </div>
+
           <table id="option-value" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
@@ -220,6 +229,12 @@ $('select[name=\'type\']').on('change', function() {
         $('#option-text').show();
     } else {
         $('#option-text').hide();
+    }
+
+    if (this.value == 'checkbox') {
+        $('#show_in_cart').show();
+    } else {
+        $('#show_in_cart').hide();
     }
 
 });
