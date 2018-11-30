@@ -78,5 +78,5 @@ Please donate via PayPal to donate@opencart.com
 </footer>
 
 </body>
-<script src="catalog/view/theme/cosyone/js/main.js"></script>
+<script src="/catalog/view/theme/cosyone/js/main.js"></script>
 </html>
