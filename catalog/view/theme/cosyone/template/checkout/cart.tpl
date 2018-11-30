@@ -14,7 +14,7 @@
               </div>
               <div class="tooltip__actions">
                 <button class="button _inverted js-delete-item-action">Отмена</button>
-                <button class="button js-delete-item-action">удалить</button>
+                <button class="button js-delete-item-action" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">удалить</button>
               </div>
             </div>
           </div>
@@ -51,7 +51,9 @@
                       <span class="dots-separator"></span>
                       <span class="cart__item-info-value">
                           <?php echo $option['value']; ?>
-                          <img class="cart__item-info-thumb" src="<?php echo $option['image']; ?>" alt="colour">
+                          <?php if (!empty($option['image'])) { ?>
+                            <img class="cart__item-info-thumb" src="<?php echo $option['image']; ?>" alt="<?php echo $option['name']; ?>">
+                          <?php } ?>
                       </span>
                     </div>
                   <?php } ?>
@@ -75,16 +77,23 @@
                   <div class="cart__item-price-value">11 798 грн</div>
                 </div>
               </div>
-              <div class="cart__item-delivery">
-                <label class="checkbox _orange _inline">
-                  <input type="checkbox" class="checkbox__input">
-                  <i class="checkbox__icon"></i>
-                  <span class="checkbox__text">Сборка изделия</span>
-                </label>
-                <span class="dots-separator"></span>
-                <span class="cart__item-delivery-price">80 грн</span>
-              </div>
-
+            <?php foreach($cart_options as $cart_option): ?>
+              <?php if ($cart_option['type'] == 'checkbox') { ?>
+                <div class="cart__item-delivery">
+                  <?php foreach ($cart_option['product_option_value'] as $option_value) { ?>
+                    <label class="checkbox _orange _inline">
+                      <input data-cart-id="<?php echo $product['cart_id']; ?>" onclick="changeCartOptions(this, event)" <?php if(isset($show_in_cart_options[$cart_option['product_option_id']])): ?> checked <?php endif; ?> name="option[<?php echo $cart_option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" type="checkbox" class="checkbox__input">
+                      <i class="checkbox__icon"></i>
+                      <span class="checkbox__text"><?php echo $option_value['name']; ?></span>
+                    </label>
+                    <span class="dots-separator"></span>
+                    <?php if ($option_value['price']) { ?>
+                      <span class="cart__item-delivery-price"><?php echo $option_value['price']; ?> грн</span>
+                    <?php } ?>
+                  <?php } ?>
+                </div>
+              <?php } ?>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
@@ -390,3 +399,135 @@
 </div>
 <?php echo $footer; ?>
 <?php endif; ?>
+
+<script>
+    function changeCartOptions($this, e) {
+        $this = $($this);
+        var data = {};
+        data[$this.attr('name')] = $this.val();
+        if ($this.is(':checked')) {
+            data['action'] = 'add';
+        } else {
+            data['action'] = 'remove';
+        }
+        data['cart_id'] = $this.data('cart-id');
+        $.ajax({
+            url: 'index.php?route=checkout/cart/updateOption',
+            type: 'post',
+            dataType: 'json',
+            data: data,
+            beforeSend: function() {
+            },
+            complete: function() {
+            },
+            success: function(json) {
+                if (json['error']) {
+                    alert(json['error']);
+                }
+                if (json['success']) {
+                    $(selectCityValue).text(value);
+                    $wrapper.find(selectCityItem).removeClass(active);
+                    $self.addClass(active);
+                    app.closeCitySelect();
+                }
+            }
+        });
+    }
+    var cart = {
+        'add': function(product_id, quantity) {
+            $.ajax({
+                url: 'index.php?route=checkout/cart/add',
+                type: 'post',
+                data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+                dataType: 'json',
+                beforeSend: function() {
+                    //$('#cart > button').button('loading');
+                },
+                complete: function() {
+                    //$('#cart > button').button('reset');
+                },
+                success: function(json) {
+                    $('.alert, .text-danger').remove();
+
+                    if (json['redirect']) {
+                        location = json['redirect'];
+                    }
+
+                    if (json['success']) {
+                        $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+                        // Need to set timeout otherwise it wont update the total
+                        setTimeout(function () {
+                            $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                        }, 100);
+
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        },
+        'update': function(key, quantity) {
+            $.ajax({
+                url: 'index.php?route=checkout/cart/edit',
+                type: 'post',
+                data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+                dataType: 'json',
+                beforeSend: function() {
+                    //$('#cart > button').button('loading');
+                },
+                complete: function() {
+                    //$('#cart > button').button('reset');
+                },
+                success: function(json) {
+                    // Need to set timeout otherwise it wont update the total
+                    setTimeout(function () {
+                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    }, 100);
+
+                    if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+                        location = 'index.php?route=checkout/cart';
+                    } else {
+                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        },
+        'remove': function(key) {
+            $.ajax({
+                url: 'index.php?route=checkout/cart/remove',
+                type: 'post',
+                data: 'key=' + key,
+                dataType: 'json',
+                beforeSend: function() {
+                    //$('#cart > button').button('loading');
+                },
+                complete: function() {
+                    //$('#cart > button').button('reset');
+                },
+                success: function(json) {
+                    // Need to set timeout otherwise it wont update the total
+                    setTimeout(function () {
+                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    }, 100);
+
+                    if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+                        location = 'index.php?route=checkout/cart';
+                    } else {
+                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        }
+    }
+</script>
