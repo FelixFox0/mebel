@@ -104,10 +104,10 @@ class ControllerCheckoutCart extends Controller {
 
                 $optionsGroup = [];
                 $show_in_cart_options = [];
-                //var_dump($product['option']);die;
+
 				foreach ($product['option'] as $option) {
 				    if (!empty($option['show_in_cart'])) {
-                        $show_in_cart_options[$option['product_option_id']] = $option['product_option_id'];
+                        $show_in_cart_options[$option['product_option_id']] = (int)$option['product_option_id'];
 				        continue;
                     }
 					if ($option['type'] != 'file') {
@@ -582,6 +582,7 @@ class ControllerCheckoutCart extends Controller {
         } else {
             $option = array();
         }
+
         $action = $this->request->post['action'] == 'add' ? true : false;
         $this->cart->updateOption($this->request->post['cart_id'], $option, $action);
     }

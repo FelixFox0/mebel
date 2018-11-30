@@ -82,7 +82,8 @@
                 <div class="cart__item-delivery">
                   <?php foreach ($cart_option['product_option_value'] as $option_value) { ?>
                     <label class="checkbox _orange _inline">
-                      <input data-cart-id="<?php echo $product['cart_id']; ?>" onclick="changeCartOptions(this, event)" <?php if(isset($show_in_cart_options[$cart_option['product_option_id']])): ?> checked <?php endif; ?> name="option[<?php echo $cart_option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" type="checkbox" class="checkbox__input">
+
+                      <input data-cart-id="<?php echo $product['cart_id']; ?>" onclick="changeCartOptions(this, event)" <?php if(isset($product['show_in_cart_options'][$cart_option['product_option_id']])): ?> checked <?php endif; ?> name="option[<?php echo $cart_option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" type="checkbox" class="checkbox__input">
                       <i class="checkbox__icon"></i>
                       <span class="checkbox__text"><?php echo $option_value['name']; ?></span>
                     </label>
