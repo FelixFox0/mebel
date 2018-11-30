@@ -355,3 +355,18 @@
 2018-11-27 5:05:06 - PHP Warning:  Illegal string offset 'country_id' in D:\OpenServer\domains\mebel.loc\catalog\model\localisation\zone.php on line 52
 2018-11-27 5:05:07 - PHP Warning:  Illegal string offset 'zone_description' in D:\OpenServer\domains\mebel.loc\catalog\model\localisation\zone.php on line 56
 2018-11-27 5:05:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\mebel.loc\catalog\model\localisation\zone.php on line 56
+2018-11-30 3:45:20 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:45:20 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:45:20 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:29 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:29 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:29 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:47 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:47 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:48:47 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:14 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:14 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:14 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:25 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:25 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
+2018-11-30 3:49:25 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 360
