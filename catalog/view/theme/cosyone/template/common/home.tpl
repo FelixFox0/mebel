@@ -14,6 +14,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?> homepage">
     <?php echo $content_top; ?>
+    <?php echo $contact;?>
      <?php echo $content_bottom_half; ?>
      <?php echo $content_bottom; ?>
      </div>

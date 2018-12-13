@@ -477,12 +477,12 @@
         },
 
         showPromo: function () {
-//            var currentDay = new Date().getDay().toString();
-//            localStorage.setItem('currentDay', currentDay);
+            var currentDay = new Date().getDay().toString();
+            localStorage.setItem('currentDay', currentDay);
 
-//            if (currentDay !== localStorage.getItem('promoShownDay')) {
+            if (currentDay !== localStorage.getItem('promoShownDay')) {
                 $(this.SELECTORS.promo).removeClass(this.CLASSES.hidden);
-//            }
+            }
         },
 
         closePromo: function () {

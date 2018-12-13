@@ -265,16 +265,20 @@
 </head>
 <body>
 <header class="header">
+    <?php if($top_header_module && $class != 'common-home'){ ?>
     <div class="promo js-promo _hidden">
         <a href="#" class="promo__close js-promo-close">
             <svg class="promo__close-icon" width="17px" height="17px">
                 <path d="M16.017,13.966 L13.966,16.016 L8.498,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.498,6.448 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
             </svg>
         </a>
+        
         <div class="promo__container container">
-            На Новый Год дарим скидки на все товары 3%
+            <?php echo $top_header_module['module_description'][(int)$language_id]['title']; ?>
         </div>
+        
     </div>
+    <?php } ?>
     <div class="header__container container">
         <div class="header__nav">
             <div class="header__nav-contacts">

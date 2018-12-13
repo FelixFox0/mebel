@@ -1,33 +1,7 @@
----------- Date: 2018-11-25 16:12:59 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /samsung-galaxy-tab-10-1?old=1
+---------- Date: 2018-12-02 23:25:30 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
 MOD DETAILS:
-   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
-   vqmver    : 2.0.0
-   author    : Rupak Nepali
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
-MOD DETAILS:
-   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
-   id        : Product Questions
-   version   : OC 2.x
-   vqmver    : 2.0.0
-   author    : Karl Pers - openthemer@gmail.com
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(1)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(2)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
-----------------------------------------------------------------------
-
-
----------- Date: 2018-11-25 17:05:51 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /samsung-galaxy-tab-10-1?old=1
-MOD DETAILS:
-   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
    id        : 
    version   : OpenCart Version 2.2
    vqmver    : 2.0.0
@@ -38,27 +12,52 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-n
 ----------------------------------------------------------------------
 
 
----------- Date: 2018-11-25 23:43:00 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /samsung-galaxy-tab-10-1?old=1
-MOD DETAILS:
-   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/cosyone_product_questions.xml
-   id        : Product Questions
-   version   : OC 2.x
-   vqmver    : 2.0.0
-   author    : Karl Pers - openthemer@gmail.com
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(1)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(2)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
-----------------------------------------------------------------------
-
-
----------- Date: 2018-11-25 23:45:18 ~ IP : 127.0.0.1 ----------
+---------- Date: 2018-12-02 23:28:14 ~ IP : 127.0.0.1 ----------
 REQUEST URI : /komplekty
 MOD DETAILS:
-   modFile   : D:\OSPanel\domains\mebel\www\vqmod/xml/all.install.ocmod.xml
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-12-02 23:31:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty
+MOD DETAILS:
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-12-02 23:36:11 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty
+MOD DETAILS:
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-12-02 23:38:35 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty
+MOD DETAILS:
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
    id        : 
    version   : OpenCart Version 2.2
    vqmver    : 2.0.0

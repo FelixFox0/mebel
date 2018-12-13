@@ -152,6 +152,10 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
+                
+                $data['top_header_module'] = $this->model_extension_module->getModuleByName('Header_top_module');
+                $data['language_id'] = $this->config->get('config_language_id');
+//                var_dump($data['top_header_module']); die();
 
 		return $this->load->view('common/header', $data);
 	}
