@@ -232,9 +232,9 @@ $('select[name=\'type\']').on('change', function() {
     }
 
     if (this.value == 'checkbox') {
-        $('#show_in_cart').show();
+        $('#option-checkbox').show();
     } else {
-        $('#show_in_cart').hide();
+        $('#option-checkbox').hide();
     }
 
 });
