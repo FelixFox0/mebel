@@ -1,6 +1,6 @@
 <div class="cart__content">
     <?php foreach ($products as $product) { ?>
-      <div class="cart__item">
+      <div class="cart__item" id="cart-item-<?php echo $product['cart_id']; ?>">
         <div class="cart__item-title">
           <div class="tooltip__wrap js-delete-item-tooltip">
             <div class="cart__item-delete js-delete-item">
@@ -59,22 +59,23 @@
                   <?php } ?>
                 </div>
               <?php } ?>
+
               <div class="cart__item-price">
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Цена:</div>
-                  <div class="cart__item-price-value">5 899 грн</div>
+                  <div class="cart__item-price-value"><?php echo $product['price']; ?> грн</div>
                 </div>
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Кол-во:</div>
                   <div class="cart__item-qty">
-                    <button class="cart__item-qty-control _minus _disabled"></button>
-                    <span class="cart__item-qty-value">1</span>
-                    <button class="cart__item-qty-control _plus"></button>
+                    <button class="cart__item-qty-control _minus _disabled" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
+                    <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
+                    <button class="cart__item-qty-control _plus" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                   </div>
                 </div>
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Сумма:</div>
-                  <div class="cart__item-price-value">11 798 грн</div>
+                  <div class="cart__item-price-value"><span class="cart__item-price-block-total"><?php echo $product['total']; ?></span> грн</div>
                 </div>
               </div>
             <?php foreach($cart_options as $cart_option): ?>
@@ -206,30 +207,8 @@
           </div>
         </div>
       </div>
-      <div class="cart__payment">
-        <div class="cart__info-row">
-          <span class="cart__info-char">1 товар на сумму</span>
-          <span class="dots-separator _brown"></span>
-          <span class="cart__info-price">5 899 грн</span>
-        </div>
-        <div class="cart__info-row">
-          <span class="cart__info-char">Доставка</span>
-          <span class="dots-separator _brown"></span>
-          <span class="cart__info-price">120 грн</span>
-        </div>
-        <div class="cart__info-row">
-          <span class="cart__info-char">Сборка</span>
-          <span class="dots-separator _brown"></span>
-          <span class="cart__info-price">80 грн</span>
-        </div>
-        <div class="cart__info-row _total">
-          <span class="cart__info-char">К оплате</span>
-          <span class="dots-separator _brown"></span>
-          <span class="cart__info-price">
-                        6 099
-                        <span class="cart__info-price-currency">грн</span>
-                    </span>
-        </div>
+      <div id="cart_total_block">
+        <?= $cart_total_block; ?>
       </div>
     </div>
     <div class="cart__info-actions">
@@ -237,19 +216,6 @@
       <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php if(false): ?>
@@ -415,22 +381,14 @@
         $.ajax({
             url: 'index.php?route=checkout/cart/updateOption',
             type: 'post',
-            dataType: 'json',
+            dataType: 'html',
             data: data,
             beforeSend: function() {
             },
             complete: function() {
             },
-            success: function(json) {
-                if (json['error']) {
-                    alert(json['error']);
-                }
-                if (json['success']) {
-                    $(selectCityValue).text(value);
-                    $wrapper.find(selectCityItem).removeClass(active);
-                    $self.addClass(active);
-                    app.closeCitySelect();
-                }
+            success: function(html) {
+              $('#cart_total_block').html(html);
             }
         });
     }
@@ -448,35 +406,29 @@
                     //$('#cart > button').button('reset');
                 },
                 success: function(json) {
-                    $('.alert, .text-danger').remove();
-
-                    if (json['redirect']) {
-                        location = json['redirect'];
-                    }
-
-                    if (json['success']) {
-                        $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
-                        // Need to set timeout otherwise it wont update the total
-                        setTimeout(function () {
-                            $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-                        }, 100);
-
-                        $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
-                    }
+                    $('#cart_total_block').html(html);
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                 }
             });
         },
-        'update': function(key, quantity) {
+        'update': function(key, $this) {
+            $this = $($this);
+            var quantity = $('#cart-item-' + key + ' .cart__item-qty-value').text() * 1;
+            if ($this.hasClass('_plus')) {
+                quantity = quantity + 1;
+            } else {
+                quantity = quantity - 1;
+            }
+            if (quantity < 1) {
+                quantity = 1;
+            }
+
             $.ajax({
                 url: 'index.php?route=checkout/cart/edit',
                 type: 'post',
-                data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+                data: 'key=' + key + '&quantity=' + quantity,
                 dataType: 'json',
                 beforeSend: function() {
                     //$('#cart > button').button('loading');
@@ -485,16 +437,17 @@
                     //$('#cart > button').button('reset');
                 },
                 success: function(json) {
-                    // Need to set timeout otherwise it wont update the total
-                    setTimeout(function () {
-                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-                    }, 100);
-
-                    if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-                        location = 'index.php?route=checkout/cart';
+                    $('#cart_total_block').html(json.cart_total_info);
+                    $('#cart-collapsed-count').text(json['count']);
+                    $('#cart-collapsed-total').text(json['total']);
+                    $('#cart-item-' + key + ' .cart__item-qty-value').text(json['sub_quantity']);
+                    if (json['sub_quantity'] > 1) {
+                        $('#cart-item-' + key + ' .cart__item-qty ._minus').removeClass('_disabled');
                     } else {
-                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                        $('#cart-item-' + key + ' .cart__item-qty ._minus').addClass('_disabled');
                     }
+                    $('#cart-item-' + key + ' .cart__item-price-block-total').text(json['sub_total']);
+
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -514,15 +467,12 @@
                     //$('#cart > button').button('reset');
                 },
                 success: function(json) {
-                    // Need to set timeout otherwise it wont update the total
-                    setTimeout(function () {
-                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-                    }, 100);
-
-                    if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-                        location = 'index.php?route=checkout/cart';
-                    } else {
-                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                    $('#cart_total_block').html(json.cart_total_info);
+                    $('#cart-collapsed-count').text(json['count']);
+                    $('#cart-collapsed-total').text(json['total']);
+                    $('#cart-item-' + key).remove();
+                    if (!json['count']) {
+                        window.location.reload();
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {

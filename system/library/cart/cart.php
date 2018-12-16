@@ -300,11 +300,11 @@ class Cart {
         if ($query->row['option']) {
             $oldOption = json_decode($query->row['option'], true);
             if ($add) {
-                $option = $option + $oldOption;
+                $oldOption = $option + $oldOption;
             } else {
-                $option = array_diff_assoc($oldOption, $option);
+                unset($oldOption[key($option)]);
             }
-            $this->db->query("UPDATE " . DB_PREFIX . "cart SET `option` = '" . json_encode($option) . "' WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+            $this->db->query("UPDATE " . DB_PREFIX . "cart SET `option` = '" . json_encode($oldOption) . "' WHERE cart_id = '" . (int)$cart_id . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
         }
     }
 
@@ -374,7 +374,7 @@ class Cart {
 		$total = 0;
 
 		foreach ($this->getProducts() as $product) {
-			$total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+			$total += $product['price'];
 		}
 
 		return $total;
