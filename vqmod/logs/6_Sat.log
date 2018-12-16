@@ -1,42 +1,51 @@
----------- Date: 2018-11-03 17:47:04 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2018-12-15 14:12:29 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty/test
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
    vqmver    : 2.0.0
-   author    : Rupak Nepali
+   author    : Karl Pers - openthemer@gmail.com
 
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
 ----------------------------------------------------------------------
 
 
----------- Date: 2018-11-03 17:47:32 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2018-12-15 14:19:35 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty/test
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
    vqmver    : 2.0.0
-   author    : Rupak Nepali
+   author    : Karl Pers - openthemer@gmail.com
 
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
 ----------------------------------------------------------------------
 
 
----------- Date: 2018-11-03 17:48:47 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2018-12-15 14:20:46 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty/test
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
+   id        : Product Questions
+   version   : OC 2.x
    vqmver    : 2.0.0
-   author    : Rupak Nepali
+   author    : Karl Pers - openthemer@gmail.com
 
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
 ----------------------------------------------------------------------
 
 

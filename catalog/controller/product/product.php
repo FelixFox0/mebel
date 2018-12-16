@@ -11,7 +11,7 @@ class ControllerProductProduct extends Controller {
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
 		);
-
+                $data['contact'] = $this->load->controller('common/contact');
 		$this->load->model('catalog/category');
 
 		if (isset($this->request->get['path'])) {

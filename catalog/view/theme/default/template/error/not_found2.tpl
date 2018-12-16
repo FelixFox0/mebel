@@ -1,3 +1,4 @@
+<?php //404 ?>
 <?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">

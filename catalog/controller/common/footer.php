@@ -45,6 +45,7 @@ class ControllerCommonFooter extends Controller {
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
                 $data['footer_modules'] = $this->load->controller('common/footer_modules');
+                $data['callback_url'] = $this->url->link('information/contact');
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 

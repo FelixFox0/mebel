@@ -1,5 +1,6 @@
 <div class="contact-us">
     <div class="contact-us__container container">
+        <!--<div class="contact-us__socials">-->
         <div class="contact-us__socials">
             <div class="contact-us__title">
                 <h2 class="title _color-white">Есть вопрос?</h2>
@@ -8,10 +9,11 @@
                 Хотите перезвоним Вам за 30 секунд ? :)<br>
                 Оставьте свой телефон:
             </div>
-            <div class="contact-us__socials-recall">
-                <input type="text" class="input js-phone-number-input">
+            <form action="index.php?route=information/callback" method="post" class="contact-us__socials-recall">
+                <input type="tel" name="phone" class="input js-phone-number-input" required="required">
+                <input type="hidden" name="instance" value="обратный зввонок хедер">
                 <button class="button">Перезвоните мне</button>
-            </div>
+            </form>
             <div class="contact-us__socials-text">
                 Или пишите нам прямо сейчас,<br>
                 с радостью ответим на все Ваши вопросы

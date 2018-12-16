@@ -1,5 +1,4 @@
 <?php echo $header; ?>
-<?php if(false){ ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -22,23 +21,5 @@
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
-</div
-<?php } ?>
-<div class="thank-you">
-    <div class="thank-you__container">
-        <h2 class="thank-you__title">Спасибо за Заказ!</h2>
-        <div class="thank-you__label">У Вас хороший вкус!</div>
-        <div class="thank-you__text">Мы перезвоним Вам в ближайшее рабочее время.</div>
-        <div class="thank-you__form">
-            <div class="thank-you__form-text">Отправить Вам подробную информацию о заказе?</div>
-            <div class="thank-you__form-content">
-                <div class="thank-you__form-item">
-                    <label class="thank-you__form-label">Укажите свой E-mail</label>
-                    <input type="text" class="input">
-                </div>
-                <button class="button">Отправить</button>
-            </div>
-        </div>
-    </div>
 </div>
 <?php echo $footer; ?>

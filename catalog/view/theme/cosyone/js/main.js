@@ -486,13 +486,16 @@
         },
 
         closePromo: function () {
-//            var shownDay = new Date().getDay();
-//            localStorage.setItem('promoShownDay', shownDay.toString());
+            var shownDay = new Date().getDay();
+            localStorage.setItem('promoShownDay', shownDay.toString());
             $(this.SELECTORS.promo).addClass(this.CLASSES.hidden);
-//            $(window).trigger('resize').trigger('scroll');
+            $(window).trigger('resize').trigger('scroll');
         },
 
         openCitySelect: function (event) {
+//            $('html, body').animate({
+//                scrollTop: 0
+//            }, 800);
             var $wrapper = $('.js-select-city-wrap'),
                 $activeItem = $wrapper.find(this.SELECTORS.selectCityItem + '.' + this.CLASSES.active),
                 currentValue = $wrapper.find(this.SELECTORS.selectCityValue).text();
@@ -631,6 +634,11 @@
             this.closePopup();
         }
     };
+    $(document).on('click', 'ul[aria-labelledby="input-sort-button"] li', function(){
+          $( "select.js-order-filter option:selected" ).each(function(e) {
+              location = this.value
+          });
+});
 
     $(document).ready(function () {
         app.init();

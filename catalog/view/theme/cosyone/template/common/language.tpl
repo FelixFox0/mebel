@@ -38,13 +38,14 @@
     </a>
     <?php } ?>
     <?php } ?>
-    <input type="hidden" name="code" value="" />
+    <input id="language_code" type="hidden" name="code" value="" />
   <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
 
 </form>
 <script>
 $('#language a').on('click', function(e) {
     e.preventDefault();
+    $('form #language_code').attr('value', $(this).attr('href'));
     $('form#language').submit();
 });
 </script>

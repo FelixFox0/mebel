@@ -349,78 +349,8 @@
     </div>
 </div>
 
-<div class="contact-us">
-    <div class="contact-us__container container">
-        <div class="contact-us__socials">
-            <div class="contact-us__title">
-                <h2 class="title _color-white">Есть вопрос?</h2>
-            </div>
-            <div class="contact-us__socials-text">
-                Хотите перезвоним Вам за 30 секунд ? :)<br>
-                Оставьте свой телефон:
-            </div>
-            <div class="contact-us__socials-recall">
-                <input type="text" class="input js-phone-number-input">
-                <button class="button">Перезвоните мне</button>
-            </div>
-            <div class="contact-us__socials-text">
-                Или пишите нам прямо сейчас,<br>
-                с радостью ответим на все Ваши вопросы
-            </div>
-            <div class="contact-us__socials-block">
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _viber"></i>
-                    Viber
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _telegram"></i>
-                    Telegram
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _messenger"></i>
-                    Facebook Messenger
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _whatsup"></i>
-                    WhatsApp
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _chat"></i>
-                    Онлайн Чат
-                </a>
-            </div>
-        </div>
-        <div class="contact-us__address">
-            <div class="contact-us__title">
-                <h2 class="title _color-white">Приходите к нам в Шоурум</h2>
-            </div>
-            <div class="contact-us__address-controls">
-                <a href="#" class="link _color-orange _active">
-                    <span class="link__text">Одесса №1</span>
-                </a>
-            </div>
-            <div class="contact-us__address-preview">
-                <div class="contact-us__map-wrap">
-                    <div class="contact-us__map-overlay">Нажмите для просмотра</div>
-                    <div class="contact-us__map"></div>
-                </div>
-                <div class="contact-us__address-photo">
-                    <img src="images/showroom-big.jpg">
-                </div>
-            </div>
-            <div class="contact-us__address-data">
-                <div class="contact-us__address-column">
-                    Одесса, ул. Семена Палия, 125, магазин 290
-                    <div class="contact-us__address-schedule">Вт - Вс, с 9:00 до 14:00</div>
-                </div>
-                <div class="contact-us__address-column">
-                    +38 (050) 555 - 45 - 55
-                    <div class="contact-us__address-schedule">с 10:00 до 20:00</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?=$contact;?>
+
 <div class="recommended">
     <div class="recommended__container container">
         <div class="recommended__title">
@@ -481,51 +411,6 @@
 
 
 
-
-<div class="popup _size-md _bg-black mfp-hide js-popup" id="mfp-callback">
-    <i class="mfp-close popup__close">
-        <svg class="popup__close-icon" width="17px" height="17px">
-            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
-        </svg>
-    </i>
-    <div class="popup__container">
-        <div class="popup__form _callback">
-            <div class="thank-you__form-text">Хотите перезвоним Вам за 30 секунд ? :)</div>
-            <div class="thank-you__form-content">
-                <div class="thank-you__form-item">
-                    <label class="thank-you__form-label">Оставьте свой телефон:</label>
-                    <input type="text" class="input js-phone-number-input">
-                </div>
-                <button class="button">Отправить</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mfp-hide popup js-popup" id="mfp-how-to-order">
-    <i class="mfp-close popup__close">
-        <svg class="popup__close-icon" width="17px" height="17px">
-            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
-        </svg>
-    </i>
-    <div class="popup__container">
-        <div class="popup__title">Как происходит заказ?</div>
-        <div class="popup__body">
-            <p class="popup__text">
-                Выберите нужные вам параметры и опции товара, затем нажмите
-                кнопку “Заказать”. Откроется корзина с выбраным товаром,
-                вы можете продолжить покупки либо сразу перейти к оформлению.
-                Укажите телефон, город и способ доставки, и нажмите кнопку “Оформить заказ”.
-            </p>
-            <p class="popup__text">
-                Наш менеджер перезвонит Вам в ближайшее рабочее время для подтверждения заказа и уточнения всех деталей.
-            </p>
-        </div>
-        <div class="popup__actions">
-            <button class="button js-close-popup">Закрыть</button>
-        </div>
-    </div>
-</div>
 
 <?php foreach ($options as $option) { ?>
     <?php if ($option['type'] == 'image' && $option['full_list']) { ?>

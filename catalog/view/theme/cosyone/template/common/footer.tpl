@@ -68,11 +68,57 @@ Please donate via PayPal to donate@opencart.com
 <?php echo $cosyone_cookie; ?>
 </body></html>
 <?php */ ?>
+
+<div class="mfp-hide popup js-popup" id="mfp-how-to-order">
+    <i class="mfp-close popup__close">
+        <svg class="popup__close-icon" width="17px" height="17px">
+            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+        </svg>
+    </i>
+    <div class="popup__container">
+        <div class="popup__title">Как происходит заказ?</div>
+        <div class="popup__body">
+            <p class="popup__text">
+                Выберите нужные вам параметры и опции товара, затем нажмите
+                кнопку “Заказать”. Откроется корзина с выбраным товаром,
+                вы можете продолжить покупки либо сразу перейти к оформлению.
+                Укажите телефон, город и способ доставки, и нажмите кнопку “Оформить заказ”.
+            </p>
+            <p class="popup__text">
+                Наш менеджер перезвонит Вам в ближайшее рабочее время для подтверждения заказа и уточнения всех деталей.
+            </p>
+        </div>
+        <div class="popup__actions">
+            <button class="button js-close-popup">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup _size-md _bg-black mfp-hide js-popup" id="mfp-callback">
+    <i class="mfp-close popup__close">
+        <svg class="popup__close-icon" width="17px" height="17px">
+            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+        </svg>
+    </i>
+    <div class="popup__container">
+        <form action="index.php?route=information/callback" method="post" class="popup__form _callback">
+            <div class="thank-you__form-text">Хотите перезвоним Вам за 30 секунд ? :)</div>
+            <div class="thank-you__form-content">
+                <div class="thank-you__form-item">
+                    <label class="thank-you__form-label">Оставьте свой телефон:</label>
+                    <input type="tel" name="phone" class="input js-phone-number-input" required="required">
+                    <input type="hidden" name="instance" value="обратный зввонок хедер">
+                </div>
+                <button class="button">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
 <footer class="footer">
     <div class="footer__container container">
         <?php echo $footer_modules ?>
         <div class="footer__copyright">
-            © Интернет-магазин «Вкусная Мебель» 2017–2018
+            © Интернет-магазин «Вкусная Мебель» 2017–<?= date('Y');?>
         </div>
     </div>
 </footer>
