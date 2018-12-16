@@ -1,6 +1,7 @@
 <?php
 class ControllerCheckoutCart extends Controller {
 	public function index() {
+
 		$this->load->language('checkout/cart');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -157,14 +158,14 @@ class ControllerCheckoutCart extends Controller {
                 //print_r($option_data);die;
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $product['price'];
+					$price = $this->currency->format($product['price'], $this->session->data['currency']);
 				} else {
 					$price = false;
 				}
 
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$total = $product['price'];
+					$total = $this->currency->format($product['price'] * $product['quantity'], $this->session->data['currency']);
 				} else {
 					$total = false;
 				}
@@ -309,7 +310,6 @@ class ControllerCheckoutCart extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
@@ -569,7 +569,18 @@ class ControllerCheckoutCart extends Controller {
         $action = $this->request->post['action'] == 'add' ? true : false;
         $this->cart->updateOption($this->request->post['cart_id'], $option, $action);
 
-        $this->response->setOutput($this->getCartTotalInfo());
+        $json['total'] = $this->cart->getTotal();
+        $json['count'] = $this->cart->countProducts();
+
+        $productsInfo = [];
+        $json['cart_total_info'] = $this->getCartTotalInfo($productsInfo);
+
+        $json['sub_total'] = $productsInfo[$this->request->post['cart_id']]['total'];
+        $json['sub_price'] = $productsInfo[$this->request->post['cart_id']]['price'];
+        $json['sub_quantity'] = (int)$productsInfo[$this->request->post['cart_id']]['quantity'];
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
     }
 
     private function getCartTotalInfo(&$productsInfo = [])

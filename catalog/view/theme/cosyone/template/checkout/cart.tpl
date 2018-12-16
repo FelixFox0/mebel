@@ -63,7 +63,7 @@
               <div class="cart__item-price">
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Цена:</div>
-                  <div class="cart__item-price-value"><?php echo $product['price']; ?> грн</div>
+                  <div class="cart__item-price-value"><span class="cart__item-price-block-price"><?php echo $product['price']; ?></span> грн</div>
                 </div>
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Кол-во:</div>
@@ -381,14 +381,18 @@
         $.ajax({
             url: 'index.php?route=checkout/cart/updateOption',
             type: 'post',
-            dataType: 'html',
+            dataType: 'json',
             data: data,
             beforeSend: function() {
             },
             complete: function() {
             },
-            success: function(html) {
-              $('#cart_total_block').html(html);
+            success: function(json) {
+                $('#cart_total_block').html(json.cart_total_info);
+                $('#cart-collapsed-count').text(json['count']);
+                $('#cart-collapsed-total').text(json['total']);
+                $('#cart-item-' + data['cart_id'] + ' .cart__item-price-block-total').text(json['sub_total']);
+                $('#cart-item-' + data['cart_id'] + ' .cart__item-price-block-price').text(json['sub_price']);
             }
         });
     }
