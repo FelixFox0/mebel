@@ -1,6 +1,7 @@
 <?php 
 class ControllerQuickCheckoutShippingMethod extends Controller {
   	public function index() {
+
 		$this->language->load('quickcheckout/checkout');
 		
 		$this->load->model('account/address');
@@ -17,7 +18,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 				unset($this->session->data['guest']);
 			}
 		} elseif (isset($this->request->post['country_id'])) {
-			// Selected new address OR is a guest
+            // Selected new address OR is a guest
 			if (isset($this->request->post['country_id'])) {
 				$country_info = $this->model_localisation_country->getCountry($this->request->post['country_id']);
 			} else {
@@ -60,7 +61,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 			$shipping_address['country_id'] = $this->request->post['country_id'];
 			$shipping_address['zone_id'] = $this->request->post['zone_id'];
 		}
-		
+
 		if (!empty($shipping_address)) {
 			// Shipping Methods
 			$method_data = array();
@@ -96,7 +97,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 
 			$this->session->data['shipping_methods'] = $method_data;
 		}
-		
+
 		$data['text_shipping_method'] = $this->language->get('text_shipping_method');
 		$data['text_estimated_delivery'] = $this->language->get('text_estimated_delivery');
 		$data['text_delivery'] = $this->language->get('text_delivery');
@@ -170,7 +171,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 		} else {
 			$data['delivery_time'] = '';
 		}
-		
+
 		// All variables
 		$data['logged'] = $this->customer->isLogged();
 		$data['debug'] = $this->config->get('quickcheckout_debug');
@@ -184,7 +185,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 		$data['cart'] = $this->config->get('quickcheckout_cart');
 		$data['shipping_reload'] = $this->config->get('quickcheckout_shipping_reload');
 		$data['language_id'] = $this->config->get('config_language_id');
-		
+
 		if ($this->config->get('quickcheckout_delivery_min')) {
 			$data['delivery_min'] = date('d-m-Y', strtotime('+' . $this->config->get('quickcheckout_delivery_min') . ' days'));
 		} else {
