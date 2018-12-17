@@ -319,7 +319,6 @@
                 <a href="#" class="link _color-orange js-select-city-open">
                     <span class="link__text js-select-city-value"><?php echo $selected_zone; ?></span>
                 </a>
-                <?php echo $zone; ?>
                 <!--<div class="select-city js-select-city">
                     <span class="select-city__close js-select-city-close">
                         <svg class="select-city__close-icon" width="17px" height="17px">
@@ -386,4 +385,7 @@
     </div>
     <?php } ?>
     <?php if ($cosyone_header_cart) { echo $cart; } ?>
+    <div id="zone-temp-block">
+        <?php echo $zone; ?>
+    </div>
 </header>

@@ -493,13 +493,13 @@
         },
 
         openCitySelect: function (event) {
-//            $('html, body').animate({
-//                scrollTop: 0
-//            }, 800);
-            var $wrapper = $('.js-select-city-wrap'),
+
+            var $wrapper = $(event.currentTarget).closest(this.SELECTORS.selectCityWrap),
                 $activeItem = $wrapper.find(this.SELECTORS.selectCityItem + '.' + this.CLASSES.active),
                 currentValue = $wrapper.find(this.SELECTORS.selectCityValue).text();
-
+            if ($wrapper.children('.select-city.js-select-city').length == 0 ) {
+                $wrapper.append($('#zone-temp-block').html());
+            }
             event.preventDefault();
             if ($activeItem.data('value') !== currentValue) $activeItem.removeClass(this.CLASSES.active);
             this.closeCitySelect();

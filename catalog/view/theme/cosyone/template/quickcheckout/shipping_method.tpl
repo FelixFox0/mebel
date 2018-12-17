@@ -4,7 +4,7 @@
         <a href="#" class="link _color-orange _font-sm js-select-city-open">
             <span class="link__text js-select-city-value"><?php echo $selected_zone['name']; ?></span>
         </a>
-        <!--<div class="select-city _pos-right js-select-city">
+        <!-- <div class="select-city _pos-right js-select-city">
                       <span class="select-city__close js-select-city-close">
                           <svg class="select-city__close-icon" width="17px" height="17px">
                               <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
