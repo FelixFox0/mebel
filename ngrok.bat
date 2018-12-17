@@ -1,0 +1,1 @@
+ngrok http --host-header=mebel.loc 80

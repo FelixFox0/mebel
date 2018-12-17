@@ -13,9 +13,11 @@ class Url {
 
 	public function link($route, $args = '', $secure = false) {
 		if ($this->ssl && $secure) {
-			$url = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
+//			$url = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
+                        $url = HTTPS_SERVER . '/index.php?route=' . $route;
 		} else {
-			$url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
+//			$url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
+                        $url =  HTTP_SERVER . 'index.php?route=' . $route;
 		}
 		
 		if ($args) {
@@ -25,7 +27,7 @@ class Url {
 				$url .= str_replace('&', '&amp;', '&' . ltrim($args, '&'));
 			}
 		}
-
+                
 		foreach ($this->rewrite as $rewrite) {
 			$url = $rewrite->rewrite($url);
 		}

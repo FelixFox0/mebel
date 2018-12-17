@@ -454,14 +454,14 @@ $(document).ready(function() {
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Бровары">Бровары</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Борисполь">Борисполь</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Ирпень">Ирпень</a>
-                            </div>
+                </div>
                             <div class="select-city__column">
                                 <a href="#" class="select-city__item js-select-city-item  _active" data-value="Одесса">Одесса</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Черноморск">Черноморск</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Николаев">Николаев</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Южный">Южный</a>
                                 <a href="#" class="select-city__item js-select-city-item _sm" data-value="Фонтанка">Фонтанка</a>
-                            </div>
+            </div>
                             <div class="select-city__column">
                                 <a href="#" class="select-city__item js-select-city-item" data-value="Харьков">Харьков</a>
                                 <a href="#" class="select-city__item js-select-city-item" data-value="Днепр">Днепр</a>

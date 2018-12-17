@@ -1,6 +1,6 @@
 <?php
 $server_document_root = $_SERVER['DOCUMENT_ROOT'];
-$http_host = $_SERVER['HTTP_HOST'];
+$http_host = $_SERVER['HTTP_X_ORIGINAL_HOST'] ? $_SERVER['HTTP_X_ORIGINAL_HOST'] : $_SERVER['HTTP_HOST'];
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$http_host.'/');
