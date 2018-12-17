@@ -2,7 +2,7 @@
 class ModelLocalisationZone extends Model {
 	public function getZone($zone_id) {
 		$query = $this->db->query("SELECT z.*, zd.name as name FROM " . DB_PREFIX . "zone as z JOIN `" . DB_PREFIX . "zone_description` `zd` ON `zd`.`zone_id` = `z`.`zone_id` WHERE z.zone_id = '" . (int)$zone_id . "' AND `zd`.`language_id` = " . (int)$this->config->get('config_language_id') . " AND z.status = '1'");
-
+//                var_dump($query->row);die();
 		return $query->row;
 	}
 
@@ -38,6 +38,7 @@ class ModelLocalisationZone extends Model {
         } else {
             $zone = $this->session->data['selected_zone'];
         }
+//        var_dump($zone);die();
         return $zone;
     }
 

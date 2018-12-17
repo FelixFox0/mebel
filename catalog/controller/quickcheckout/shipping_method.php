@@ -1,13 +1,20 @@
 <?php 
 class ControllerQuickCheckoutShippingMethod extends Controller {
   	public function index() {
-
 		$this->language->load('quickcheckout/checkout');
 		
 		$this->load->model('account/address');
 		$this->load->model('localisation/country');
 		$this->load->model('localisation/zone');
-		
+                $data['selected_zone'] = $this->session->data['selected_zone'];
+                if (!isset($this->request->post['country_id'])) {
+                    $this->request->post['country_id'] = $this->session->data['selected_zone']['country_id'];
+                }
+                
+                if (!isset($this->request->post['zone_id'])) {
+                    $this->request->post['zone_id'] = $this->session->data['selected_zone']['zone_id'];
+                }
+                
 		$shipping_address = array();
 		
 		if ($this->customer->isLogged() && isset($this->request->get['address_id'])) {
@@ -50,19 +57,20 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 				$shipping_address['zone'] = '';
 				$shipping_address['zone_code'] = '';
 			}
-		
-			$shipping_address['firstname'] = $this->request->post['firstname'];
-			$shipping_address['lastname'] = $this->request->post['lastname'];
-			$shipping_address['company'] = $this->request->post['company'];
-			$shipping_address['address_1'] = $this->request->post['address_1'];
-			$shipping_address['address_2'] = $this->request->post['address_2'];
-			$shipping_address['postcode'] = $this->request->post['postcode'];
-			$shipping_address['city'] = $this->request->post['city'];
-			$shipping_address['country_id'] = $this->request->post['country_id'];
-			$shipping_address['zone_id'] = $this->request->post['zone_id'];
+                        if(isset($this->request->post['firstname'])){
+                            $shipping_address['firstname'] = $this->request->post['firstname'];
+                            $shipping_address['lastname'] = $this->request->post['lastname'];
+                            $shipping_address['company'] = $this->request->post['company'];
+                            $shipping_address['address_1'] = $this->request->post['address_1'];
+                            $shipping_address['address_2'] = $this->request->post['address_2'];
+                            $shipping_address['postcode'] = $this->request->post['postcode'];
+                            $shipping_address['city'] = $this->request->post['city'];
+                            $shipping_address['country_id'] = $this->request->post['country_id'];
+                            $shipping_address['zone_id'] = $this->request->post['zone_id'];
+                        }
 		}
 
-		if (!empty($shipping_address)) {
+		if (empty($shipping_address)) {
 			// Shipping Methods
 			$method_data = array();
 
@@ -205,7 +213,8 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 				$this->response->setOutput($this->load->view('default/template/quickcheckout/shipping_method.tpl', $data));
 			}
 		} else {
-			$this->response->setOutput($this->load->view('quickcheckout/shipping_method', $data));
+//			$this->response->setOutput($this->load->view('quickcheckout/shipping_method', $data));
+                        return $this->load->view('quickcheckout/shipping_method', $data);
 		}
   	}
 	

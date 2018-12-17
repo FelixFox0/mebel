@@ -2,7 +2,7 @@
     <span class="cart__info-delivery-label">Доставка в:</span>
     <div class="select-city__wrap js-select-city-wrap">
         <a href="#" class="link _color-orange _font-sm js-select-city-open">
-            <span class="link__text js-select-city-value"><?php echo $selected_zone; ?></span>
+            <span class="link__text js-select-city-value"><?php echo $selected_zone['name']; ?></span>
         </a>
         <!--<div class="select-city _pos-right js-select-city">
                       <span class="select-city__close js-select-city-close">
@@ -50,7 +50,31 @@
     </div>
 </div>
 <div class="cart__info-delivery-methods">
+
+    
+    <?php foreach ($shipping_methods as $shipping_method) { ?>
+    <?php foreach ($shipping_method['quote'] as $quote) { ?>
     <div class="cart__info-delivery-wrap">
+        <div class="cart__info-row">
+            <label class="radio">
+
+        <?php if ($quote['code'] == $code || !$code || !$exists) { ?>
+            <?php $code = $quote['code']; ?>
+            <?php $exists = true; ?>
+            <input type="radio" value="<?php echo $quote['code']; ?>" name="shipping_method" class="radio__input" checked="checked" >
+        <?php } else { ?>
+            <input type="radio" value="<?php echo $quote['code']; ?>" name="shipping_method" class="radio__input" >
+        <?php } ?>
+                <i class="radio__icon"></i>
+                <span class="radio__text"><?php echo $quote['title']; ?></span>
+            </label>
+            <span class="dots-separator _brown"></span>
+            <span class="cart__info-price"><?php echo $quote['text']; ?></span>
+    <?php } ?>
+        </div>
+    </div>
+    <?php } ?>
+    <!--<div class="cart__info-delivery-wrap">
         <div class="cart__info-row">
             <label class="radio">
                 <input type="radio" name="delivery-method" class="radio__input">
@@ -88,7 +112,7 @@
             Самовывоз из нашего магазина: Одесса, ул. Семена Палия,
             125, магазин 290, Вт - Вс, с 9:00 до 14:00
         </div>
-    </div>
+    </div>-->
 </div>
 
 
