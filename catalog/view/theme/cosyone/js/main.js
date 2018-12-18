@@ -333,20 +333,30 @@
             event.preventDefault();
             img.src = $self.data('thumb-src') || $self.find('img').get(0).src;
             img.alt = $self.data('alt') || 'colour';
-            elem.appendChild(img);
-            elem.href = "#";
-            elem.classList.add('product-page__constructor-button',
-                this.CLASSES.active,
-                this.SELECTORS.constructorButton.substring(1),
-                this.SELECTORS.constructorNewImg.substring(1));
-            elem.dataset.value = $self.data('value');
-            elem.dataset.characteristicId = $self.data('characteristic-id');
 
             if ($addedImg.length) $addedImg.remove();
             $imagesList.find(this.SELECTORS.constructorButton).removeClass(this.CLASSES.active);
+
+
             $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorValue).text($self.data('value'));
             $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorInput).val($self.data('characteristic-id'));
-            $imagesList.append(elem);
+
+            var oldItem = $imagesList.find('[data-characteristic-id="' + $self.data('characteristic-id') + '"]');
+            if (oldItem.length > 0) {
+                oldItem.addClass('_active');
+            } else {
+                elem.appendChild(img);
+                elem.href = "#";
+                elem.classList.add('product-page__constructor-button',
+                    this.CLASSES.active,
+                    this.SELECTORS.constructorButton.substring(1),
+                    this.SELECTORS.constructorNewImg.substring(1));
+                elem.dataset.value = $self.data('value');
+                elem.dataset.characteristicId = $self.data('characteristic-id');
+
+
+                $imagesList.append(elem);
+            }
             this.closePopup();
         },
 
