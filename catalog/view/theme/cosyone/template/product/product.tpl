@@ -68,16 +68,14 @@
                                                 <?php } ?>
                                             </div>
                                             <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" class="js-constructor-block-input _hidden">
-                                            <?php if ($option['large_samples']) { ?>
-                                                <a href="#mfp-big-samples-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
+                                            <a href="#mfp-images-list-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
+                                                <?php if ($option['large_samples']) { ?>
                                                     <span class="link__text">Крупные образцы</span>
-                                                </a>
-                                            <?php } ?>
-                                            <?php if ($option['full_list']) { ?>
-                                                <a href="#mfp-images-list-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
+                                                <?php } ?>
+                                                <?php if ($option['full_list']) { ?>
                                                     <span class="link__text">Полный Список</span>
-                                                </a>
-                                            <?php } ?>
+                                                <?php } ?>
+                                            </a>
                                         </div>
                                     <?php } ?>
                                     <?php if ($option['type'] == 'group') { ?>
@@ -132,8 +130,8 @@
                                                 <?php } ?>
                                             </div>
                                             <input name="option[<?php echo $option['product_option_id']; ?>]" type="text" class="js-constructor-block-input _hidden">
-                                            <a href="#" class="link _color-orange _font-sm">
-                                                <span class="link__text">Подробно о системах</span>
+                                            <a href="#mfp-info-popup-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
+                                                <span class="link__text">Подробно</span>
                                             </a>
                                         </div>
                                     <?php } ?>
@@ -413,7 +411,7 @@
 
 
 <?php foreach ($options as $option) { ?>
-    <?php if ($option['type'] == 'image' && $option['full_list']) { ?>
+    <?php if ($option['type'] == 'image') { ?>
         <div class="mfp-hide popup js-popup" id="mfp-images-list-<?php echo $option['option_id']; ?>">
             <i class="mfp-close popup__close">
                 <svg class="popup__close-icon" width="17px" height="17px">
@@ -447,8 +445,8 @@
             </div>
         </div>
     <?php } ?>
-    <?php if ($option['type'] == 'image' && $option['large_samples']) { ?>
-        <div class="mfp-hide popup js-popup" id="mfp-big-samples-<?php echo $option['option_id']; ?>">
+    <?php if ($option['type'] == 'radio') { ?>
+        <div class="mfp-hide popup js-popup" id="mfp-info-popup-<?php echo $option['option_id']; ?>">
             <i class="mfp-close popup__close">
                 <svg class="popup__close-icon" width="17px" height="17px">
                     <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
@@ -460,14 +458,6 @@
                     <p class="popup__text">
                         <?php echo $option['description']; ?>
                     </p>
-                    <div class="popup__samples">
-                        <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                            <div class="popup__samples-item">
-                                <img class="popup__samples-item-img" src="<?php echo $option_value['image_popup']; ?>" alt="<?php echo $option_value['name']; ?>" data-option-id="<?php echo $option['option_id']; ?>">
-                                <span class="popup__samples-item-title"><?php echo $option_value['name']; ?></span>
-                            </div>
-                        <?php } ?>
-                    </div>
                 </div>
                 <div class="popup__actions">
                     <button class="button js-close-popup">Закрыть</button>

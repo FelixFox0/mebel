@@ -57,20 +57,21 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 				$shipping_address['zone'] = '';
 				$shipping_address['zone_code'] = '';
 			}
-                        if(isset($this->request->post['firstname'])){
-                            $shipping_address['firstname'] = $this->request->post['firstname'];
-                            $shipping_address['lastname'] = $this->request->post['lastname'];
-                            $shipping_address['company'] = $this->request->post['company'];
-                            $shipping_address['address_1'] = $this->request->post['address_1'];
-                            $shipping_address['address_2'] = $this->request->post['address_2'];
-                            $shipping_address['postcode'] = $this->request->post['postcode'];
-                            $shipping_address['city'] = $this->request->post['city'];
-                            $shipping_address['country_id'] = $this->request->post['country_id'];
-                            $shipping_address['zone_id'] = $this->request->post['zone_id'];
-                        }
+                        
+                        $shipping_address['firstname'] = isset($this->request->post['firstname'])?$this->request->post['firstname']:'';
+                        $shipping_address['lastname'] = isset($this->request->post['lastname'])?$this->request->post['lastname']:'';
+                        $shipping_address['company'] = isset($this->request->post['company'])?$this->request->post['company']:'';
+                        $shipping_address['address_1'] = isset($this->request->post['address_1'])?$this->request->post['address_1']:'';
+                        $shipping_address['address_2'] = isset($this->request->post['address_2'])?$this->request->post['address_2']:'';
+                        $shipping_address['postcode'] = isset($this->request->post['postcode'])?$this->request->post['postcode']:'';
+                        $shipping_address['city'] = isset($this->request->post['city'])?$this->request->post['city']:'';
+                        $shipping_address['country_id'] = isset($this->request->post['country_id'])?$this->request->post['country_id']:'';
+                        $shipping_address['zone_id'] = isset($this->request->post['zone_id'])?$this->request->post['zone_id']:'';
+                        
 		}
 
-		if (empty($shipping_address)) {
+		if (!empty($shipping_address)) {
+//                if (false) {
 			// Shipping Methods
 			$method_data = array();
 
@@ -222,6 +223,14 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 		$this->load->model('account/address');
 		$this->load->model('localisation/country');
 		$this->load->model('localisation/zone');
+                
+                if (!isset($this->request->post['country_id'])) {
+                    $this->request->post['country_id'] = $this->session->data['selected_zone']['country_id'];
+                }
+                
+                if (!isset($this->request->post['zone_id'])) {
+                    $this->request->post['zone_id'] = $this->session->data['selected_zone']['zone_id'];
+                }
 		
 		if ($this->customer->isLogged() && isset($this->request->get['address_id'])) {
 			// Selected stored address
@@ -265,16 +274,16 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 				$shipping_address['zone'] = '';
 				$shipping_address['zone_code'] = '';
 			}
-		
-			$shipping_address['firstname'] = $this->request->post['firstname'];
-			$shipping_address['lastname'] = $this->request->post['lastname'];
-			$shipping_address['company'] = $this->request->post['company'];
-			$shipping_address['address_1'] = $this->request->post['address_1'];
-			$shipping_address['address_2'] = $this->request->post['address_2'];
-			$shipping_address['postcode'] = $this->request->post['postcode'];
-			$shipping_address['city'] = $this->request->post['city'];
-			$shipping_address['country_id'] = $this->request->post['country_id'];
-			$shipping_address['zone_id'] = $this->request->post['zone_id'];
+                        
+                        $shipping_address['firstname'] = isset($this->request->post['firstname'])?$this->request->post['firstname']:'';
+                        $shipping_address['lastname'] = isset($this->request->post['lastname'])?$this->request->post['lastname']:'';
+                        $shipping_address['company'] = isset($this->request->post['company'])?$this->request->post['company']:'';
+                        $shipping_address['address_1'] = isset($this->request->post['address_1'])?$this->request->post['address_1']:'';
+                        $shipping_address['address_2'] = isset($this->request->post['address_2'])?$this->request->post['address_2']:'';
+                        $shipping_address['postcode'] = isset($this->request->post['postcode'])?$this->request->post['postcode']:'';
+                        $shipping_address['city'] = isset($this->request->post['city'])?$this->request->post['city']:'';
+                        $shipping_address['country_id'] = isset($this->request->post['country_id'])?$this->request->post['country_id']:'';
+                        $shipping_address['zone_id'] = isset($this->request->post['zone_id'])?$this->request->post['zone_id']:'';
 			
 			$this->session->data['shipping_address'] = $shipping_address;
 		}

@@ -1,5 +1,5 @@
----------- Date: 2018-11-27 04:55:40 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2018-12-18 02:06:45 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=checkout/cart
 MOD DETAILS:
    modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
    id        : 
@@ -9,23 +9,6 @@ MOD DETAILS:
 
 File Name    : catalog/view/theme/*/template/common/header.tpl(0)
 VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
-----------------------------------------------------------------------
-
-
----------- Date: 2018-11-27 04:59:27 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /komplekty/test
-MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
-   id        : Product Questions
-   version   : OC 2.x
-   vqmver    : 2.0.0
-   author    : Karl Pers - openthemer@gmail.com
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(1)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(2)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
 ----------------------------------------------------------------------
 
 

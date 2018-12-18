@@ -584,7 +584,7 @@ class ControllerCheckoutCart extends Controller {
         $this->response->setOutput(json_encode($json));
     }
 
-    private function getCartTotalInfo(&$productsInfo = [])
+    public function getCartTotalInfo(&$productsInfo = [])
     {
         $data = [];
         $products = $this->cart->getProducts();
@@ -660,8 +660,11 @@ class ControllerCheckoutCart extends Controller {
             );
         }
 
-
-
-        return $this->load->view('checkout/cart_total', $data);
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            $this->response->setOutput($this->load->view('checkout/cart_total', $data));
+        }else{
+            return $this->load->view('checkout/cart_total', $data);
+        }
+        
     }
 }

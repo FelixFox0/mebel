@@ -49,9 +49,19 @@
         </div>-->
     </div>
 </div>
-<div class="cart__info-delivery-methods">
+<div id="shipping_method" class="cart__info-delivery-methods">
 
-    
+    <?php $exists = false; ?>
+    <?php 
+    foreach ($shipping_methods as $shipping_method) {
+	foreach ($shipping_method['quote'] as $quote) {
+		if ($quote['code'] == $code) {
+			$exists = true;
+			break;
+		}
+	}
+    }
+    ?>
     <?php foreach ($shipping_methods as $shipping_method) { ?>
     <?php foreach ($shipping_method['quote'] as $quote) { ?>
     <div class="cart__info-delivery-wrap">
@@ -263,7 +273,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 			});
 		} else {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/shipping_method/set&address_id=' + $('#shipping-address select[name=\'address_id\']').val(),
+				url: 'index.php?route=quickcheckout/shipping_method/set
 				type: 'post',
 				data: $('#shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 				dataType: 'html',
@@ -321,3 +331,42 @@ $(document).ready(function() {
 //--></script>
 
 <?php endif; ?>
+<script>
+
+$('input[name=\'shipping_method\']').on('change', function() {
+    
+//$('.radio').on('click', function() {
+//    alert('bbb');
+    $.ajax({
+        url: 'index.php?route=quickcheckout/shipping_method/set',
+        type: 'post',
+        data: $('.cart__info-delivery input[type=\'text\'], .cart__info-delivery input[type=\'checkbox\']:checked, .cart__info-delivery input[type=\'radio\']:checked, .cart__info-delivery input[type=\'hidden\'], .cart__info-delivery select, input[name=\'shipping_method\']:checked'),
+        dataType: 'html',
+        cache: false,
+        success: function(html) {
+            $.ajax({
+                url: 'index.php?route=checkout/cart/getCartTotalInfo',
+                type: 'get',
+                dataType: 'html',
+                cache: false,
+                success: function(html) {
+                    $('#cart_total_block').html(html);
+                },
+                <?php if ($debug) { ?>
+                error: function(xhr, ajaxOptions, thrownError) {
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+                <?php } ?>
+            });
+                
+        },
+        <?php if ($debug) { ?>
+        error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+        <?php } ?>
+    });
+});
+
+
+</script>
