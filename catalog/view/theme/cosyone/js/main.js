@@ -649,6 +649,29 @@
               location = this.value
           });
 });
+    $(document).on('click', '.order', function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '/index.php?route=checkout/order',
+            type: 'post',
+            data: 'phone=' + $('input[name="order_phone"]').val(),
+            dataType: 'json',
+            beforeSend: function() {
+              
+            },
+            complete: function() {
+              
+            },
+            success: function(json) {     
+              if (json['success']) {
+                location = json['success'];
+                //alert("Ваш заказ получен"); 
+              }else{
+                  alert("Ваш заказ не получен");
+              }
+            }
+          });
+      });
 
     $(document).ready(function () {
         app.init();

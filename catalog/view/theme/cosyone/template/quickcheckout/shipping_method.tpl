@@ -346,7 +346,8 @@ $('input[name=\'shipping_method\']').on('change', function() {
         success: function(html) {
             $.ajax({
                 url: 'index.php?route=checkout/cart/getCartTotalInfo',
-                type: 'get',
+                type: 'post',
+                data: 'ajax=true',
                 dataType: 'html',
                 cache: false,
                 success: function(html) {

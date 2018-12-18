@@ -553,7 +553,7 @@ $(document).ready(function() {
             </div>
         </div>
         <div class="cart__info-actions">
-            <a href="/thank-you.html" class="button">Оформить заказ</a>
+            <a href="/thank-you.html" class="button order">Оформить заказ</a>
             <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
         </div>
     </div>

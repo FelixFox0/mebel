@@ -660,7 +660,7 @@ class ControllerCheckoutCart extends Controller {
             );
         }
 
-        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        if(isset($this->request->post['ajax'])) {
             $this->response->setOutput($this->load->view('checkout/cart_total', $data));
         }else{
             return $this->load->view('checkout/cart_total', $data);
