@@ -471,11 +471,11 @@ class ControllerCheckoutCart extends Controller {
             }
 		    $this->cart->update($this->request->post['key'], $quantity);
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
-			unset($this->session->data['payment_methods']);
-			unset($this->session->data['reward']);
+			//unset($this->session->data['shipping_method']);
+			//unset($this->session->data['shipping_methods']);
+			//unset($this->session->data['payment_method']);
+			//unset($this->session->data['payment_methods']);
+			//unset($this->session->data['reward']);
 
             $json['total'] = $this->cart->getTotal();
             $json['count'] = $this->cart->countProducts();
@@ -499,15 +499,15 @@ class ControllerCheckoutCart extends Controller {
 		if (isset($this->request->post['key'])) {
 			$this->cart->remove($this->request->post['key']);
 
-			unset($this->session->data['vouchers'][$this->request->post['key']]);
+			//unset($this->session->data['vouchers'][$this->request->post['key']]);
 
 			$this->session->data['success'] = $this->language->get('text_remove');
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
-			unset($this->session->data['payment_methods']);
-			unset($this->session->data['reward']);
+			//unset($this->session->data['shipping_method']);
+			//unset($this->session->data['shipping_methods']);
+			//unset($this->session->data['payment_method']);
+			//unset($this->session->data['payment_methods']);
+			//unset($this->session->data['reward']);
 
             $json['total'] = $this->cart->getTotal();
             $json['count'] = $this->cart->countProducts();
