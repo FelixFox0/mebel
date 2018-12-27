@@ -748,7 +748,7 @@ $(document).delegate('#button-shipping-method', 'click', function() {
 
 $(document).delegate('#button-payment-method', 'click', function() {
     $.ajax({
-        url: 'index.php?route=checkout/payment_method/save', 
+        url: 'index.php?route=checkout/payment_method/save',
         type: 'post',
         data: $('#collapse-payment-method input[type=\'radio\']:checked, #collapse-payment-method input[type=\'checkbox\']:checked, #collapse-payment-method textarea'),
         dataType: 'json',

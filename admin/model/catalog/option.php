@@ -4,7 +4,7 @@ class ModelCatalogOption extends Model {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
         $data['group_by'] = !empty($data['group_by']) ? (int)$data['group_by'] : null;
-        $data['show_in_cart'] = isset($data['show_in_cart']) ? 1 : null;
+        $data['show_in_cart'] = !empty($data['show_in_cart']) ? 1 : null;
         $data['view'] = !empty($data['view']) ? (int)$data['view'] : 0;
 		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', group_by = '" . $data['group_by'] . "', view = '" . (int)$data['view'] . "', show_in_cart = '" . $data['show_in_cart'] . "'");
 
@@ -33,7 +33,7 @@ class ModelCatalogOption extends Model {
         $data['large_samples'] = isset($data['large_samples']) ? 1 : null;
         $data['full_list'] = !empty($data['full_list']) ? (int)$data['full_list'] : null;
         $data['group_by'] = !empty($data['group_by']) ? (int)$data['group_by'] : null;
-        $data['show_in_cart'] = isset($data['show_in_cart']) ? 1 : null;
+        $data['show_in_cart'] = !empty($data['show_in_cart']) ? 1 : null;
         $data['view'] = !empty($data['view']) ? (int)$data['view'] : 0;
 		$this->db->query("UPDATE `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "', large_samples = '" . $data['large_samples'] . "', full_list = '" . $data['full_list'] . "', group_by = '" . $data['group_by'] . "', view = '" . (int)$data['view'] . "', show_in_cart = '" . $data['show_in_cart'] . "' WHERE option_id = '" . (int)$option_id . "'");
 
