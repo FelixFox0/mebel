@@ -392,7 +392,7 @@ class ControllerProductProduct extends Controller {
                 }
 			}
 			if (!empty($optionsGroup)) {
-                $data['options'] = array_merge($data['options'], $optionsGroup);
+                $data['options'] = array_merge($optionsGroup, $data['options']);
             }
 
 

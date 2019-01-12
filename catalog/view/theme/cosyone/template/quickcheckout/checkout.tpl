@@ -161,7 +161,7 @@ $(window).load(function() {
 	// Login box
 	$(document).ready(function() {
 		$.ajax({
-			url: 'index.php?route=quickcheckout/login',
+			url: '/index.php?route=quickcheckout/login',
 			dataType: 'html',
 			cache: false,
 			beforeSend: function() {
@@ -181,7 +181,7 @@ $(window).load(function() {
 	// Login Form Clicked
 	$(document).on('click', '#button-login', function() {
 		$.ajax({
-			url: 'index.php?route=quickcheckout/login/validate',
+			url: '/index.php?route=quickcheckout/login/validate',
 			type: 'post',
 			data: $('#checkout #login :input'),
 			dataType: 'json',
@@ -219,7 +219,7 @@ $(window).load(function() {
 // Validate Register
 function validateRegister() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/register/validate',
+		url: '/index.php?route=quickcheckout/register/validate',
 		type: 'post',
 		data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'password\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select'),
 		dataType: 'json',
@@ -286,7 +286,7 @@ function validateRegister() {
 // Load Guest Payment Form
 $(document).ready(function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/guest',
+		url: '/index.php?route=quickcheckout/guest',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -306,7 +306,7 @@ $(document).ready(function() {
 // Validate Guest Payment Address
 function validateGuestAddress() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/guest/validate',
+		url: '/index.php?route=quickcheckout/guest/validate',
 		type: 'post',
 		data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address select'),
 		dataType: 'json',
@@ -383,7 +383,7 @@ function validateGuestAddress() {
 // Validate Guest Shipping Address
 function validateGuestShippingAddress() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/guest_shipping/validate',
+		url: '/index.php?route=quickcheckout/guest_shipping/validate',
 		type: 'post',
 		data: $('#shipping-address input[type=\'text\'], #shipping-address input[type=\'checkbox\']:checked, #shipping-address input[type=\'radio\']:checked, #shipping-address select'),
 		dataType: 'json',
@@ -450,7 +450,7 @@ $(document).on('click', '#button-payment-method', function() {
 // Load payment addresses
 $(document).ready(function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/payment_address',
+		url: '/index.php?route=quickcheckout/payment_address',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -471,7 +471,7 @@ $(document).ready(function() {
 // Load shipping addresses
 $(document).ready(function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/shipping_address',
+		url: '/index.php?route=quickcheckout/shipping_address',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -492,7 +492,7 @@ $(document).ready(function() {
 // Validate Payment Address
 function validatePaymentAddress() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/payment_address/validate',
+		url: '/index.php?route=quickcheckout/payment_address/validate',
 		type: 'post',
 		data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'password\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select'),
 		dataType: 'json',
@@ -554,7 +554,7 @@ function validatePaymentAddress() {
 // Validate Shipping Address
 function validateShippingAddress() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/shipping_address/validate',
+		url: '/index.php?route=quickcheckout/shipping_address/validate',
 		type: 'post',
 		data: $('#shipping-address input[type=\'text\'], #shipping-address input[type=\'password\'], #shipping-address input[type=\'checkbox\']:checked, #shipping-address input[type=\'radio\']:checked, #shipping-address select'),
 		dataType: 'json',
@@ -623,7 +623,7 @@ $(document).on('click', '#button-payment-method', function() {
 // Payment Method
 function reloadPaymentMethod() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/payment_method',
+		url: '/index.php?route=quickcheckout/payment_method',
 		type: 'post',
 		data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select, #payment-method input[type=\'text\'], #payment-method input[type=\'checkbox\']:checked, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'hidden\'], #payment-method select'),
 		dataType: 'html',
@@ -644,7 +644,7 @@ function reloadPaymentMethod() {
 
 function reloadPaymentMethodById(address_id) {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/payment_method&address_id=' + address_id,
+		url: '/index.php?route=quickcheckout/payment_method&address_id=' + address_id,
 		type: 'post',
 		data: $('#payment-method input[type=\'checkbox\']:checked, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'hidden\'], #payment-method select'),
 		dataType: 'html',
@@ -666,7 +666,7 @@ function reloadPaymentMethodById(address_id) {
 // Validate Payment Method
 function validatePaymentMethod() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/payment_method/validate',
+		url: '/index.php?route=quickcheckout/payment_method/validate',
 		type: 'post',
 		data: $('#payment-method select, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'checkbox\']:checked, #payment-method textarea'),
 		dataType: 'json',
@@ -711,7 +711,7 @@ function validatePaymentMethod() {
 		}
 		
 		$.ajax({
-			url: 'index.php?route=quickcheckout/shipping_method',
+			url: '/index.php?route=quickcheckout/shipping_method',
 			type: 'post',
 			data: post_data,
 			dataType: 'html',
@@ -732,7 +732,7 @@ function validatePaymentMethod() {
 
 	function reloadShippingMethodById(address_id) {
 		$.ajax({
-			url: 'index.php?route=quickcheckout/shipping_method&address_id=' + address_id,
+			url: '/index.php?route=quickcheckout/shipping_method&address_id=' + address_id,
 			type: 'post',
 			data: $('#shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 			dataType: 'html',
@@ -754,7 +754,7 @@ function validatePaymentMethod() {
 	// Validate Shipping Method
 	function validateShippingMethod() {
 		$.ajax({
-			url: 'index.php?route=quickcheckout/shipping_method/validate',
+			url: '/index.php?route=quickcheckout/shipping_method/validate',
 			type: 'post',
 			data: $('#shipping-method select, #shipping-method input[type=\'radio\']:checked, #shipping-method textarea, #shipping-method input[type=\'text\']'),
 			dataType: 'json',
@@ -793,7 +793,7 @@ function validatePaymentMethod() {
 // Load confirm button
 $(document).ready(function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/terms',
+		url: '/index.php?route=quickcheckout/terms',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -813,7 +813,7 @@ $(document).ready(function() {
 // Validate confirm button
 function validateTerms() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/terms/validate',
+		url: '/index.php?route=quickcheckout/terms/validate',
 		type: 'post',
 		data: $('#terms input[type=\'checkbox\']:checked'),
 		dataType: 'json',
@@ -851,7 +851,7 @@ function validateTerms() {
 // Load confirm
 function loadConfirm() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/confirm',
+		url: '/index.php?route=quickcheckout/confirm',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -903,7 +903,7 @@ function loadConfirm() {
 <?php if ($cart_module) { ?>
 function loadCart() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/cart',
+		url: '/index.php?route=quickcheckout/cart',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -930,7 +930,7 @@ $(document).ready(function(){
 <?php if ($voucher_module || $coupon_module || $reward_module) { ?>
 $(document).ready(function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/voucher',
+		url: '/index.php?route=quickcheckout/voucher',
 		dataType: 'html',
 		cache: false,
 		beforeSend: function() {
@@ -951,7 +951,7 @@ $(document).ready(function() {
 
 $(document).on('click', '#button-coupon', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/voucher/validateCoupon',
+		url: '/index.php?route=quickcheckout/voucher/validateCoupon',
 		type: 'post',
 		data: $('#coupon-content :input'),
 		dataType: 'json',
@@ -1019,7 +1019,7 @@ $(document).on('click', '#button-coupon', function() {
 
 $(document).on('click', '#button-voucher', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/voucher/validateVoucher',
+		url: '/index.php?route=quickcheckout/voucher/validateVoucher',
 		type: 'post',
 		data: $('#voucher-content :input'),
 		dataType: 'json',
@@ -1087,7 +1087,7 @@ $(document).on('click', '#button-voucher', function() {
 
 $(document).on('click', '#button-reward', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/voucher/validateReward',
+		url: '/index.php?route=quickcheckout/voucher/validateReward',
 		type: 'post',
 		data: $('#reward-content :input'),
 		dataType: 'json',
@@ -1182,7 +1182,7 @@ $(document).on('focusout', 'input[name=\'postcode\']', function(){
 <?php if ($edit_cart) { ?>
 $(document).on('click', '.button-update', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/cart/update',
+		url: '/index.php?route=quickcheckout/cart/update',
 		type: 'post',
 		data: $('#cart1 :input'),
 		dataType: 'json',
@@ -1238,7 +1238,7 @@ $(document).on('click', '.button-remove', function() {
 	var remove_id = $(this).attr('data-remove');
 
 	$.ajax({
-		url: 'index.php?route=quickcheckout/cart/update&remove=' + remove_id,
+		url: '/index.php?route=quickcheckout/cart/update&remove=' + remove_id,
 		type: 'get',
 		dataType: 'json',
 		cache: false,

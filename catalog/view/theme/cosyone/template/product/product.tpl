@@ -518,7 +518,7 @@
 <script type="text/javascript">
     $('#button-cart').on('click', function() {
         $.ajax({
-            url: 'index.php?route=checkout/cart/add',
+            url: '/index.php?route=checkout/cart/add',
             type: 'post',
             data: $('.product-page__constructor input[type=\'text\'], .product-page__constructor input[type=\'hidden\'], .product-page__constructor input[type=\'radio\']:checked, .product-page__constructor input[type=\'checkbox\']:checked, .product-page__constructor select, .product-page__constructor textarea'),
             dataType: 'json',
@@ -555,7 +555,7 @@
     $('#form-review .js-send-response').on('click', function(e) {
         e.preventDefault();
         $.ajax({
-            url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
+            url: '/index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
             type: 'post',
             dataType: 'json',
             data: $("#form-review").serialize(),

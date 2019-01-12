@@ -68,7 +68,7 @@ $('#question').load('index.php?route=product/question/question_list&product_id=<
 
 $('#button-question').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=product/question/ask_question&product_id=<?php echo $product_id; ?>',
+		url: '/index.php?route=product/question/ask_question&product_id=<?php echo $product_id; ?>',
 		type: 'post',
 		dataType: 'json',
 		data: 'name=' + encodeURIComponent($('input[name=\'q_name\']').val()) + 

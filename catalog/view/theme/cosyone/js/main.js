@@ -172,7 +172,7 @@
 
                     open: function () {
                         //$(this.SELECTORS.collapsedCart).addClass(this.CLASSES.hidden);
-                        $('#mfp-cart').load('index.php?route=checkout/cart');
+                        $('#mfp-cart').load('/index.php?route=checkout/cart');
                     }.bind(this),
 
                     close: function () {
@@ -531,7 +531,7 @@
                 active = this.CLASSES.active;
             event.preventDefault();
             $.ajax({
-                url: 'index.php?route=common/zone/change',
+                url: '/index.php?route=common/zone/change',
                 type: 'post',
                 dataType: 'json',
                 data: {zone_id: id},
@@ -560,7 +560,7 @@
                 disabled = this.CLASSES.disabled;
             if ($self.val() !== '') {
                 $.ajax({
-                    url: 'index.php?route=common/zone/search',
+                    url: '/index.php?route=common/zone/search',
                     type: 'post',
                     dataType: 'json',
                     data: {search: $self.val()},
@@ -603,7 +603,7 @@
                 selectCityValue = this.SELECTORS.selectCityValue,
                 id = $input.data('id');
             $.ajax({
-                url: 'index.php?route=common/zone/change',
+                url: '/index.php?route=common/zone/change',
                 type: 'post',
                 dataType: 'json',
                 data: {zone_id: id},

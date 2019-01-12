@@ -288,7 +288,7 @@
         }
         data['cart_id'] = $this.data('cart-id');
         $.ajax({
-            url: 'index.php?route=checkout/cart/updateOption',
+            url: '/index.php?route=checkout/cart/updateOption',
             type: 'post',
             dataType: 'json',
             data: data,
@@ -308,7 +308,7 @@
     var cart = {
         'add': function(product_id, quantity) {
             $.ajax({
-                url: 'index.php?route=checkout/cart/add',
+                url: '/index.php?route=checkout/cart/add',
                 type: 'post',
                 data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
                 dataType: 'json',
@@ -339,7 +339,7 @@
             }
 
             $.ajax({
-                url: 'index.php?route=checkout/cart/edit',
+                url: '/index.php?route=checkout/cart/edit',
                 type: 'post',
                 data: 'key=' + key + '&quantity=' + quantity,
                 dataType: 'json',
@@ -369,7 +369,7 @@
         },
         'remove': function(key) {
             $.ajax({
-                url: 'index.php?route=checkout/cart/remove',
+                url: '/index.php?route=checkout/cart/remove',
                 type: 'post',
                 data: 'key=' + key,
                 dataType: 'json',

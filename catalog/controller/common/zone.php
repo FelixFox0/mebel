@@ -34,16 +34,10 @@ class ControllerCommonZone extends Controller {
         $res = $this->model_localisation_zone->getZone($zone_id);
 
         if ($res) {
-            $data['selected_zone'] = [
-                'zone_id' => $res['zone_id'],
-                'name' => $res['name'],
-            ];
+            $data['selected_zone'] = $res;
             $this->session->data['selected_zone'] = $data['selected_zone'];
-            $json = [
-                'zone_id' => $res['zone_id'],
-                'name' => $res['name'],
-                'success' => true,
-            ];
+            $json = $res;
+            $json['success'] = true;
         } else {
             $json['error'] = $this->language->get('zone_not_found');
         }
