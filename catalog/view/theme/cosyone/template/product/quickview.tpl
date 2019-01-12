@@ -415,7 +415,7 @@ $('.quantity_button.plus').on('click', function(){
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
+		url: '/index.php?route=product/product/getRecurringDescription',
 		type: 'post',
 		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
 		dataType: 'json',
@@ -435,7 +435,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
+		url: '/index.php?route=checkout/cart/add',
 		type: 'post',
 		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
@@ -511,7 +511,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 			clearInterval(timer);
 			
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -550,7 +550,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 var ql_wishlist = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=account/wishlist/add',
+			url: '/index.php?route=account/wishlist/add',
 			type: 'post',
 			data: 'product_id=' + product_id,
 			dataType: 'json',
@@ -582,7 +582,7 @@ var ql_wishlist = {
 var ql_compare = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=product/compare/add',
+			url: '/index.php?route=product/compare/add',
 			type: 'post',
 			data: 'product_id=' + product_id,
 			dataType: 'json',

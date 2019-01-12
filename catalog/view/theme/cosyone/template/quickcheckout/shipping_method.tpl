@@ -232,7 +232,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 		}
 
 		$.ajax({
-			url: 'index.php?route=quickcheckout/shipping_method/set',
+			url: '/index.php?route=quickcheckout/shipping_method/set',
 			type: 'post',
 			data: post_data,
 			dataType: 'html',
@@ -255,7 +255,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 	<?php } else { ?>
 		if ($('#shipping-address input[name=\'shipping_address\']').val() == 'new') {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/shipping_method/set',
+				url: '/index.php?route=quickcheckout/shipping_method/set',
 				type: 'post',
 				data: $('#shipping-address input[type=\'text\'], #shipping-address input[type=\'checkbox\']:checked, #shipping-address input[type=\'radio\']:checked, #shipping-address input[type=\'hidden\'], #shipping-address select, #shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 				dataType: 'html',
@@ -273,7 +273,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 			});
 		} else {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/shipping_method/set
+				url: '/index.php?route=quickcheckout/shipping_method/set
 				type: 'post',
 				data: $('#shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 				dataType: 'html',
@@ -338,14 +338,14 @@ $('input[name=\'shipping_method\']').on('change', function() {
 //$('.radio').on('click', function() {
 //    alert('bbb');
     $.ajax({
-        url: 'index.php?route=quickcheckout/shipping_method/set',
+        url: '/index.php?route=quickcheckout/shipping_method/set',
         type: 'post',
         data: $('.cart__info-delivery input[type=\'text\'], .cart__info-delivery input[type=\'checkbox\']:checked, .cart__info-delivery input[type=\'radio\']:checked, .cart__info-delivery input[type=\'hidden\'], .cart__info-delivery select, input[name=\'shipping_method\']:checked'),
         dataType: 'html',
         cache: false,
         success: function(html) {
             $.ajax({
-                url: 'index.php?route=checkout/cart/getCartTotalInfo',
+                url: '/index.php?route=checkout/cart/getCartTotalInfo',
                 type: 'post',
                 data: 'ajax=true',
                 dataType: 'html',

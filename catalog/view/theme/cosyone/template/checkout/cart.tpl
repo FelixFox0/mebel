@@ -68,7 +68,7 @@
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Кол-во:</div>
                   <div class="cart__item-qty">
-                    <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1input-show-in-cart): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
+                    <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                     <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
                     <button class="cart__item-qty-control _plus" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                   </div>
@@ -288,7 +288,7 @@
         }
         data['cart_id'] = $this.data('cart-id');
         $.ajax({
-            url: 'index.php?route=checkout/cart/updateOption',
+            url: '/index.php?route=checkout/cart/updateOption',
             type: 'post',
             dataType: 'json',
             data: data,
@@ -308,7 +308,7 @@
     var cart = {
         'add': function(product_id, quantity) {
             $.ajax({
-                url: 'index.php?route=checkout/cart/add',
+                url: '/index.php?route=checkout/cart/add',
                 type: 'post',
                 data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
                 dataType: 'json',
@@ -339,7 +339,7 @@
             }
 
             $.ajax({
-                url: 'index.php?route=checkout/cart/edit',
+                url: '/index.php?route=checkout/cart/edit',
                 type: 'post',
                 data: 'key=' + key + '&quantity=' + quantity,
                 dataType: 'json',
@@ -369,7 +369,7 @@
         },
         'remove': function(key) {
             $.ajax({
-                url: 'index.php?route=checkout/cart/remove',
+                url: '/index.php?route=checkout/cart/remove',
                 type: 'post',
                 data: 'key=' + key,
                 dataType: 'json',

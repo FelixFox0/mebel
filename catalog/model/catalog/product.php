@@ -371,7 +371,7 @@ class ModelCatalogProduct extends Model {
 				'full_list'            => (int)$product_option['full_list'],
                 'view'                 => (int)$product_option['view'],
                 'group_by'             => $product_option['group_by'],
-                'show_in_cart'         => $product_option['show_in_cart'],
+                'show_in_cart'         => (int)$product_option['show_in_cart'],
 
 			);
 		}
