@@ -1,5 +1,10 @@
+<?php if(empty($products)):?>
 <div class="cart__content">
-    <?php foreach ($products as $product) { ?>
+  Корзина пуста
+</div>
+<?php else: ?>
+  <div class="cart__content">
+      <?php foreach ($products as $product) { ?>
       <div class="cart__item" id="cart-item-<?php echo $product['cart_id']; ?>">
         <div class="cart__item-title">
           <div class="tooltip__wrap js-delete-item-tooltip">
@@ -19,112 +24,114 @@
             </div>
           </div>
           <span class="cart__item-title-text">
-                      <?php echo $product['name']; ?>
-                  </span>
+                          <?php echo $product['name']; ?>
+                      </span>
         </div>
         <div class="cart__item-card">
           <div class="cart__item-img-wrap">
             <?php if ($product['thumb']) { ?>
-              <img class="cart__item-img" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>">
+            <img class="cart__item-img" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>">
             <?php } ?></td>
           </div>
           <div class="cart__item-info">
-              <div class="cart__item-info-sizes">
-                <?php if ($product['option_group']) { ?>
-                  <?php foreach ($product['option_group'] as $option_group) { ?>
-                    <div class="cart__item-info-label"><?php echo $option_group['group_name']; ?></div>
-                    <?php foreach ($option_group['options'] as $option_group_options) { ?>
-                      <div class="cart__item-info-row">
-                        <span class="cart__item-info-char"><?php echo $option_group_options['name']; ?></span>
-                        <span class="dots-separator"></span>
-                        <span class="cart__item-info-value"><?php echo $option_group_options['value']; ?></span>
-                      </div>
-                    <?php } ?>
-                  <?php } ?>
-                <?php } ?>
+            <div class="cart__item-info-sizes">
+              <?php if ($product['option_group']) { ?>
+              <?php foreach ($product['option_group'] as $option_group) { ?>
+              <div class="cart__item-info-label"><?php echo $option_group['group_name']; ?></div>
+              <?php foreach ($option_group['options'] as $option_group_options) { ?>
+              <div class="cart__item-info-row">
+                <span class="cart__item-info-char"><?php echo $option_group_options['name']; ?></span>
+                <span class="dots-separator"></span>
+                <span class="cart__item-info-value"><?php echo $option_group_options['value']; ?></span>
               </div>
-              <?php if ($product['option']) { ?>
-                <div class="cart__item-info-data">
-                  <?php foreach ($product['option'] as $option) { ?>
-                    <div class="cart__item-info-row">
-                      <span class="cart__item-info-char"><?php echo $option['name']; ?></span>
-                      <span class="dots-separator"></span>
-                      <span class="cart__item-info-value">
-                          <?php echo $option['value']; ?>
-                          <?php if (!empty($option['image'])) { ?>
-                            <img class="cart__item-info-thumb" src="<?php echo $option['image']; ?>" alt="<?php echo $option['name']; ?>">
-                          <?php } ?>
-                      </span>
-                    </div>
-                  <?php } ?>
-                </div>
               <?php } ?>
+              <?php } ?>
+              <?php } ?>
+            </div>
+            <?php if ($product['option']) { ?>
+            <div class="cart__item-info-data">
+              <?php foreach ($product['option'] as $option) { ?>
+              <div class="cart__item-info-row">
+                <span class="cart__item-info-char"><?php echo $option['name']; ?></span>
+                <span class="dots-separator"></span>
+                <span class="cart__item-info-value">
+                              <?php echo $option['value']; ?>
+                  <?php if (!empty($option['image'])) { ?>
+                  <img class="cart__item-info-thumb" src="<?php echo $option['image']; ?>" alt="<?php echo $option['name']; ?>">
+                  <?php } ?>
+                          </span>
+              </div>
+              <?php } ?>
+            </div>
+            <?php } ?>
 
-              <div class="cart__item-price">
-                <div class="cart__item-price-block">
-                  <div class="cart__item-price-label">Цена:</div>
-                  <div class="cart__item-price-value"><span class="cart__item-price-block-price"><?php echo $product['price']; ?></span> грн</div>
-                </div>
-                <div class="cart__item-price-block">
-                  <div class="cart__item-price-label">Кол-во:</div>
-                  <div class="cart__item-qty">
-                    <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
-                    <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
-                    <button class="cart__item-qty-control _plus" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
-                  </div>
-                </div>
-                <div class="cart__item-price-block">
-                  <div class="cart__item-price-label">Сумма:</div>
-                  <div class="cart__item-price-value"><span class="cart__item-price-block-total"><?php echo $product['total']; ?></span> грн</div>
+            <div class="cart__item-price">
+              <div class="cart__item-price-block">
+                <div class="cart__item-price-label">Цена:</div>
+                <div class="cart__item-price-value"><span class="cart__item-price-block-price"><?php echo $product['price']; ?></span> грн</div>
+              </div>
+              <div class="cart__item-price-block">
+                <div class="cart__item-price-label">Кол-во:</div>
+                <div class="cart__item-qty">
+                  <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
+                  <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
+                  <button class="cart__item-qty-control _plus" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                 </div>
               </div>
+              <div class="cart__item-price-block">
+                <div class="cart__item-price-label">Сумма:</div>
+                <div class="cart__item-price-value"><span class="cart__item-price-block-total"><?php echo $product['total']; ?></span> грн</div>
+              </div>
+            </div>
             <?php foreach($cart_options as $cart_option): ?>
-              <?php if ($cart_option['type'] == 'checkbox') { ?>
-                <div class="cart__item-delivery">
-                  <?php foreach ($cart_option['product_option_value'] as $option_value) { ?>
-                    <label class="checkbox _orange _inline">
+            <?php if ($cart_option['type'] == 'checkbox') { ?>
+            <div class="cart__item-delivery">
+              <?php foreach ($cart_option['product_option_value'] as $option_value) { ?>
+              <label class="checkbox _orange _inline">
 
-                      <input data-cart-id="<?php echo $product['cart_id']; ?>" onclick="changeCartOptions(this, event)" <?php if(isset($product['show_in_cart_options'][$cart_option['product_option_id']])): ?> checked <?php endif; ?> name="option[<?php echo $cart_option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" type="checkbox" class="checkbox__input">
-                      <i class="checkbox__icon"></i>
-                      <span class="checkbox__text"><?php echo $option_value['name']; ?></span>
-                    </label>
-                    <span class="dots-separator"></span>
-                    <?php if ($option_value['price']) { ?>
-                      <span class="cart__item-delivery-price"><?php echo $option_value['price']; ?> грн</span>
-                    <?php } ?>
-                  <?php } ?>
-                </div>
+                <input data-cart-id="<?php echo $product['cart_id']; ?>" onclick="changeCartOptions(this, event)" <?php if(isset($product['show_in_cart_options'][$cart_option['product_option_id']])): ?> checked <?php endif; ?> name="option[<?php echo $cart_option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" type="checkbox" class="checkbox__input">
+                <i class="checkbox__icon"></i>
+                <span class="checkbox__text"><?php echo $option_value['name']; ?></span>
+              </label>
+              <span class="dots-separator"></span>
+              <?php if ($option_value['price']) { ?>
+              <span class="cart__item-delivery-price"><?php echo $option_value['price']; ?> грн</span>
               <?php } ?>
+              <?php } ?>
+            </div>
+            <?php } ?>
             <?php endforeach; ?>
           </div>
         </div>
       </div>
-    <?php } ?>
-  </div>
-  <div class="cart__info">
-    <i class="cart__close js-cart-close">
-      <svg class="cart__close-icon">
-        <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
-      </svg>
-    </i>
-    <div class="cart__info-content">
-      <div class="cart__info-title">Оформление заказа</div>
-      <div class="cart__info-phone">
-        <label class="cart__info-phone-label">Ваш телефон</label>
-        <div class="hint__wrap">
-          <input name="order_phone" class="input js-phone-number-input" type="text">
+      <?php } ?>
+    </div>
+    <div class="cart__info">
+      <i class="cart__close js-cart-close">
+        <svg class="cart__close-icon">
+          <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+        </svg>
+      </i>
+      <div class="cart__info-content">
+        <div class="cart__info-title">Оформление заказа</div>
+        <div class="cart__info-phone">
+          <label class="cart__info-phone-label">Ваш телефон</label>
+          <div class="hint__wrap">
+            <input name="order_phone" class="input js-phone-number-input" type="text">
+          </div>
+        </div>
+        <?=$shipping;?>
+        <div id="cart_total_block">
+          <?= $cart_total_block; ?>
         </div>
       </div>
-      <?=$shipping;?>
-      <div id="cart_total_block">
-        <?= $cart_total_block; ?>
+      <div class="cart__info-actions">
+        <a href="/thank-you.html" class="button order">Оформить заказ</a>
+        <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
       </div>
     </div>
-    <div class="cart__info-actions">
-      <a href="/thank-you.html" class="button order">Оформить заказ</a>
-      <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
-    </div>
-  </div>
+<?php endif; ?>
+
 
 
 <?php if(false): ?>
