@@ -300,6 +300,9 @@
                 <div class="product-page__column">
                     <div class="product-page__delivery">
                         <?php echo $delivery_description; ?>
+                        <a href="#detailed-information" class="link _color-orange _font-sm js-popup-toggle">
+                            <span class="link__text">Детальная информация</span>
+                        </a>
                     </div>
                 </div>
             </div>

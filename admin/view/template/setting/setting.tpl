@@ -169,6 +169,12 @@
                   <textarea name="config_comment" rows="5" placeholder="<?php echo $entry_comment; ?>" id="input-comment" class="form-control"><?php echo $config_comment; ?></textarea>
                 </div>
               </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-detailed-information"><span data-toggle="tooltip" data-container="#tab-general" title="Дополнительная информация на странице товара во всплывающем окне">Дополнительная информация</span></label>
+                <div class="col-sm-10">
+                  <textarea name="config_detailed_information" rows="5" placeholder="Дополнительная информация" id="input-detailed-information" class="form-control"><?php echo $config_detailed_information; ?></textarea>
+                </div>
+              </div>
               <?php if ($locations) { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_location; ?>"><?php echo $entry_location; ?></span></label>
