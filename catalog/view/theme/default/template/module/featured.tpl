@@ -46,9 +46,11 @@
 <div class="recommended">
     <div class="recommended__container container">
         <div class="recommended__title">
-            <h2 class="title">Самые Вкусные Предложения</h2>
+            <h2 class="title"><?php echo $heading_title['title']; ?></h2>
         </div>
-        <div class="recommended__label">Количество ограничено!</div>
+        <?php if(isset($heading_title['description'])){ ?>
+        <div class="recommended__label"><?php echo $heading_title['description']; ?></div>
+        <?php } ?>
         <div class="recommended__items">
 <?php foreach ($products as $product) { ?>
                     <a href="<?php echo $product['href']; ?>" class="product">
