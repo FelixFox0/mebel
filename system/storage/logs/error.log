@@ -598,3 +598,10 @@
 2018-12-28 2:02:17 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 371
 2018-12-28 2:12:29 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 371
 2018-12-28 2:12:29 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 371
+2019-01-12 22:18:37 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 371
+2019-01-12 22:18:37 - PHP Notice:  Undefined index: thumb_hover in D:\OpenServer\domains\mebel.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_product.tpl on line 371
+2019-01-13 1:10:52 - PHP Notice:  Use of undefined constant show - assumed 'show' in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\checkout\cart.tpl on line 71
+2019-01-13 1:10:52 - PHP Notice:  Undefined variable: input in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\checkout\cart.tpl on line 71
+2019-01-13 1:10:52 - PHP Notice:  Use of undefined constant in - assumed 'in' in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\checkout\cart.tpl on line 71
+2019-01-13 1:10:52 - PHP Notice:  Use of undefined constant cart - assumed 'cart' in D:\OpenServer\domains\mebel.loc\catalog\view\theme\cosyone\template\checkout\cart.tpl on line 71
+2019-01-13 2:03:25 - PHP Warning:  Illegal string offset 'title' in D:\OpenServer\domains\mebel.loc\catalog\view\theme\default\template\module\featured.tpl on line 49

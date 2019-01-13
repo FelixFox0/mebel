@@ -68,7 +68,7 @@
                 <div class="cart__item-price-block">
                   <div class="cart__item-price-label">Кол-во:</div>
                   <div class="cart__item-qty">
-                    <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1input-show-in-cart): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
+                    <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                     <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
                     <button class="cart__item-qty-control _plus" onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                   </div>

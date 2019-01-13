@@ -189,6 +189,8 @@ class ControllerProductCategory extends Controller {
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+//                                        var_dump($price);
+//                                        die();
 				} else {
 					$price = false;
 				}
@@ -218,20 +220,23 @@ class ControllerProductCategory extends Controller {
 
                                         foreach ($option['product_option_value'] as $option_value) {
                                                 if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
-                                                        if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+                                                    
+                                                       /* if(true){
+//                                                        if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
                                                                 $price = $this->currency->format($this->tax->calculate($option_value['price'], $result['tax_class_id'], $this->config->get('config_tax') ? 'P' : false), $this->session->data['currency']);
                                                         } else {
                                                                 $price = false;
-                                                        }
-
+                                                        }*/
+//                                                        var_dump($this->config->get('config_customer_price'));
+//                                                        var_dump($product_option_value_data);
                                                         $product_option_value_data[] = array(
                                                                 'product_option_value_id' => $option_value['product_option_value_id'],
                                                                 'option_value_id'         => $option_value['option_value_id'],
                                                                 'name'                    => $option_value['name'],
                                                                 'image'                   => $this->model_tool_image->resize($option_value['image'], 20, 20),
 //                                                                'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 284),
-                                                                'price'                   => $price,
-                                                                'price_prefix'            => $option_value['price_prefix']
+//                                                                'price'                   => $price,
+//                                                                'price_prefix'            => $option_value['price_prefix']
                                                         );
                                                 }
                                         }
