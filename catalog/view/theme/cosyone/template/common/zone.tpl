@@ -23,8 +23,8 @@
         </div>
         <div class="select-city__manual-input-example">
             Например:
-            <a href="#" class="link _font-sm _color-orange js-select-city-item" data-value="Беляевка">
-                <span class="link__text"><?php echo $example; ?></span>
+            <a href="#" class="link _font-sm _color-orange js-select-city-item" data-value="<?php echo $example['name']; ?>" data-id="<?php echo $example['zone_id']; ?>">
+                <span class="link__text"><?php echo $example['name']; ?></span>
             </a>
         </div>
     </div>

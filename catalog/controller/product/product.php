@@ -394,7 +394,7 @@ class ControllerProductProduct extends Controller {
 			if (!empty($optionsGroup)) {
                 $data['options'] = array_merge($optionsGroup, $data['options']);
             }
-
+            //print_r($data['options']);die;
 
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];

@@ -7,10 +7,11 @@ class ControllerCommonZone extends Controller {
         $this->load->model('localisation/zone');
 
         $data['mojor_zones'] = $this->model_localisation_zone->getMajorZones();
+
         if (count($data['mojor_zones']) > 0) {
-            $data['example'] = $data['mojor_zones'][0]['name'];
+            $data['example'] = $data['mojor_zones'][0];
         } else {
-            $data['example'] = '';
+            $data['example'] = [];
         }
 
         if (count($data['mojor_zones'])) {
