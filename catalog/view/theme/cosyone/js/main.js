@@ -134,6 +134,7 @@
             $(document).on('input', this.SELECTORS.selectCityInput, this.handleCityInputChange.bind(this));
             $(document).on('click', this.SELECTORS.selectCityButton, this.updateCityValueFromInput.bind(this));
             $(document).on('click', this.SELECTORS.cartClose, this.closeCart.bind(this));
+            $(document).on('change', '.product-page__constructor input, .product-page__constructor select, .product-page__constructor textarea', this.calculateOneProductPrice.bind(this));
         },
 
         initSelectmenu: function () {
@@ -319,6 +320,7 @@
             $constructorBlock.find(this.SELECTORS.constructorValue).text(dataValue);
             $constructorBlock.find(this.SELECTORS.constructorInput).val(dataCharacteristicId);
             $self.addClass(this.CLASSES.active);
+            this.calculateOneProductPrice();
         },
 
         selectImageFromPopup: function (event) {
@@ -340,6 +342,7 @@
 
             $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorValue).text($self.data('value'));
             $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorInput).val($self.data('characteristic-id'));
+            this.calculateOneProductPrice();
 
             var oldItem = $imagesList.find('[data-characteristic-id="' + $self.data('characteristic-id') + '"]');
             if (oldItem.length > 0) {
@@ -358,6 +361,26 @@
                 $imagesList.append(elem);
             }
             this.closePopup();
+        },
+
+        calculateOneProductPrice: function () {
+            $.ajax({
+                url: '/index.php?route=product/product/getCalculatedPrice',
+                type: 'post',
+                data: $('.product-page__constructor input[type=\'text\'], .product-page__constructor input[type=\'hidden\'], .product-page__constructor input[type=\'radio\']:checked, .product-page__constructor input[type=\'checkbox\']:checked, .product-page__constructor select, .product-page__constructor textarea'),
+                dataType: 'json',
+                beforeSend: function() {
+                    //$('#button-cart').button('loading');
+                },
+                complete: function() {
+                    //$('#button-cart').button('reset');
+                },
+                success: function(json) {
+                    if (json['success']) {
+                        $('.price .price__value').text(json['price']);
+                    }
+                }
+            });
         },
 
         closePopup: function () {
