@@ -394,7 +394,7 @@ class ControllerProductProduct extends Controller {
 			if (!empty($optionsGroup)) {
                 $data['options'] = array_merge($optionsGroup, $data['options']);
             }
-
+            //print_r($data['options']);die;
 
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
@@ -786,4 +786,45 @@ class ControllerProductProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+    public function getCalculatedPrice() {
+        $json = array();
+
+        if (isset($this->request->post['product_id'])) {
+            $product_id = (int)$this->request->post['product_id'];
+        } else {
+            $product_id = 0;
+        }
+
+        $this->load->model('catalog/product');
+
+        $product_info = $this->model_catalog_product->getProduct($product_id);
+
+        //print_r($product_info);die;
+        if ($product_info) {
+            $price = $product_info['price'];
+            if (isset($this->request->post['option'])) {
+                $option = array_filter($this->request->post['option']);
+            } else {
+                $option = array();
+            }
+
+            $product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
+
+            foreach ($product_options as $product_option) {
+                if (!empty($option[$product_option['product_option_id']])) {
+                    foreach ($product_option['product_option_value'] as $product_option_value ) {
+                        if ($product_option_value['product_option_value_id'] == $option[$product_option['product_option_id']]) {
+                            $price += $product_option_value['price'];
+                        }
+                    }
+                }
+            }
+        }
+        $json['price'] = $price;
+        $json['success'] = true;
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+    }
+
 }

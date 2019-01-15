@@ -512,6 +512,12 @@ class ControllerSettingSetting extends Controller {
 			$data['config_comment'] = $this->config->get('config_comment');
 		}
 
+        if (isset($this->request->post['config_detailed_information'])) {
+            $data['config_detailed_information'] = $this->request->post['config_detailed_information'];
+        } else {
+            $data['config_detailed_information'] = $this->config->get('config_detailed_information');
+        }
+
 		$this->load->model('localisation/location');
 
 		$data['locations'] = $this->model_localisation_location->getLocations();

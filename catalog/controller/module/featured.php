@@ -1,9 +1,11 @@
 <?php
 class ControllerModuleFeatured extends Controller {
 	public function index($setting) {
+//                var_dump($setting);
 		$this->load->language('module/featured');
 
-		$data['heading_title'] = $this->language->get('heading_title');
+//		$data['heading_title'] = $this->language->get('heading_title');
+                $data['heading_title'] = $this->language->get($setting['name']);
 
 		$data['text_tax'] = $this->language->get('text_tax');
 

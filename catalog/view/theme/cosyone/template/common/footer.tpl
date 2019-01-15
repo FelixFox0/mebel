@@ -94,6 +94,25 @@ Please donate via PayPal to donate@opencart.com
     </div>
 </div>
 
+<div class="mfp-hide popup js-popup" id="detailed-information">
+    <i class="mfp-close popup__close">
+        <svg class="popup__close-icon" width="17px" height="17px">
+            <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+        </svg>
+    </i>
+    <div class="popup__container">
+        <div class="popup__title">Детальная информация</div>
+        <div class="popup__body">
+            <p class="popup__text">
+                <?=$detailed_information;?>
+            </p>
+        </div>
+        <div class="popup__actions">
+            <button class="button js-close-popup">Закрыть</button>
+        </div>
+    </div>
+</div>
+
 <div class="popup _size-md _bg-black mfp-hide js-popup" id="mfp-callback">
     <i class="mfp-close popup__close">
         <svg class="popup__close-icon" width="17px" height="17px">
