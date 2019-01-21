@@ -38,3 +38,17 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"
 ----------------------------------------------------------------------
 
 
+---------- Date: 2019-01-21 21:50:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Users/felix_fox/PhpstormProjects/mebel/vqmod/xml/all.install.ocmod.xml
+   id        : 
+   version   : OpenCart Version 2.2
+   vqmver    : 2.0.0
+   author    : Rupak Nepali
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
+----------------------------------------------------------------------
+
+

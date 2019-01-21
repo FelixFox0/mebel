@@ -39,3 +39,4 @@
 2019-01-21 18:16:36 - PHP Notice:  Undefined index: shipping_method in /Users/felix_fox/PhpstormProjects/mebel/catalog/controller/checkout/order.php on line 56
 2019-01-21 18:16:59 - PHP Notice:  Undefined index: shipping_method in /Users/felix_fox/PhpstormProjects/mebel/catalog/controller/checkout/order.php on line 55
 2019-01-21 18:16:59 - PHP Notice:  Undefined index: shipping_method in /Users/felix_fox/PhpstormProjects/mebel/catalog/controller/checkout/order.php on line 56
+2019-01-21 21:51:04 - PHP Warning:  Illegal string offset 'title' in /Users/felix_fox/PhpstormProjects/mebel/vqmod/vqcache/vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 264
