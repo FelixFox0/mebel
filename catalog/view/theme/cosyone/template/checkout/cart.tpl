@@ -1,6 +1,23 @@
 <?php if(empty($products)):?>
-<div class="cart__content">
-  Корзина пуста
+<div class="cart js-cart _empty" id="mfp-cart">
+  <div class="cart__content">
+    <div class="cart__empty">
+      <div class="cart__empty-title">Корзина пуста</div>
+      <div class="cart__empty-desc">В вашей корзине нет ни одного товара</div>
+      <button class="button js-cart-close">ЗАКРЫТЬ</button>
+    </div>
+  </div>
+  <div class="cart__info">
+    <i class="cart__close">
+      <svg class="cart__close-icon js-cart-close">
+        <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+      </svg>
+    </i>
+    <div class="cart__info-content"></div>
+    <div class="cart__info-actions">
+      <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
+    </div>
+  </div>
 </div>
 <?php else: ?>
   <div class="cart__content">
@@ -284,9 +301,12 @@
 <?php endif; ?>
 
 <script>
+    $('.js-phone-number-input').inputmask({
+        mask: '+38 (999) 999-99-99'
+    });
     function changeCartOptions($this, e) {
         $this = $($this);
-        var data = {};
+        var data = [];
         data[$this.attr('name')] = $this.val();
         if ($this.is(':checked')) {
             data['action'] = 'add';
