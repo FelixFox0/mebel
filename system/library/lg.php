@@ -11,7 +11,7 @@ class LG implements \ArrayAccess
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
-            $this->container[] = array_merge($this->container, $value);
+            $this->container = array_merge($this->container, $value);
         } else {
             $this->container[$offset] = $value;
         }
