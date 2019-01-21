@@ -1,7 +1,7 @@
----------- Date: 2018-12-17 20:23:34 ~ IP : 127.0.0.1 ----------
+---------- Date: 2019-01-21 17:41:31 ~ IP : 127.0.0.1 ----------
 REQUEST URI : /
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_blog.xml
+   modFile   : /Users/felix_fox/PhpstormProjects/mebel/vqmod/xml/cosyone_blog.xml
    id        : OPENCART BLOG
    version   : 1.0
    vqmver    : 2.5.0
@@ -10,7 +10,7 @@ MOD DETAILS:
 File Name    : catalog/controller/startup/seo_url.php(4)
 VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): ($data['route'] == 'information/information' && $key == 'information_id'))
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
+   modFile   : /Users/felix_fox/PhpstormProjects/mebel/vqmod/xml/all.install.ocmod.xml
    id        : 
    version   : OpenCart Version 2.2
    vqmver    : 2.0.0
@@ -21,33 +21,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-n
 ----------------------------------------------------------------------
 
 
----------- Date: 2018-12-17 20:54:40 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /
+---------- Date: 2019-01-21 17:45:18 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /komplekty/test
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_blog.xml
-   id        : OPENCART BLOG
-   version   : 1.0
-   vqmver    : 2.5.0
-   author    : Karl Pers - openthemer@gmail.com
-
-File Name    : catalog/controller/startup/seo_url.php(4)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): ($data['route'] == 'information/information' && $key == 'information_id'))
-MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
-   id        : 
-   version   : OpenCart Version 2.2
-   vqmver    : 2.0.0
-   author    : Rupak Nepali
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-nav">
-----------------------------------------------------------------------
-
-
----------- Date: 2018-12-17 21:17:13 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /komplekty/test?filter=2
-MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
+   modFile   : /Users/felix_fox/PhpstormProjects/mebel/vqmod/xml/cosyone_product_questions.xml
    id        : Product Questions
    version   : OC 2.x
    vqmver    : 2.0.0
