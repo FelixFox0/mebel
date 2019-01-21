@@ -368,6 +368,7 @@ $('input[name=\'shipping_method\']').on('change', function() {
         <?php } ?>
     });
 });
+
 $('input[name=\'shipping_method\']').trigger('change');
 
 </script>
