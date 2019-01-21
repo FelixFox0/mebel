@@ -61,9 +61,9 @@
         </div>
         <?php } ?>
         <div class="categories-view__controls">
-            <a class="categories-view__controls-link js-category-view-link _active" data-content="<?php echo $first_category['name']; ?>" href="<?php echo $first_category['href']; ?>"><?php echo $first_category['name']; ?></a>
+            <a class="categories-view__controls-link js-category-view-link _active" data-content="<?php echo $first_category['name']; ?>" href="#"><?php echo $first_category['name']; ?></a>
             <?php foreach ($categories as $category) { ?>
-                <a class="categories-view__controls-link js-category-view-link" data-content="<?php echo $category['name']; ?>" href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                <a class="categories-view__controls-link js-category-view-link" data-content="<?php echo $category['name']; ?>" href="#"><?php echo $category['name']; ?></a>
             <?php } ?>
         </div>
     </div>
