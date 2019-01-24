@@ -22,15 +22,10 @@
 <div class="categories-view">
     <div class="categories-view__container container js-category-view-container">
         <div class="categories-view__title">
-            <h2 class="title">Только стильная мебель</h2>
+            <h2 class="title"><?=$welcome_text_title;?></h2>
         </div>
         <div class="categories-view__description">
-            <pre>Добро пожаловать! Мы мебельная студия “Вкусная Мебель”, занимаемся продажей и изготовлением
-            мебели с 2008 года. За плечами огромный опыт в проектировании и производстве мебели на заказ любой сложности и на любой
-            кошелек. Наша цель сломать устоявшийся стереотип о том что стильно значит дорого. Мы стремимся к тому чтобы культура
-            дизайна мебели и интерьера в Украине развивалась и двигалась в перед, соответствуя соременным трендам.
-            Поэтому мы собрали для вас самые вкусные предложения,
-            самые полезные статьи и публикации.</pre>
+            <pre><?=$welcome_text;?></pre>
         </div>
         <?php $first_category = array_shift($categories); ?>
         <div class="categories-view__content js-category-view-content _active" data-content="<?php echo $first_category['name']; ?>">
@@ -39,7 +34,7 @@
                 <h3 class="categories-view__content-title"><?php echo $first_category['name']; ?></h3>
                 <?php echo $first_category['description']; ?>                
                 <div class="categories-view__content-button">
-                    <a href="<?php echo $first_category['href']; ?>" class="button _color-sky">За покупками</a>
+                    <a href="<?php echo $first_category['href']; ?>" class="button _color-sky"><?=$to_purchases;?></a>
                 </div>
             </div>
         </div>
@@ -51,11 +46,11 @@
                 <h3 class="categories-view__content-title"><?php echo $category['name']; ?></h3>
                 <div class="categories-view__content-desc"><?php echo $category['description']; ?></div>
                 <div class="categories-view__content-links">
-                    <a href="#" class="link _color-sky">Как выбрать кресло? Совет дизайнера.</a>
-                    <a href="#" class="link _color-sky">Как мы доставляем и собираем мягкую мебель?</a>
+                    <a href="#" class="link _color-sky"><?=$designer_council;?></a>
+                    <a href="#" class="link _color-sky"><?=$how_we_deliver;?></a>
                 </div>
                 <div class="categories-view__content-button">
-                    <a href="<?php echo $category['href']; ?>" class="button _color-sky">За покупками</a>
+                    <a href="<?php echo $category['href']; ?>" class="button _color-sky"><?=$to_purchases;?></a>
                 </div>
             </div>
         </div>

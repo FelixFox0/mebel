@@ -6,19 +6,13 @@
                 <span class="breadcrumbs__link-text"><?php echo $breadcrumb['text']; ?></span>
             </a>
         <?php } ?>
-        <!--<a href="/catalogue.html" class="breadcrumbs__link">
-            <span class="breadcrumbs__link-text">Шкафы</span>
-        </a>
-        <a href="#" class="breadcrumbs__link">
-            <span class="breadcrumbs__link-text">Шкаф Купе Checksta, пескоструй на зеркале</span>
-        </a>-->
     </div>
 </div>
 
 <div class="product-page">
     <div class="container">
         <div class="product-page__title"><?php echo $heading_title; ?></div>
-        <div class="product-page__code">Код Товара: <?php echo $sku; ?></div>
+        <div class="product-page__code"><?=$_product_code;?> <?php echo $sku; ?></div>
         <div class="product-page__card">
             <div class="product-page__row">
                 <div class="product-page__column">
@@ -70,10 +64,10 @@
                                             <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" class="js-constructor-block-input _hidden">
                                             <a href="#mfp-images-list-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
                                                 <?php if ($option['large_samples']) { ?>
-                                                    <span class="link__text">Крупные образцы</span>
+                                                    <span class="link__text"><?=$_large_samples;?></span>
                                                 <?php } ?>
                                                 <?php if ($option['full_list']) { ?>
-                                                    <span class="link__text">Полный Список</span>
+                                                    <span class="link__text"><?=$_full_list;?></span>
                                                 <?php } ?>
                                             </a>
                                         </div>
@@ -131,7 +125,7 @@
                                             </div>
                                             <input name="option[<?php echo $option['product_option_id']; ?>]" type="text" class="js-constructor-block-input _hidden">
                                             <a href="#mfp-info-popup-<?php echo $option['option_id']; ?>" class="link _color-orange _font-sm js-popup-toggle">
-                                                <span class="link__text">Подробно</span>
+                                                <span class="link__text"><?=$_details;?></span>
                                             </a>
                                         </div>
                                     <?php } ?>
@@ -225,7 +219,7 @@
                         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
                     </div>
                     <div class="product-page__delivery-row">
-                        Доставка в:
+                        <?=$_delivery_to;?>
                         <div class="select-city__wrap js-select-city-wrap">
                             <a href="#" class="link _color-orange js-select-city-open">
                                 <span class="link__text js-select-city-value">
@@ -233,7 +227,7 @@
                                 </span>
                             </a>
                         </div>
-                        15-20 рабочих дней
+                        <?=$_working_days;?>
                     </div>
                     <div class="product-page__order-row">
                         <?php if ($price) { ?>
@@ -252,9 +246,9 @@
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <button class="button" id="button-cart">Заказать</button>
+                        <button class="button" id="button-cart"><?=$_order;?></button>
                         <a href="#mfp-how-to-order" class="link _color-orange _font-sm js-popup-toggle">
-                            <span class="link__text">Как происходит заказ?</span>
+                            <span class="link__text"><?=$_how_order;?></span>
                         </a>
                     </div>
                 </div>
@@ -263,7 +257,7 @@
                 <div class="product-page__column">
                     <div class="product-page__data">
                         <div class="product-page__title">
-                            Описание товара
+                            <?=$_product_description;?>
                         </div>
                         <div class="product-page__data-desc">
                             <?php echo $short_description; ?>
@@ -289,7 +283,7 @@
                         <?php } ?>
                         <div class="product-page__data-column-wrapper">
                             <div class="product-page__data-column">
-                                <div class="product-page__data-column-title">Дополнительно</div>
+                                <div class="product-page__data-column-title"><?=$_advanced;?></div>
                                 <div class="product-page__data-list-wrap">
                                     <?php echo $additional_description; ?>
                                 </div>
@@ -301,7 +295,7 @@
                     <div class="product-page__delivery">
                         <?php echo $delivery_description; ?>
                         <a href="#detailed-information" class="link _color-orange _font-sm js-popup-toggle">
-                            <span class="link__text">Детальная информация</span>
+                            <span class="link__text"><?=$_detailed_information;?></span>
                         </a>
                     </div>
                 </div>
@@ -314,7 +308,7 @@
 
 
             <div class="product-page__responses">
-                <h2 class="product-page__title">Отзывы</h2>
+                <h2 class="product-page__title"><?=$_testimonials;?></h2>
                 <div class="product-page__responses-content js-responses">
                     <?php foreach($all_reviews as $all_reviews): ?>
                         <div class="product-page__responses-item js-responses-item">
@@ -322,8 +316,8 @@
                                 <?php echo $all_reviews['text']; ?>
                             </div>
                             <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
-                                <span class="link__text js-responses-toggle-text">Читать полностью</span>
-                                <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                                <span class="link__text js-responses-toggle-text"><?=$_read_full;?></span>
+                                <span class="link__text _hidden js-responses-toggle-text"><?=$_hide;?></span>
                             </a>
                             <span class="product-page__responses-author"><?php echo $all_reviews['author']; ?></span>
                         </div>
@@ -331,7 +325,7 @@
                 </div>
                 <?php if ($review_status) { ?>
                     <div class="product-page__responses-controls">
-                        <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
+                        <a href="#mfp-response" class="button _inverted js-popup-toggle"><?=$_write_review;?></a>
                         <div class="product-page__responses-nav _hidden js-responses-nav">
                             <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
                                 <svg class="product-page__responses-nav-icon" width="7px" height="12px">
@@ -443,7 +437,7 @@
                     </div>
                 </div>
                 <div class="popup__actions">
-                    <button class="button js-close-popup">Закрыть</button>
+                    <button class="button js-close-popup"><?=$_close;?></button>
                 </div>
             </div>
         </div>
@@ -463,7 +457,7 @@
                     </p>
                 </div>
                 <div class="popup__actions">
-                    <button class="button js-close-popup">Закрыть</button>
+                    <button class="button js-close-popup"><?=$_close;?></button>
                 </div>
             </div>
         </div>
@@ -477,21 +471,21 @@
         </svg>
     </i>
     <div class="popup__container">
-        <div class="popup__title">Написать Отзыв</div>
+        <div class="popup__title"><?=$_write_review;?></div>
         <div>
             <?php if ($review_guest) { ?>
                 <form class="popup__form"  id="form-review">
                     <div class="popup__form-item">
-                        <label class="popup__form-label">Ваше Имя</label>
+                        <label class="popup__form-label"><?=$your_name;?></label>
                         <input class="input" type="text" name="name">
                     </div>
                     <div class="popup__form-item">
-                        <label class="popup__form-label">Отзыв</label>
+                        <label class="popup__form-label"><?=$_testimonial;?></label>
                         <textarea class="textarea" name="text"></textarea>
                     </div>
                     <?php echo $captcha; ?>
                     <div class="popup__form-action">
-                        <button class="button js-send-response">Отправить</button>
+                        <button class="button js-send-response"><?=$_send;?></button>
                     </div>
                 </form>
             <?php } else { ?>
@@ -509,12 +503,12 @@
     </i>
     <div class="popup__container">
         <div class="popup__success">
-            <div class="popup__success-title">Спасибо за отзыв!</div>
-            <div class="popup__success-text">Отзыв будет проверен модератором и вскоре будет доступен на сайте.</div>
+            <div class="popup__success-title"><?=$thanks_feedback;?></div>
+            <div class="popup__success-text"><?=$feedback_will_check;?></div>
         </div>
 
         <div class="popup__actions">
-            <button class="button js-close-popup">Закрыть</button>
+            <button class="button js-close-popup"><?=$_close;?></button>
         </div>
     </div>
 </div>

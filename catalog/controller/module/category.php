@@ -71,6 +71,13 @@ class ControllerModuleCategory extends Controller {
 			);
 		}
 
+        $this->load->language('common');
+        $data['welcome_text'] = $this->language->get('welcome_text');
+        $data['welcome_text_title'] = $this->language->get('welcome_text_title');
+        $data['to_purchases'] = $this->language->get('to_purchases');
+        $data['designer_council'] = $this->language->get('designer_council');
+        $data['how_we_deliver'] = $this->language->get('how_we_deliver');
+
 		return $this->load->view('module/category', $data);
 	}
 }

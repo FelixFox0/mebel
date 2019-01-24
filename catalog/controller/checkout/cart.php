@@ -312,6 +312,22 @@ class ControllerCheckoutCart extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
             $data['shipping'] = $this->load->controller('quickcheckout/shipping_method');
+
+
+            $this->load->language('common');
+            $data['cart_empty'] = $this->language->get('cart_empty');
+            $data['cart_no_products'] = $this->language->get('cart_no_products');
+            $data['_close'] = $this->language->get('_close');
+            $data['continue_shopping'] = $this->language->get('continue_shopping');
+            $data['_cancel'] = $this->language->get('_cancel');
+            $data['_delete'] = $this->language->get('_delete');
+            $data['_price'] = $this->language->get('_price');
+            $data['_amount'] = $this->language->get('_amount');
+            $data['_total'] = $this->language->get('_total');
+            $data['_checkout_continue'] = $this->language->get('_checkout_continue');
+            $data['your_phone'] = $this->language->get('your_phone');
+            $data['_checkout_future'] = $this->language->get('_checkout_future');
+
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
