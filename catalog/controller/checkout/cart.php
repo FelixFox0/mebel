@@ -141,7 +141,7 @@ class ControllerCheckoutCart extends Controller {
                         'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
                         'image' => !empty($option['image']) ? $this->model_tool_image->resize($option['image'], 20, 20) : null,
                     );
-                    if (!empty($option['group_by']) && $option['type'] == 'text') {
+                    if (!empty($option['group_by']) && ($option['type'] == 'text' || $option['type'] == 'select')) {
                         if (!isset($optionsGroup[$option['group_by']])) {
                             $optionsGroup[$option['group_by']]['group_name'] = $option['group_name'];
                             $optionsGroup[$option['group_by']]['type'] = 'group';

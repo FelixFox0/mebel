@@ -87,16 +87,34 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="product-page__constructor-sizes">
                                                 <?php foreach ($option['options'] as $groupOption) { ?>
-                                                    <div class="product-page__constructor-sizes-row">
-                                                        <span class="product-page__constructor-sizes-char"><?php echo $groupOption['name']; ?></span>
-                                                        <span class="dots-separator"></span>
-                                                        <a href="#" class="link _color-orange js-size-link">
-                                                            <span class="link__text js-size-value" data-value="<?php echo $groupOption['value']; ?>"><?php echo $groupOption['value']; ?></span>
-                                                        </a>
-                                                        <input name="option[<?php echo $groupOption['product_option_id']; ?>]" type="text" maxlength="4" class="product-page__constructor-sizes-input js-size-input _hidden" value="<?php echo $groupOption['value']; ?>">
-                                                    </div>
+                                                    <?php if ($option['type_element'] == 'text') { ?>
+                                                        <div class="product-page__constructor-sizes-row">
+                                                            <span class="product-page__constructor-sizes-char"><?php echo $groupOption['name']; ?></span>
+                                                            <span class="dots-separator"></span>
+                                                            <a href="#" class="link _color-orange js-size-link">
+                                                                <span class="link__text js-size-value" data-value="<?php echo $groupOption['value']; ?>"><?php echo $groupOption['value']; ?></span>
+                                                            </a>
+                                                            <input name="option[<?php echo $groupOption['product_option_id']; ?>]" type="text" maxlength="4" class="product-page__constructor-sizes-input js-size-input _hidden" value="<?php echo $groupOption['value']; ?>">
+                                                        </div>
+                                                    <?php } ?>
+                                                    <?php if ($option['type_element'] == 'select') { ?>
+                                                        <div class="form-group<?php echo ($groupOption['required'] ? ' required' : ''); ?>">
+                                                            <label class="control-label" for="input-option<?php echo $groupOption['product_option_id']; ?>"><?php echo $groupOption['name']; ?></label>
+                                                            <select name="option[<?php echo $groupOption['product_option_id']; ?>]" id="input-option<?php echo $groupOption['product_option_id']; ?>" class="form-control">
+                                                                <option value=""><?php echo $text_select; ?></option>
+                                                                <?php foreach ($groupOption['product_option_value'] as $option_value) { ?>
+                                                                <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+                                                                    <?php if ($option_value['price']) { ?>
+                                                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                                    <?php } ?>
+                                                                </option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>
                                                 <?php } ?>
                                             </div>
                                         </div>

@@ -380,11 +380,12 @@ class ControllerProductProduct extends Controller {
 					'full_list'            => $option['full_list'],
 					'group_by'            => $option['group_by']
 				);
-				if (!empty($option['group_by']) && $option['type'] == 'text') {
+				if (!empty($option['group_by']) && ($option['type'] == 'text' || $option['type'] == 'select')) {
 				    if (!isset($optionsGroup[$option['group_by']])) {
                         $optionsGroup[$option['group_by']]['description'] = $option['description'];
                         $optionsGroup[$option['group_by']]['group_name'] = $option['group_name'];
-                        $optionsGroup[$option['group_by']]['type'] = 'group';
+                        $optionsGroup[$option['group_by']]['type'] =  'group';
+                        $optionsGroup[$option['group_by']]['type_element'] = $option['type'];
                     }
                     $optionsGroup[$option['group_by']]['options'][] = $option;
                 } else {
