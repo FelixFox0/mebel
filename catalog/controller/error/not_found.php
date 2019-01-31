@@ -48,6 +48,14 @@ class ControllerErrorNotFound extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+        $this->load->model('catalog/category');
+        $categories = $this->model_catalog_category->getCategories(0);
+        foreach ($categories as $category) {
+            $data['categories'][] = array(
+                'name'     => $category['name'],
+                'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
+            );
+        }
 		$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 
 		$this->response->setOutput($this->load->view('error/not_found2', $data));

@@ -380,11 +380,12 @@ class ControllerProductProduct extends Controller {
 					'full_list'            => $option['full_list'],
 					'group_by'            => $option['group_by']
 				);
-				if (!empty($option['group_by']) && $option['type'] == 'text') {
+				if (!empty($option['group_by']) && ($option['type'] == 'text' || $option['type'] == 'select')) {
 				    if (!isset($optionsGroup[$option['group_by']])) {
                         $optionsGroup[$option['group_by']]['description'] = $option['description'];
                         $optionsGroup[$option['group_by']]['group_name'] = $option['group_name'];
-                        $optionsGroup[$option['group_by']]['type'] = 'group';
+                        $optionsGroup[$option['group_by']]['type'] =  'group';
+                        $optionsGroup[$option['group_by']]['type_element'] = $option['type'];
                     }
                     $optionsGroup[$option['group_by']]['options'][] = $option;
                 } else {
@@ -565,6 +566,29 @@ class ControllerProductProduct extends Controller {
                     'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
                 );
             }
+
+            $this->load->language('common');
+            $data['_product_code'] = $this->language->get('_product_code');
+            $data['_large_samples'] = $this->language->get('_large_samples');
+            $data['_full_list'] = $this->language->get('_full_list');
+            $data['_details'] = $this->language->get('_details');
+            $data['_delivery_to'] = $this->language->get('_delivery_to');
+            $data['_working_days'] = $this->language->get('_working_days');
+            $data['_order'] = $this->language->get('_order');
+            $data['_how_order'] = $this->language->get('_how_order');
+            $data['_product_description'] = $this->language->get('_product_description');
+            $data['_advanced'] = $this->language->get('_advanced');
+            $data['_detailed_information'] = $this->language->get('_detailed_information');
+            $data['_testimonials'] = $this->language->get('_testimonials');
+            $data['_read_full'] = $this->language->get('_read_full');
+            $data['_hide'] = $this->language->get('_hide');
+            $data['_write_review'] = $this->language->get('_write_review');
+            $data['_close'] = $this->language->get('_close');
+            $data['your_name'] = $this->language->get('your_name');
+            $data['_testimonial'] = $this->language->get('_testimonial');
+            $data['_send'] = $this->language->get('_send');
+            $data['thanks_feedback'] = $this->language->get('thanks_feedback');
+            $data['feedback_will_check'] = $this->language->get('feedback_will_check');
 
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {

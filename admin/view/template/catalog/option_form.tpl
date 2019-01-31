@@ -143,7 +143,7 @@
             </div>
           </div>
 
-          <div id="option-text">
+          <div id="option-group">
             <div class="form-group">
               <label class="col-sm-2 control-label">Название группы</label>
               <div class="col-sm-10">
@@ -225,10 +225,10 @@ $('select[name=\'type\']').on('change', function() {
     } else {
         $('#option-images').hide();
     }
-    if (this.value == 'text') {
-        $('#option-text').show();
+    if (this.value == 'text' || this.value == 'select') {
+        $('#option-group').show();
     } else {
-        $('#option-text').hide();
+        $('#option-group').hide();
     }
 
     if (this.value == 'checkbox') {

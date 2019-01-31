@@ -256,8 +256,7 @@
 <html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=1300">
     <title>Вкусная Мебель</title>
     <link rel="stylesheet" href="/catalog/view/theme/cosyone/stylesheet/main.css">
     <script src="/catalog/view/theme/cosyone/js/libs.js"></script>

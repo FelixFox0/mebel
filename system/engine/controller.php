@@ -4,6 +4,7 @@ abstract class Controller {
 
 	public function __construct($registry) {
 		$this->registry = $registry;
+        $this->load->language('common');
 	}
 
 	public function __get($key) {

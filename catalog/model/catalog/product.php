@@ -331,7 +331,7 @@ class ModelCatalogProduct extends Model {
 		if ($show_in_cart) {
             $show_in_cart = ' AND o.show_in_cart = 1 ';
         } else {
-            $show_in_cart = ' AND o.show_in_cart IS NULL ';
+            $show_in_cart = ' AND o.show_in_cart = 0';
         }
 
 		$product_option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_id = '" . (int)$product_id . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "' " . $show_in_cart . " ORDER BY o.sort_order");
