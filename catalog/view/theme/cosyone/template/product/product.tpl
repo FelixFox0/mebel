@@ -101,18 +101,16 @@
                                                         </div>
                                                     <?php } ?>
                                                     <?php if ($option['type_element'] == 'select') { ?>
-                                                        <div class="form-group<?php echo ($groupOption['required'] ? ' required' : ''); ?>">
-                                                            <label class="control-label" for="input-option<?php echo $groupOption['product_option_id']; ?>"><?php echo $groupOption['name']; ?></label>
-                                                            <select name="option[<?php echo $groupOption['product_option_id']; ?>]" id="input-option<?php echo $groupOption['product_option_id']; ?>" class="form-control">
-                                                                <option value=""><?php echo $text_select; ?></option>
-                                                                <?php foreach ($groupOption['product_option_value'] as $option_value) { ?>
-                                                                <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-                                                                    <?php if ($option_value['price']) { ?>
-                                                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                        <div class="product-page__constructor-sizes-row">
+                                                            <span class="product-page__constructor-sizes-char"><?php echo $groupOption['name']; ?></span>
+                                                            <span class="dots-separator"></span>
+                                                            <div class="product-page__constructor-sizes-select">
+                                                                <select class="js-size-select" name="option[<?php echo $groupOption['product_option_id']; ?>]">
+                                                                    <?php foreach ($groupOption['product_option_value'] as $option_value_key => $option_value) { ?>
+                                                                        <option value="<?php echo $option_value['product_option_value_id']; ?>" data-value="<?php echo $option_value['name']; ?>" <?php if($option_value_key == 0): ?> selected <?php endif; ?> ><?php echo $option_value['name']; ?></option>
                                                                     <?php } ?>
-                                                                </option>
-                                                                <?php } ?>
-                                                            </select>
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     <?php } ?>
                                                 <?php } ?>

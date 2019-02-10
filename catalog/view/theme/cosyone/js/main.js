@@ -105,6 +105,7 @@
             this.initPhoneMask();
             this.showSizesHintInSession();
             this.showPromo();
+            this.calculateOneProductPrice();
         },
 
         initEventListeners: function () {
@@ -140,6 +141,15 @@
             $(this.SELECTORS.sizeSelect).selectmenu({
                 classes: {
                     "ui-selectmenu-menu": "_sizes"
+                },
+                change: function( event, ui ) {
+                    var selectedText = $(this).parent().find('.ui-selectmenu-text');
+                    selectedText.text(parseFloat(selectedText.text()));
+                    app.calculateOneProductPrice();
+                },
+                create: function( event, ui ) {
+                    var selectedText = $(this).parent().find('.ui-selectmenu-text');
+                    selectedText.text(parseFloat(selectedText.text()));
                 }
             });
         },

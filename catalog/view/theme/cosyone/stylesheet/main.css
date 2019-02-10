@@ -160,7 +160,7 @@ p {
     display: flex;
     font-size: 18.5px; }
   ._sizes .ui-menu-item:after {
-    content: 'мм';
+    /*content: 'мм';*/
     display: inline-block;
     margin-left: 4px; }
 
