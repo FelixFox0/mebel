@@ -115,7 +115,7 @@ class Image {
 
 		imagefilledrectangle($this->image, 0, 0, $width, $height, $background);
 
-		imagecopyresampled($this->image, $image_old, $xpos, $ypos, 0, 0, $new_width, $new_height, $this->width, $this->height);
+		imagecopyresampled($this->image, $image_old, $xpos, $ypos, 0, 0, $new_width, $new_height, $this->width, $this->width);
 		imagedestroy($image_old);
 
 		$this->width = $width;
@@ -142,7 +142,7 @@ class Image {
 				break;
 		}
 
-		imagecopy($this->image, $watermark->getImage(), $watermark_pos_x, $watermark_pos_y, 0, 0, $watermark->getWidth(), $watermark->getHeight());
+		imagecopy($this->image, $watermark->getImage(), $watermark_pos_x, $watermark_pos_y, 0, 0, $watermark->getWidth(), $watermark->getWidth());
 
 		imagedestroy($watermark->getImage());
 	}
@@ -151,7 +151,7 @@ class Image {
 		$image_old = $this->image;
 		$this->image = imagecreatetruecolor($bottom_x - $top_x, $bottom_y - $top_y);
 
-		imagecopy($this->image, $image_old, 0, 0, $top_x, $top_y, $this->width, $this->height);
+		imagecopy($this->image, $image_old, 0, 0, $top_x, $top_y, $bottom_x, $bottom_y);
 		imagedestroy($image_old);
 
 		$this->width = $bottom_x - $top_x;

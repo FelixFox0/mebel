@@ -275,12 +275,18 @@ $(document).ready(function() {
                             <h3 class="product__title"><?php echo $product['name']; ?></h3>
                             <?php if($product['options']){ ?>
                             <div class="product__colors">
-                               <?php foreach ($product['options'] as $options) { ?>
-                               
+                               <?php foreach ($product['options'] as $keyOptions => $options) { ?>
+                                <?php if($keyOptions > 2) {
+                                    break;
+                                } ?>
                                 <div class="product__colors-category">
-                                    <?php foreach ($options['product_option_value'] as $option) { ?>
+                                    <?php foreach ($options['product_option_value'] as $keyOption => $option) { ?>
                                     <span class="product__color js-color-link" data-href="<?php echo (parse_url($product['href'], PHP_URL_QUERY) ? $product['href'].'&' : $product['href'].'?') . 'option_value_id='.$option['option_value_id']; ?>">
-                                        <img src="<?=$option['image']?>" alt="$option['name']">
+                                        <?php if(($keyOption === 7 && $keyOptions !== 1 && count($options['product_option_value']) > 8) || ($keyOption === 3 && $keyOptions === 1 && count($options['product_option_value']) > 4)): ?>
+                                            ...<?php break; ?>
+                                        <?php else: ?>
+                                            <img src="<?=$option['image']?>" alt="$option['name']">
+                                        <?php endif; ?>
                                     </span>
                                     <?php } ?>
                                 </div>

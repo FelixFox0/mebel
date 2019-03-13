@@ -306,14 +306,15 @@
     });
     function changeCartOptions($this, e) {
         $this = $($this);
-        var data = [];
+        var data = {
+            cart_id: $this.data('cart-id')
+        };
         data[$this.attr('name')] = $this.val();
         if ($this.is(':checked')) {
-            data['action'] = 'add';
+            data.action = 'add';
         } else {
-            data['action'] = 'remove';
+            data.action = 'remove';
         }
-        data['cart_id'] = $this.data('cart-id');
         $.ajax({
             url: '/index.php?route=checkout/cart/updateOption',
             type: 'post',

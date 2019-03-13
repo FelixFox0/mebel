@@ -105,7 +105,7 @@
             this.initPhoneMask();
             this.showSizesHintInSession();
             this.showPromo();
-            this.calculateOneProductPrice();
+            app.calculateOneProductPrice();
         },
 
         initEventListeners: function () {
@@ -142,7 +142,7 @@
                 classes: {
                     "ui-selectmenu-menu": "_sizes"
                 },
-                change: function( event, ui ) {
+                select: function( event, ui ) {
                     var selectedText = $(this).parent().find('.ui-selectmenu-text');
                     selectedText.text(parseFloat(selectedText.text()));
                     app.calculateOneProductPrice();
