@@ -115,7 +115,7 @@ class Image {
 
 		imagefilledrectangle($this->image, 0, 0, $width, $height, $background);
 
-		imagecopyresampled($this->image, $image_old, $xpos, $ypos, 0, 0, $new_width, $new_height, $this->width, $this->width);
+		imagecopyresampled($this->image, $image_old, $xpos, $ypos, 0, 0, $new_width, $new_height, $this->width, $this->height);
 		imagedestroy($image_old);
 
 		$this->width = $width;
@@ -142,7 +142,7 @@ class Image {
 				break;
 		}
 
-		imagecopy($this->image, $watermark->getImage(), $watermark_pos_x, $watermark_pos_y, 0, 0, $watermark->getWidth(), $watermark->getWidth());
+		imagecopy($this->image, $watermark->getImage(), $watermark_pos_x, $watermark_pos_y, 0, 0, $watermark->getWidth(), $watermark->getHeight());
 
 		imagedestroy($watermark->getImage());
 	}

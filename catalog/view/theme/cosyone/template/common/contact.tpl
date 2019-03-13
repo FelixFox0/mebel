@@ -52,7 +52,7 @@
                     <div class="contact-us__map"></div>
                 </div>
                 <div class="contact-us__address-photo">
-                    <img src="images/showroom-big.jpg">
+                    <img src="/image/showroom-big.jpg">
                 </div>
             </div>
             <div class="contact-us__address-data">
