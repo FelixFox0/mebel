@@ -290,13 +290,14 @@ class ControllerProductProduct extends Controller {
 				$data['popup'] = '';
 			}
 
-			if ($product_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
-			} else {
-				$data['thumb'] = '';
-			}
+            $data['images'] = [];
 
-			$data['images'] = array();
+			if ($product_info['image']) {
+                $data['images'][] = array(
+                    'popup' => $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
+                    'thumb' => $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+                );
+			}
 
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
 
@@ -359,7 +360,7 @@ class ControllerProductProduct extends Controller {
 							'name'                    => $option_value['name'],
 							'name'                    => $option_value['name'],
 							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50, true),
-							'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 284),
+							'image_popup'             => $this->model_tool_image->resize($option_value['image'], 264, 264, true),
 							'price'                   => $price,
 							'price_prefix'            => $option_value['price_prefix']
 						);

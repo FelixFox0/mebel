@@ -20,18 +20,13 @@
                         <div class="product-page__image-thumbs">
                             <?php foreach ($images as $imageKey => $image) { ?>
                                 <a href="#" class="product-page__image-thumb js-product-gallery-thumb" data-img-id="0<?php echo $imageKey + 1; ?>">
-                                    <img src="<?php echo $image['small']; ?>" alt="thumb">
+                                    <img src="<?php echo $image['thumb']; ?>" alt="thumb">
                                 </a>
                             <?php } ?>
                         </div>
                         <div class="product-page__image-wrap js-product-gallery">
-                            <?php if ($thumb) { ?>
-                                <a href="<?php echo $thumb; ?>" class="product-page__image _active js-product-gallery-img" data-img-id="00">
-                                    <img src="<?php echo $thumb; ?>" alt="product">
-                                </a>
-                            <?php } ?>
                             <?php foreach ($images as $imageKey => $image) { ?>
-                                <a href="<?php echo $image['popup']; ?>" class="product-page__image <?php if(!$thumb && $imageKey == 0): ?> _active <?php endif; ?> js-product-gallery-img" data-img-id="0<?php echo $imageKey + 1; ?>">
+                                <a href="<?php echo $image['popup']; ?>" class="product-page__image <?php if($imageKey == 0): ?> _active <?php endif; ?> js-product-gallery-img" data-img-id="0<?php echo $imageKey + 1; ?>">
                                     <img src="<?php echo $image['popup']; ?>" alt="product">
                                 </a>
                             <?php } ?>
