@@ -296,7 +296,7 @@ class ModelCatalogProduct extends Model {
 			$data['sku'] = '';
 			$data['upc'] = '';
 			$data['viewed'] = '0';
-			$data['keyword'] = '';
+			$data['keyword'] = '-';
 			$data['status'] = '0';
 
 			$data['product_attribute'] = $this->getProductAttributes($product_id);

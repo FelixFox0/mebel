@@ -100,7 +100,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 				$data['options'][$i]['display'] = $display_option;
 				$data['options'][$i]['expanded'] = isset($adv_ajaxfilter_setting['expanded_option_' . $option['option_id']]) ? 1 : 0;
 				foreach($data['options'][$i]['option_values'] as $j => $option_value) {
-					$data['options'][$i]['option_values'][$j]['thumb'] = $this->model_tool_image->resize($data['options'][$i]['option_values'][$j]['image'], 20, 20);
+					$data['options'][$i]['option_values'][$j]['thumb'] = $this->model_tool_image->resize($data['options'][$i]['option_values'][$j]['image'], 20, 20, true);
 				}
 			} else {
 				unset($data['options'][$i]);

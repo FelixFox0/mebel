@@ -151,7 +151,7 @@ class Image {
 		$image_old = $this->image;
 		$this->image = imagecreatetruecolor($bottom_x - $top_x, $bottom_y - $top_y);
 
-		imagecopy($this->image, $image_old, 0, 0, $top_x, $top_y, $this->width, $this->height);
+		imagecopy($this->image, $image_old, 0, 0, $top_x, $top_y, $bottom_x, $bottom_y);
 		imagedestroy($image_old);
 
 		$this->width = $bottom_x - $top_x;

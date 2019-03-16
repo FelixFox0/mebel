@@ -3,20 +3,16 @@
         <!--<div class="contact-us__socials">-->
         <div class="contact-us__socials">
             <div class="contact-us__title">
-                <h2 class="title _color-white">Есть вопрос?</h2>
+                <h2 class="title _color-white"><?=$do_you_have_question;?></h2>
             </div>
-            <div class="contact-us__socials-text">
-                Хотите перезвоним Вам за 30 секунд ? :)<br>
-                Оставьте свой телефон:
+            <div class="contact-us__socials-text"><?=$do_you_want_call;?>
             </div>
             <form action="index.php?route=information/callback" method="post" class="contact-us__socials-recall">
                 <input type="tel" name="phone" class="input js-phone-number-input" required="required">
                 <input type="hidden" name="instance" value="обратный зввонок хедер">
-                <button class="button">Перезвоните мне</button>
+                <button class="button"><?=$call_me;?></button>
             </form>
-            <div class="contact-us__socials-text">
-                Или пишите нам прямо сейчас,<br>
-                с радостью ответим на все Ваши вопросы
+            <div class="contact-us__socials-text"><?=$write_to_us;?>
             </div>
             <div class="contact-us__socials-block">
                 <a href="#" class="contact-us__socials-item">
@@ -37,36 +33,35 @@
                 </a>
                 <a href="#" class="contact-us__socials-item">
                     <i class="contact-us__socials-icon _chat"></i>
-                    Онлайн Чат
+                    <?=$online_chat;?>
                 </a>
             </div>
         </div>
         <div class="contact-us__address">
             <div class="contact-us__title">
-                <h2 class="title _color-white">Приходите к нам в Шоурум</h2>
+                <h2 class="title _color-white"><?=$come_to_us;?></h2>
             </div>
             <div class="contact-us__address-controls">
                 <a href="#" class="link _color-orange _active">
-                    <span class="link__text">Одесса №1</span>
+                    <span class="link__text"><?=$odessa_number_one;?></span>
                 </a>
             </div>
             <div class="contact-us__address-preview">
                 <div class="contact-us__map-wrap">
-                    <div class="contact-us__map-overlay">Нажмите для просмотра</div>
+                    <div class="contact-us__map-overlay"><?=$press_to_watch;?></div>
                     <div class="contact-us__map"></div>
                 </div>
                 <div class="contact-us__address-photo">
-                    <img src="images/showroom-big.jpg">
+                    <img src="/image/showroom-big.jpg">
                 </div>
             </div>
             <div class="contact-us__address-data">
-                <div class="contact-us__address-column">
-                    Одесса, ул. Семена Палия, 125, магазин 290
-                    <div class="contact-us__address-schedule">Вт - Вс, с 9:00 до 14:00</div>
+                <div class="contact-us__address-column"><?=$full_address;?>
+                    <div class="contact-us__address-schedule"><?=$time_work;?></div>
                 </div>
                 <div class="contact-us__address-column">
                     +38 (050) 555 - 45 - 55
-                    <div class="contact-us__address-schedule">с 10:00 до 20:00</div>
+                    <div class="contact-us__address-schedule"><?=$time_call;?></div>
                 </div>
             </div>
         </div>

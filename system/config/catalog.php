@@ -14,7 +14,8 @@ $_['db_port']          = DB_PORT;
 
 // Autoload Libraries
 $_['library_autoload'] = array(
-	'openbay'
+	'openbay',
+    'lg'
 );
 
 // Actions

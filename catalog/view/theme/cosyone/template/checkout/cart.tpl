@@ -1,6 +1,23 @@
 <?php if(empty($products)):?>
-<div class="cart__content">
-  Корзина пуста
+<div class="cart js-cart _empty" id="mfp-cart">
+  <div class="cart__content">
+    <div class="cart__empty">
+      <div class="cart__empty-title"><?=$cart_empty;?></div>
+      <div class="cart__empty-desc"><?=$cart_no_products;?></div>
+      <button class="button js-cart-close"><?=$_close;?></button>
+    </div>
+  </div>
+  <div class="cart__info">
+    <i class="cart__close">
+      <svg class="cart__close-icon js-cart-close">
+        <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+      </svg>
+    </i>
+    <div class="cart__info-content"></div>
+    <div class="cart__info-actions">
+      <button class="button _inverted cart__continue js-cart-close"><?=$continue_shopping;?></button>
+    </div>
+  </div>
 </div>
 <?php else: ?>
   <div class="cart__content">
@@ -15,11 +32,11 @@
             </div>
             <div class="tooltip">
               <div class="tooltip__content">
-                Вы точно хотите удалить товар из корзины?
+                <?=$confirm_delete;?>
               </div>
               <div class="tooltip__actions">
-                <button class="button _inverted js-delete-item-action">Отмена</button>
-                <button class="button js-delete-item-action" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">удалить</button>
+                <button class="button _inverted js-delete-item-action"><?=$_cancel;?></button>
+                <button class="button js-delete-item-action" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><?=$_delete;?></button>
               </div>
             </div>
           </div>
@@ -67,11 +84,11 @@
 
             <div class="cart__item-price">
               <div class="cart__item-price-block">
-                <div class="cart__item-price-label">Цена:</div>
+                <div class="cart__item-price-label"><?=$_price;?></div>
                 <div class="cart__item-price-value"><span class="cart__item-price-block-price"><?php echo $product['price']; ?></span> грн</div>
               </div>
               <div class="cart__item-price-block">
-                <div class="cart__item-price-label">Кол-во:</div>
+                <div class="cart__item-price-label"><?=$_amount;?></div>
                 <div class="cart__item-qty">
                   <button class="cart__item-qty-control _minus <?php if($product['quantity'] == 1): ?>_disabled <?php endif; ?> " onclick="cart.update('<?php echo $product['cart_id']; ?>', this);"></button>
                   <span class="cart__item-qty-value"><?php echo $product['quantity']; ?></span>
@@ -79,7 +96,7 @@
                 </div>
               </div>
               <div class="cart__item-price-block">
-                <div class="cart__item-price-label">Сумма:</div>
+                <div class="cart__item-price-label"><?=$_total;?></div>
                 <div class="cart__item-price-value"><span class="cart__item-price-block-total"><?php echo $product['total']; ?></span> грн</div>
               </div>
             </div>
@@ -113,9 +130,9 @@
         </svg>
       </i>
       <div class="cart__info-content">
-        <div class="cart__info-title">Оформление заказа</div>
+        <div class="cart__info-title"><?=$_checkout_continue;?></div>
         <div class="cart__info-phone">
-          <label class="cart__info-phone-label">Ваш телефон</label>
+          <label class="cart__info-phone-label"><?=$your_phone;?></label>
           <div class="hint__wrap">
             <input name="order_phone" class="input js-phone-number-input" type="text">
           </div>
@@ -126,8 +143,8 @@
         </div>
       </div>
       <div class="cart__info-actions">
-        <a href="/thank-you.html" class="button order">Оформить заказ</a>
-        <button class="button _inverted cart__continue js-cart-close">Продолжить покупки</button>
+        <a href="/thank-you.html" class="button order"><?=$_checkout_future;?></a>
+        <button class="button _inverted cart__continue js-cart-close"><?=$continue_shopping;?></button>
       </div>
     </div>
 <?php endif; ?>
@@ -284,16 +301,20 @@
 <?php endif; ?>
 
 <script>
+    $('.js-phone-number-input').inputmask({
+        mask: '+38 (999) 999-99-99'
+    });
     function changeCartOptions($this, e) {
         $this = $($this);
-        var data = {};
+        var data = {
+            cart_id: $this.data('cart-id')
+        };
         data[$this.attr('name')] = $this.val();
         if ($this.is(':checked')) {
-            data['action'] = 'add';
+            data.action = 'add';
         } else {
-            data['action'] = 'remove';
+            data.action = 'remove';
         }
-        data['cart_id'] = $this.data('cart-id');
         $.ajax({
             url: '/index.php?route=checkout/cart/updateOption',
             type: 'post',
