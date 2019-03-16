@@ -3719,8 +3719,7 @@ img.mfp-img {
         flex-wrap: wrap;
         width: 380px; }
         .product-page__data-list-wrap {
-          display: flex;
-          margin-bottom: 80px; }
+          display: flex; }
         .product-page__data-list:last-child {
           min-width: 255px;
           width: 255px; }
@@ -3739,7 +3738,7 @@ img.mfp-img {
             background-color: #323232;
             border-radius: 100%; }
     .product-page__description {
-      margin: 0 110px 60px;
+      margin: 80px 110px 60px;
       line-height: 1.5; }
       @media (max-width: 1620px) {
         .product-page__description {
