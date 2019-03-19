@@ -25,7 +25,7 @@
             <h2 class="title"><?=$welcome_text_title;?></h2>
         </div>
         <div class="categories-view__description">
-            <pre><?=$welcome_text;?></pre>
+            <?=$welcome_text;?>
         </div>
         <?php $first_category = array_shift($categories); ?>
         <div class="categories-view__content js-category-view-content _active" data-content="<?php echo $first_category['name']; ?>">

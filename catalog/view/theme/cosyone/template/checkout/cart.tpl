@@ -54,7 +54,7 @@
             <div class="cart__item-info-sizes">
               <?php if ($product['option_group']) { ?>
               <?php foreach ($product['option_group'] as $option_group) { ?>
-              <div class="cart__item-info-label"><?php echo $option_group['group_name']; ?></div>
+              <div class="cart__item-info-label"><?php echo $option_group['group_name']; ?>:</div>
               <?php foreach ($option_group['options'] as $option_group_options) { ?>
               <div class="cart__item-info-row">
                 <span class="cart__item-info-char"><?php echo $option_group_options['name']; ?></span>
@@ -134,7 +134,7 @@
         <div class="cart__info-phone">
           <label class="cart__info-phone-label"><?=$your_phone;?></label>
           <div class="hint__wrap">
-            <input name="order_phone" class="input js-phone-number-input" type="text">
+            <input name="order_phone" placeholder="+38" class="input js-phone-number-input" type="text">
           </div>
         </div>
         <?=$shipping;?>
