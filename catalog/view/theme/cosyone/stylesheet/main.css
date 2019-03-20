@@ -3187,7 +3187,7 @@ img.mfp-img {
     text-transform: uppercase;
     font-size: 17px;
     transition: 0.2s color; }
-    .header__categories-link:hover {
+    .header__categories-link:hover, .header__categories-link._active {
       color: #FFFFFF; }
 
 .news__slider {
