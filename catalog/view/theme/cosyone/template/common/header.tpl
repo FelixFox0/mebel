@@ -378,7 +378,7 @@
     <div class="header__categories">
         <div class="header__categories-container container">
             <?php foreach ($categories as $category_1) { ?>
-               <a class="header__categories-link" href="<?php echo $category_1['href']; ?>"><?php echo $category_1['name']; ?></a>
+               <a class="header__categories-link" <?php if($category_1['current']):?>style="color: #FFFFFF;"<?php endif;?> href="<?php echo $category_1['href']; ?>"><?php echo $category_1['name']; ?></a>
             <?php } ?>
         </div>
     </div>

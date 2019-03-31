@@ -413,7 +413,8 @@
                     $('#cart-collapsed-total').text(json['total']);
                     $('#cart-item-' + key).remove();
                     if (!json['count']) {
-                        window.location.reload();
+                        $('.cart__collapsed.js-cart-collapsed').hide();
+                        $('#mfp-cart').load('/index.php?route=checkout/cart');
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {

@@ -327,27 +327,25 @@ class ControllerCheckoutCart extends Controller {
             $data['_checkout_continue'] = $this->language->get('_checkout_continue');
             $data['your_phone'] = $this->language->get('your_phone');
             $data['_checkout_future'] = $this->language->get('_checkout_future');
+            $data['confirm_delete'] = $this->language->get('confirm_delete');
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
-			$data['heading_title'] = $this->language->get('heading_title');
-
-			$data['text_error'] = $this->language->get('text_empty');
-
-			$data['button_continue'] = $this->language->get('button_continue');
-
-			$data['continue'] = $this->url->link('common/home');
-
-			unset($this->session->data['success']);
-
-			$data['column_left'] = $this->load->controller('common/column_left');
-			$data['column_right'] = $this->load->controller('common/column_right');
-			$data['content_top'] = $this->load->controller('common/content_top');
-			$data['content_bottom'] = $this->load->controller('common/content_bottom');
-			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
-
-			$this->response->setOutput($this->load->view('error/not_found', $data));
+            $this->load->language('common');
+            $data['cart_empty'] = $this->language->get('cart_empty');
+            $data['cart_no_products'] = $this->language->get('cart_no_products');
+            $data['_close'] = $this->language->get('_close');
+            $data['continue_shopping'] = $this->language->get('continue_shopping');
+            $data['_cancel'] = $this->language->get('_cancel');
+            $data['_delete'] = $this->language->get('_delete');
+            $data['_price'] = $this->language->get('_price');
+            $data['_amount'] = $this->language->get('_amount');
+            $data['_total'] = $this->language->get('_total');
+            $data['_checkout_continue'] = $this->language->get('_checkout_continue');
+            $data['your_phone'] = $this->language->get('your_phone');
+            $data['_checkout_future'] = $this->language->get('_checkout_future');
+            $data['confirm_delete'] = $this->language->get('confirm_delete');
+			$this->response->setOutput($this->load->view('checkout/cart_empty', $data));
 		}
 	}
 

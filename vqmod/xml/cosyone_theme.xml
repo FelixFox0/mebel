@@ -126,8 +126,10 @@
 			<search position="replace" offset="29"><![CDATA[$categories = $this->model_catalog_category->getCategories(0);]]></search>
 			<add><![CDATA[// Custom categories starts
 		// Add current class for active categories
+		$path = null;
 		if (isset($this->request->get['path'])) {
 			$parts = explode('_', (string)$this->request->get['path']);
+			$path = (int)$this->request->get['path'];
 		} else {
 			$parts = array();
 		}
@@ -140,6 +142,7 @@
 					
 		$categories_1 = $this->model_catalog_category->getCategories(0);
 		$this->load->model('tool/image');
+
 		foreach ($categories_1 as $category_1) {
 		if ($category_1['top']) {
 			$level_2_data = array();
@@ -184,7 +187,8 @@
 				'column'   => $category_1['column'] ? $category_1['column'] : 1,
 				'name'     => $category_1['name'],
 				'children' => $level_2_data,
-				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'])
+				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id']),
+				'current' => ($category_1['category_id'] == $path)
 			);
 		}
 	}
