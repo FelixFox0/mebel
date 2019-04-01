@@ -1,8 +1,9 @@
 <?php
 class ModelLocalisationZone extends Model {
 	public function addZone($data) {
-        $major = isset($data['major']) ? 1 : null;
-		$this->db->query("INSERT INTO " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "', major = '" . $major . "'");
+        $major = isset($data['major']) ? 1 : 0;
+        $additional = isset($data['additional']) ? 1 : 0;
+		$this->db->query("INSERT INTO " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "', major = '" . $major . "', additional = '" . $additional . "'");
 
         $zone_id = $this->db->getLastId();
 
@@ -16,8 +17,9 @@ class ModelLocalisationZone extends Model {
 	}
 
 	public function editZone($zone_id, $data) {
-        $major = isset($data['major']) ? 1 : null;
-		$this->db->query("UPDATE " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "', major = '" . $major . "' WHERE zone_id = '" . (int)$zone_id . "'");
+        $major = isset($data['major']) ? 1 : 0;
+        $additional = isset($data['additional']) ? 1 : 0;
+		$this->db->query("UPDATE " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "', major = '" . $major . "', additional = '" . $additional . "' WHERE zone_id = '" . (int)$zone_id . "'");
 
         $this->db->query("DELETE FROM " . DB_PREFIX . "zone_description WHERE zone_id = '" . (int)$zone_id . "'");
 

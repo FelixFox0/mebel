@@ -10,7 +10,7 @@
         <?php foreach ($mojor_zones as $mojor_zones_chunk) { ?>
         <div class="select-city__column">
             <?php foreach ($mojor_zones_chunk as $mojor_zone) { ?>
-            <a href="#" class="select-city__item js-select-city-item" data-value="<?php echo $mojor_zone['name']; ?>" data-id="<?php echo $mojor_zone['zone_id']; ?>"><?php echo $mojor_zone['name']; ?></a>
+            <a href="#" class="select-city__item js-select-city-item <?php if($mojor_zone['additional']):?> _sm <?php endif; ?> <?php if($mojor_zone['zone_id'] == $current_zone['zone_id']):?> _active <?php endif; ?> " data-value="<?php echo $mojor_zone['name']; ?>" data-id="<?php echo $mojor_zone['zone_id']; ?>"><?php echo $mojor_zone['name']; ?></a>
             <?php } ?>
         </div>
         <?php } ?>

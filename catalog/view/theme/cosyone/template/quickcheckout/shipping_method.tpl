@@ -79,7 +79,7 @@
                 <span class="radio__text"><?php echo $quote['title']; ?></span>
             </label>
             <span class="dots-separator _brown"></span>
-            <span class="cart__info-price"><?php echo $quote['text']; ?></span>
+            <span class="cart__info-price"><?php echo $quote['text']; ?> грн</span>
     <?php } ?>
         </div>
     </div>

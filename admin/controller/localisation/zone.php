@@ -374,6 +374,14 @@ class ControllerLocalisationZone extends Controller {
             $data['major'] = '';
         }
 
+        if (isset($this->request->post['major'])) {
+            $data['additional'] = $this->request->post['additional'];
+        } elseif (!empty($zone_info)) {
+            $data['additional'] = $zone_info['additional'];
+        } else {
+            $data['additional'] = '';
+        }
+
         if (isset($this->request->post['zone_description'])) {
             $data['zone_description'] = $this->request->post['zone_description'];
         } elseif (isset($this->request->get['zone_id'])) {
