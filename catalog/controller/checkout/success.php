@@ -4,6 +4,8 @@ class ControllerCheckoutSuccess extends Controller {
 		$this->load->language('checkout/success');
 
 		if (isset($this->session->data['order_id'])) {
+            $this->session->data['old_order_id'] = $this->session->data['order_id'];
+            $data['order_id'] = $this->session->data['order_id'];
 			$this->cart->clear();
 
 			// Add to activity log
@@ -66,11 +68,11 @@ class ControllerCheckoutSuccess extends Controller {
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
-		if ($this->customer->isLogged()) {
+		/*if ($this->customer->isLogged()) {
 			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', true), $this->url->link('account/order', '', true), $this->url->link('account/download', '', true), $this->url->link('information/contact'));
 		} else {
 			$data['text_message'] = sprintf($this->language->get('text_guest'), $this->url->link('information/contact'));
-		}
+		}*/
 
 		$data['button_continue'] = $this->language->get('button_continue');
 
@@ -82,7 +84,25 @@ class ControllerCheckoutSuccess extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['updateorder'] = $this->url->link('checkout/success/updateorder');
 
-		$this->response->setOutput($this->load->view('common/success', $data));
+        $this->load->language('common');
+        $data['send'] = $this->language->get('_send');
+        $data['all_good'] = $this->language->get('all_good');
+        $data['send_detailed'] = $this->language->get('send_detailed');
+        $data['specify_email'] = $this->language->get('specify_email');
+        $data['text_message'] = $this->language->get('text_message');
+        $this->response->setOutput($this->load->view('common/success', $data));
 	}
+
+    public function updateorder() {
+        $email = !empty($this->request->post['email']) ? $this->request->post['email'] : null;
+        $order_id = !empty($this->session->data['old_order_id']) ? $this->session->data['old_order_id'] : null;
+        if ($email && $order_id) {
+            $this->load->model('checkout/order');
+            $this->model_checkout_order->editOrderEmail($order_id, $email);
+        }
+
+        $this->response->redirect($this->url->link('checkout/success'));
+    }
 }

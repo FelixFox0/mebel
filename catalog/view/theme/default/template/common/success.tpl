@@ -29,21 +29,23 @@
 <div class="thank-you">
     <div class="thank-you__container">
         <h2 class="thank-you__title"><?php echo $heading_title; ?></h2>
-        <div class="thank-you__label">У Вас хороший вкус!</div>
+        <div class="thank-you__label"><?=$all_good;?></div>
         <div class="thank-you__text"><?php echo $text_message; ?></div>
         
         
         <?php if(isset($order_id)){ ?>
-        <div class="thank-you__form">
-            <div class="thank-you__form-text">Отправить Вам подробную информацию о заказе?</div>
-            <div class="thank-you__form-content">
-                <div class="thank-you__form-item">
-                    <label class="thank-you__form-label">Укажите свой E-mail</label>
-                    <input type="text" name="e-mail" class="input">
+        <form action="<?=$updateorder;?>" method="post">
+            <div class="thank-you__form">
+                <div class="thank-you__form-text"><?=$send_detailed;?></div>
+                <div class="thank-you__form-content">
+                    <div class="thank-you__form-item">
+                        <label class="thank-you__form-label"><?=$specify_email;?></label>
+                        <input type="email" name="email" class="input" required="required">
+                    </div>
+                    <button class="button"><?=$send;?></button>
                 </div>
-                <button class="button">Отправить</button>
             </div>
-        </div>
+        </form>
         <?php } ?>
     </div>
 </div>
