@@ -2901,7 +2901,8 @@ img.mfp-img {
       justify-content: space-between;
       margin: 28px 0 80px; }
       .contact-us__socials-recall .input {
-        width: 245px; }
+        width: 245px;
+        height: 47px;}
     .contact-us__socials-block {
       width: 100%;
       display: flex;
@@ -3336,7 +3337,11 @@ img.mfp-img {
   .price._discount, .price._sold-out {
     padding: 9px 17px; }
   .price__period {
-    font-size: 9px;
+    font-family: Calibri;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: lowercase;
     margin-left: 4px; }
   .price__old-value {
     position: relative;
@@ -3670,6 +3675,12 @@ img.mfp-img {
         padding: 13.5px 20px; }
         .product-page__order-row .price__wrap {
           margin-right: 12px; }
+        .product-page__order-row .price__period {
+          font-size: 17px;
+          text-transform: lowercase;
+          font-family: Calibri;
+          font-weight: bold;
+          font-style: normal; }
       .product-page__order-row .button {
         margin-right: 28px;
         min-width: 175px; }
