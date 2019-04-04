@@ -1,5 +1,14 @@
----------- Date: 2018-12-18 02:06:45 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /index.php?route=checkout/cart
+---------- Date: 2019-04-02 00:56:39 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=checkout/success
+MOD DETAILS:
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_blog.xml
+   id        : OPENCART BLOG
+   version   : 1.0
+   vqmver    : 2.5.0
+   author    : Karl Pers - openthemer@gmail.com
+
+File Name    : catalog/controller/startup/seo_url.php(4)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): ($data['route'] == 'information/information' && $key == 'information_id'))
 MOD DETAILS:
    modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/all.install.ocmod.xml
    id        : 
@@ -12,20 +21,17 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="nav navbar-n
 ----------------------------------------------------------------------
 
 
----------- Date: 2018-12-18 05:48:08 ~ IP : 127.0.0.1 ----------
-REQUEST URI : /samsung-galaxy-tab-10-1
+---------- Date: 2019-04-02 01:19:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=product/product/getCalculatedPrice
 MOD DETAILS:
-   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_product_questions.xml
-   id        : Product Questions
-   version   : OC 2.x
-   vqmver    : 2.0.0
-   author    : Karl Pers - openthemer@gmail.com
+   modFile   : D:\OpenServer\domains\mebel.loc\vqmod/xml/cosyone_theme.xml
+   id        : cosyone theme
+   version   : 1.0
+   vqmver    : 2.X
+   author    : Karl Pers - Openthemer.com
 
-File Name    : catalog/view/theme/*/template/product/product.tpl(1)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div class="tab-content">
-
-File Name    : catalog/view/theme/*/template/product/product.tpl(2)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare">
+File Name    : catalog/controller/product/product.php(7)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $data['images'] = array();
 ----------------------------------------------------------------------
 
 
