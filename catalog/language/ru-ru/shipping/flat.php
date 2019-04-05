@@ -1,5 +1,5 @@
 <?php
 // Text
-$_['text_title']       = 'Фиксированная стоимость доставки';
-$_['text_description'] = 'Новой почтой';
+$_['text_title']       = 'На дом';
+$_['text_description'] = 'На дом';
 

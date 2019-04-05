@@ -256,9 +256,7 @@ $(document).ready(function() {
                         <?php } ?>
                     </select>
                 </div>
-                <div class="catalogue__filters-content">
-                    <?php echo $column_left; ?>
-                </div>
+                <?php echo $column_left; ?>
             </div>
             <div class="catalogue__content">
                 <h2 class="catalogue__title title">Шкафы Купе</h2>
