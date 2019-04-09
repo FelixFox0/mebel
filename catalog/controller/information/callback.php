@@ -24,7 +24,7 @@ class ControllerInformationCallback extends Controller {
 			$mail->setText($this->request->post['instance'] . ': ' . $this->request->post['phone']);
 			$mail->send();
 
-			$this->response->redirect($this->url->link('information/contact/success'));
+			$this->response->redirect($this->url->link('information/callback/success'));
 		}
                 $this->load->controller('error/not_found');
 	}
@@ -53,6 +53,7 @@ class ControllerInformationCallback extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 
 		$data['continue'] = $this->url->link('common/home');
+        $data['all_good'] = $data['all_good'] = $this->language->get('all_good');
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

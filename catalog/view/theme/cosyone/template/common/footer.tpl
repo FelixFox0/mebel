@@ -125,7 +125,15 @@ Please donate via PayPal to donate@opencart.com
             <div class="thank-you__form-content">
                 <div class="thank-you__form-item">
                     <label class="thank-you__form-label">Оставьте свой телефон:</label>
-                    <input type="tel" name="phone" class="input js-phone-number-input" required="required">
+
+                        <input type="tel" name="phone" class="input js-phone-number-input">
+                        <div class="hint">
+                        <span class="hint__content">
+                            Вы не указали номер телефона
+                        </span>
+                            <span class="hint__arrow"></span>
+                        </div>
+
                     <input type="hidden" name="instance" value="обратный зввонок хедер">
                 </div>
                 <button class="button">Отправить</button>

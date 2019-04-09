@@ -25,7 +25,8 @@ class ModelShippingFlat3 extends Model {
 				'title'        => $this->language->get('text_description'),
 				'cost'         => $this->config->get('flat3_cost'),
 				'tax_class_id' => $this->config->get('flat3_tax_class_id'),
-				'text'         => $this->currency->format($this->tax->calculate($this->config->get('flat3_cost'), $this->config->get('flat3_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency'])
+//				'text'         => $this->currency->format($this->tax->calculate($this->config->get('flat3_cost'), $this->config->get('flat3_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency']),
+				'text'         => $this->currency->format($this->tax->calculate($this->config->get('flat3_cost'), $this->config->get('flat3_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency']) ? $this->currency->format($this->tax->calculate($this->config->get('flat3_cost'), $this->config->get('flat3_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency']) : $this->language->get('text_detail')
 			);
 
 			$method_data = array(

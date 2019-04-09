@@ -259,7 +259,7 @@ $(document).ready(function() {
                 <?php echo $column_left; ?>
             </div>
             <div class="catalogue__content">
-                <h2 class="catalogue__title title">Шкафы Купе</h2>
+                <h2 class="catalogue__title title"><?= $meta_title; ?></h2>
                 <div class="catalogue__product-list">
                    
     

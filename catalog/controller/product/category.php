@@ -128,6 +128,7 @@ class ControllerProductCategory extends Controller {
 				$data['thumb'] = '';
 			}
 
+            $data['meta_title'] = $category_info['meta_title'];
 			$data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['compare'] = $this->url->link('product/compare');
 
