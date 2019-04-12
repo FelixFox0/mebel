@@ -17,6 +17,7 @@ class ControllerCommonContact extends Controller {
         $data['full_address'] = $this->language->get('full_address');
         $data['time_work'] = $this->language->get('time_work');
         $data['time_call'] = $this->language->get('time_call');
+        $data['did_not_specify_phone'] = $this->language->get('did_not_specify_phone');
 
 
         return $this->load->view('common/contact', $data);

@@ -328,6 +328,7 @@ class ControllerCheckoutCart extends Controller {
             $data['your_phone'] = $this->language->get('your_phone');
             $data['_checkout_future'] = $this->language->get('_checkout_future');
             $data['confirm_delete'] = $this->language->get('confirm_delete');
+            $data['did_not_specify_phone'] = $this->language->get('did_not_specify_phone');
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {

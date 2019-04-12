@@ -435,6 +435,9 @@ class ControllerProductCategory extends Controller {
 			$data['header'] = $this->load->controller('common/header');
                         $data['contact'] = $this->load->controller('common/contact');
 
+            $this->load->language('common');
+            $data['products_on_page'] = $this->language->get('products_on_page');
+
 			$this->response->setOutput($this->load->view('product/category', $data));
 		} else {
 			$url = '';

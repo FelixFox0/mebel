@@ -157,6 +157,12 @@ class ControllerCommonHeader extends Controller {
                 $data['language_id'] = $this->config->get('config_language_id');
 //                var_dump($data['top_header_module']); die();
 
+
+        $this->load->language('common');
+        $data['_back_call'] = $this->language->get('_back_call');
+        $data['_online_consultation'] = $this->language->get('_online_consultation');
+
+
 		return $this->load->view('common/header', $data);
 	}
 }

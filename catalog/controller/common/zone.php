@@ -19,6 +19,13 @@ class ControllerCommonZone extends Controller {
             $data['current_zone'] = $this->model_localisation_zone->getCurrentZone();
         }
         $this->model_localisation_zone->getCurrentZone();
+
+        $this->load->language('common');
+        $data['_select_city'] = $this->language->get('_select_city');
+        $data['_delivery_ukraine'] = $this->language->get('_delivery_ukraine');
+        $data['_enter_other_city'] = $this->language->get('_enter_other_city');
+        $data['_enter_city'] = $this->language->get('_enter_city');
+        $data['_for_example'] = $this->language->get('_for_example');
         return $this->load->view('common/zone', $data);
     }
 
