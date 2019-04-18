@@ -631,29 +631,61 @@
 });
     $(document).on('click', '.order', function(e){
         e.preventDefault();
-        $.ajax({
-            url: '/index.php?route=checkout/order',
-            type: 'post',
-            data: 'phone=' + $('input[name="order_phone"]').val(),
-            dataType: 'json',
-            beforeSend: function() {
-              
-            },
-            complete: function() {
-              
-            },
-            success: function(json) {     
-              if (json['success']) {
-                location = json['success'];
-                //alert("Ваш заказ получен"); 
-              }else{
-                  alert("Ваш заказ не получен");
-              }
-            }
-          });
+        if($("input[name=\"order_phone\"]").val().replace(/\D/gm, '').length == 12) {
+
+            $.ajax({
+                url: '/index.php?route=checkout/order',
+                type: 'post',
+                data: 'phone=' + $('input[name="order_phone"]').val(),
+                dataType: 'json',
+                beforeSend: function () {
+
+                },
+                complete: function () {
+
+                },
+                success: function (json) {
+                    if (json['success']) {
+                        location = json['success'];
+                        //alert("Ваш заказ получен");
+                    } else {
+                        alert("Ваш заказ не получен");
+                    }
+                }
+            });
+        }else{
+            $(" input[name=\"order_phone\"]").parent().addClass('hint__wrap _error');
+        }
       });
+
 
     $(document).ready(function () {
         app.init();
     });
+
+    $("form.contact-us__socials-recall, form.popup__form").submit(function (e) {
+        // e.preventDefault();
+        // console.log(e);
+        // console.log(this);
+        // alert ($(this).attr('class'));
+        // var str = $("form.contact-us__socials-recall input[name=\"phone\"]").val();
+        // alert($("form.contact-us__socials-recall input[name=\"phone\"]").val().replace(/\D/gm, ''));
+        $(this).children().removeClass('hint__wrap _error');
+        // console.log($(this).find("input[name=\"phone\"]").val());
+        if($(this).find("input[name=\"phone\"]").val().replace(/\D/gm, '').length != 12){
+            // alert($("form.contact-us__socials-recall input[name=\"phone\"]").val());
+            // $('.' + $(this).attr('class')).submit();
+        // }else{
+            e.preventDefault();
+            $(this).find(" input[name=\"phone\"]").parent().addClass('hint__wrap _error');
+            // $( "<p>Test</p>" ).insertAfter( "form.contact-us__socials-recall input[name=\"phone\"]" );
+        }
+
+        // return true; //отправляете ваш submit
+    });
+
+////    $('.contact-us__socials-recall input[name="tel"]');
+//    $(document).on('change', '.contact-us__socials-recall input[name="tel"]', function() {
+//        if('change', '.contact-us__socials-recall input[name="tel"]').
+//    });
 }());

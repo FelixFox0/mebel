@@ -1,5 +1,5 @@
 <div class="cart__info-delivery">
-    <span class="cart__info-delivery-label">Доставка в:</span>
+    <span class="cart__info-delivery-label"><?=$_delivery_to;?></span>
     <div class="select-city__wrap js-select-city-wrap">
         <a href="#" class="link _color-orange _font-sm js-select-city-open">
             <span class="link__text js-select-city-value"><?php echo $selected_zone['name']; ?></span>
@@ -79,7 +79,7 @@
                 <span class="radio__text"><?php echo $quote['title']; ?></span>
             </label>
             <span class="dots-separator _brown"></span>
-            <span class="cart__info-price"><?php echo $quote['text']; ?> грн</span>
+            <span class="cart__info-price"><?php echo ($quote['text'] === 0)? $quote['text'] . ' грн' : $quote['text']; ?></span>
     <?php } ?>
         </div>
     </div>

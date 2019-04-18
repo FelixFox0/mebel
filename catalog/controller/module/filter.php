@@ -13,6 +13,11 @@ class ControllerModuleFilter extends Controller {
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
+        $this->load->language('common');
+        $data['_hide'] = $this->language->get('_hide');
+        $data['clean_all'] = $this->language->get('clean_all');
+        $data['show_more'] = $this->language->get('show_more');
+
 		if ($category_info) {
 			$this->load->language('module/filter');
 

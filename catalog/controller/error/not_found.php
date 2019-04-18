@@ -58,6 +58,12 @@ class ControllerErrorNotFound extends Controller {
         }
 		$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 
+
+        $this->load->language('common');
+        $data['oi'] = $this->language->get('oi');
+        $data['we_cannot_find_page'] = $this->language->get('we_cannot_find_page');
+        $data['try_to_start_main'] = $this->language->get('try_to_start_main');
+
 		$this->response->setOutput($this->load->view('error/not_found2', $data));
 	}
 }

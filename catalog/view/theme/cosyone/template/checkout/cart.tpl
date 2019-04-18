@@ -135,6 +135,12 @@
           <label class="cart__info-phone-label"><?=$your_phone;?></label>
           <div class="hint__wrap">
             <input name="order_phone" placeholder="+38" class="input js-phone-number-input" type="text">
+              <div class="hint">
+                        <span class="hint__content">
+                            <?=$did_not_specify_phone;?>
+                        </span>
+                  <span class="hint__arrow"></span>
+              </div>
           </div>
         </div>
         <?=$shipping;?>

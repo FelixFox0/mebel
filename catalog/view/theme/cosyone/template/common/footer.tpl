@@ -76,20 +76,17 @@ Please donate via PayPal to donate@opencart.com
         </svg>
     </i>
     <div class="popup__container">
-        <div class="popup__title">Как происходит заказ?</div>
+        <div class="popup__title"><?=$_how_order;?></div>
         <div class="popup__body">
             <p class="popup__text">
-                Выберите нужные вам параметры и опции товара, затем нажмите
-                кнопку “Заказать”. Откроется корзина с выбраным товаром,
-                вы можете продолжить покупки либо сразу перейти к оформлению.
-                Укажите телефон, город и способ доставки, и нажмите кнопку “Оформить заказ”.
+                <?=$select_parameter_your_need;?>
             </p>
             <p class="popup__text">
-                Наш менеджер перезвонит Вам в ближайшее рабочее время для подтверждения заказа и уточнения всех деталей.
+                <?=$our_manager_call_you;?>
             </p>
         </div>
         <div class="popup__actions">
-            <button class="button js-close-popup">Закрыть</button>
+            <button class="button js-close-popup"><?=$_close;?></button>
         </div>
     </div>
 </div>
@@ -101,14 +98,14 @@ Please donate via PayPal to donate@opencart.com
         </svg>
     </i>
     <div class="popup__container">
-        <div class="popup__title">Детальная информация</div>
+        <div class="popup__title"><?=$_detailed_information;?></div>
         <div class="popup__body">
             <p class="popup__text">
                 <?=$detailed_information;?>
             </p>
         </div>
         <div class="popup__actions">
-            <button class="button js-close-popup">Закрыть</button>
+            <button class="button js-close-popup"><?=$_close;?></button>
         </div>
     </div>
 </div>
@@ -121,14 +118,22 @@ Please donate via PayPal to donate@opencart.com
     </i>
     <div class="popup__container">
         <form action="index.php?route=information/callback" method="post" class="popup__form _callback">
-            <div class="thank-you__form-text">Хотите перезвоним Вам за 30 секунд ? :)</div>
+            <div class="thank-you__form-text"><?=$call_in_30;?></div>
             <div class="thank-you__form-content">
                 <div class="thank-you__form-item">
-                    <label class="thank-you__form-label">Оставьте свой телефон:</label>
-                    <input type="tel" name="phone" class="input js-phone-number-input" required="required">
+                    <label class="thank-you__form-label"><?=$put_your_number;?></label>
+
+                        <input type="tel" name="phone" class="input js-phone-number-input">
+                        <div class="hint">
+                        <span class="hint__content">
+                            <?=$did_not_specify_phone;?>
+                        </span>
+                            <span class="hint__arrow"></span>
+                        </div>
+
                     <input type="hidden" name="instance" value="обратный зввонок хедер">
                 </div>
-                <button class="button">Отправить</button>
+                <button class="button"><?=$_send;?></button>
             </div>
         </form>
     </div>
@@ -137,7 +142,7 @@ Please donate via PayPal to donate@opencart.com
     <div class="footer__container container">
         <?php echo $footer_modules ?>
         <div class="footer__copyright">
-            © Интернет-магазин «Вкусная Мебель» 2017–<?= date('Y');?>
+            © <?=$copyright;?> 2017–<?= date('Y');?>
         </div>
     </div>
 </footer>

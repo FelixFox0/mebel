@@ -23,7 +23,8 @@ class ModelShippingPickup extends Model {
 				'title'        => $this->language->get('text_description'),
 				'cost'         => 0.00,
 				'tax_class_id' => 0,
-				'text'         => $this->currency->format(0.00, $this->session->data['currency'])
+//				'text'         => $this->currency->format(0.00, $this->session->data['currency'])
+				'text'         => $this->currency->format(0.00, $this->session->data['currency'])  ? $this->currency->format(0.00, $this->session->data['currency']) : $this->language->get('text_detail')
 			);
 
 			$method_data = array(

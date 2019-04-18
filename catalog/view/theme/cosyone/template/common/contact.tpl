@@ -8,7 +8,16 @@
             <div class="contact-us__socials-text"><?=$do_you_want_call;?>
             </div>
             <form action="index.php?route=information/callback" method="post" class="contact-us__socials-recall">
-                <input type="tel" name="phone" class="input js-phone-number-input" required="required">
+                
+                <div>
+                    <input type="tel" name="phone" class="input js-phone-number-input">
+                    <div class="hint">
+                        <span class="hint__content">
+                            <?=$did_not_specify_phone;?>
+                        </span>
+                        <span class="hint__arrow"></span>
+                    </div>
+                </div>
                 <input type="hidden" name="instance" value="обратный зввонок хедер">
                 <button class="button"><?=$call_me;?></button>
             </form>

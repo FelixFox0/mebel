@@ -257,7 +257,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1300">
-    <title>Вкусная Мебель</title>
+    <title><?php echo $title; ?></title>
+    <?php if ($description) { ?>
+    <meta name="description" content="<?php echo $description; ?>" />
+    <?php } ?>
     <link rel="stylesheet" href="/catalog/view/theme/cosyone/stylesheet/main.css">
     <script src="/catalog/view/theme/cosyone/js/libs.js"></script>
     <script src="/catalog/view/javascript/common.js" type="text/javascript"></script>
@@ -283,11 +286,11 @@
             <div class="header__nav-contacts">
                 <a href="#mfp-callback" class="link _color-orange _font-sm js-popup-toggle">
                     <i class="link__icon _phone"></i>
-                    <span class="link__text">Обратный Звонок</span>
+                    <span class="link__text"><?=$_back_call;?></span>
                 </a>
                 <a href="#" class="link _color-orange _font-sm">
                     <i class="link__icon _msg"></i>
-                    <span class="link__text">Консультация Онлайн</span>
+                    <span class="link__text"><?=$_online_consultation;?></span>
                 </a>
             </div>
             <div class="header__nav-links">
