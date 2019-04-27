@@ -28,7 +28,6 @@
 <?php } ?>
 
 <?php echo $header; ?>
-    <div class="container">
 
     <div class="breadcrumbs">
         <div class="container breadcrumbs__container">

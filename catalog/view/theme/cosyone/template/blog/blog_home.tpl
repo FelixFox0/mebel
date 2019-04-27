@@ -1,3 +1,4 @@
+<?php if(false) { ?>
 <?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">
@@ -69,4 +70,43 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>
+<?php } ?>
+
+<?php echo $header; ?>
+    <div class="breadcrumbs">
+        <div class="container breadcrumbs__container">
+            <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+                <a href="<?php echo $breadcrumb['href']; ?>" class="breadcrumbs__link">
+                    <span class="breadcrumbs__link-text"><?php echo $breadcrumb['text']; ?></span>
+                </a>
+            <?php } ?>
+        </div>
+    </div>
+    <div class="blog">
+        <div class="blog__container">
+            <h1 class="blog__title"><?php echo $heading_title; ?></h1>
+            <blockquote class="blog__quote"><?php echo $description; ?></blockquote>
+            <div class="blog__content">
+                <?php foreach ($blogs as $blog) { ?>
+                <div class="blog__item">
+                    <a href="<?php echo $blog['href']; ?>" class="blog__item-image-wrap" >
+                        <?php if($blog['image']){ ?>
+                        <img class="blog__item-image" src="<?php echo $blog['image']; ?>" class="zoom_image" alt="<?php echo $blog['title']; ?>" title="<?php echo $blog['title']; ?>" />
+                        <?php } ?>
+                    </a>
+                    <div class="blog__item-data">
+                        <h2 class="blog__item-title"><?php echo $blog['title']; ?></h2>
+                        <p class="blog__item-text"><?php echo $blog['short_description']; ?></p>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+
+
+            <div class="blog__pagination">
+                <?php echo $pagination; ?>
+            </div>
+        </div>
+    </div>
+<?php echo $footer; ?>

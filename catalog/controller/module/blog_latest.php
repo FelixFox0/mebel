@@ -35,7 +35,7 @@ class ControllerModuleBlogLatest extends Controller {
 				'comment_total' => $this->model_blog_blog->getTotalCommentsByBlogId($result['blog_id']),
 				'date_added_full' => $result['date_added'],
 				
-				'description' => substr(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'), 0, $setting['characters']) . "...",
+				'short_description' => substr(html_entity_decode($result['short_description'], ENT_QUOTES, 'UTF-8'), 0, $setting['characters']) . "...",
 //                                'description' => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
 				'count_read' => $result['count_read'],
 				'image'   		=> $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']),

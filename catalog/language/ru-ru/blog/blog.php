@@ -5,7 +5,7 @@ $_['heading_title_category'] = 	'Категории';
 $_['text_show_all'] = 			'Показать все';
 
 // Blog
-$_['text_blog'] = 				'Блог';
+$_['text_blog'] = 				'Полезное';
 $_['text_filter_by'] = 			'Блог Сообщения с тегами Как: ';
 $_['text_posted_on'] = 			'Опубликованы:';
 $_['text_posted_by'] = 			'Сообщение от:';

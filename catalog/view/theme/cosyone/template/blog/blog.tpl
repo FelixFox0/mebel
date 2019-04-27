@@ -1,3 +1,4 @@
+<?php if(false) { ?>
 <?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">
@@ -211,4 +212,23 @@ $('#button-comment').on('click', function() {
 	});
 });     
 </script>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>
+<?php } ?>
+<?php echo $header; ?>
+
+<div class="breadcrumbs">
+    <div class="container breadcrumbs__container">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+            <a href="<?php echo $breadcrumb['href']; ?>" class="breadcrumbs__link">
+                <span class="breadcrumbs__link-text"><?php echo $breadcrumb['text']; ?></span>
+            </a>
+        <?php } ?>
+    </div>
+</div>
+
+<div class="page">
+    <div class="page__container">
+        <?php echo $description; ?>
+    </div>
+</div>
+<?php echo $footer; ?>
