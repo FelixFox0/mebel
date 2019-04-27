@@ -207,6 +207,10 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 			$data['delivery_max'] = date('d-m-Y');
 		}
 
+        $this->load->language('common');
+        $data['_delivery_to'] = $this->language->get('_delivery_to');
+
+
 		if (version_compare(VERSION, '2.2.0.0', '<')) {
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/quickcheckout/shipping_method.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/quickcheckout/shipping_method.tpl', $data));

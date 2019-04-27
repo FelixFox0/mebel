@@ -76,6 +76,19 @@ class ControllerCommonFooter extends Controller {
 
         $data['detailed_information'] = $this->config->get('config_detailed_information');
 
+        $this->load->language('common');
+        $data['_how_order'] = $this->language->get('_how_order');
+        $data['_close'] = $this->language->get('_close');
+        $data['_send'] = $this->language->get('_send');
+        $data['did_not_specify_phone'] = $this->language->get('did_not_specify_phone');
+        $data['_detailed_information'] = $this->language->get('_detailed_information');
+
+        $data['select_parameter_your_need'] = $this->language->get('select_parameter_your_need');
+        $data['our_manager_call_you'] = $this->language->get('our_manager_call_you');
+        $data['call_in_30'] = $this->language->get('call_in_30');
+        $data['put_your_number'] = $this->language->get('put_your_number');
+        $data['copyright'] = $this->language->get('copyright');
+
 		return $this->load->view('common/footer', $data);
 	}
 }

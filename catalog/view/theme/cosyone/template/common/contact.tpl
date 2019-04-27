@@ -13,7 +13,7 @@
                     <input type="tel" name="phone" class="input js-phone-number-input">
                     <div class="hint">
                         <span class="hint__content">
-                            Вы не указали номер телефона
+                            <?=$did_not_specify_phone;?>
                         </span>
                         <span class="hint__arrow"></span>
                     </div>

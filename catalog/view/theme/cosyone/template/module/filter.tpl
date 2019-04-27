@@ -7,7 +7,7 @@
             <?php foreach ($filter_group['filter'] as $filter) { ?>
                 <?php if (in_array($filter['filter_id'], $filter_category)) { ?>
                     <?php if ($hasFilter) { ?>
-                        <a href="#" class="catalogue__filters-clear-button">Очистить все</a>
+                        <a href="#" class="catalogue__filters-clear-button"><?=$clean_all;?></a>
                         <?php $hasFilter = false; ?>
                     <?php } ?>
                 <?php } ?>
@@ -42,8 +42,8 @@
         <?php } ?> 
     <?php } ?>    
     <a href="#" class="catalogue__filters-category-show js-filter-visibility-toggle _hidden">
-        <span class="js-filter-show-text">Показать еще</span>
-        <span class="js-filter-hide-text _hidden">Скрыть</span>
+        <span class="js-filter-show-text"><?=$show_more;?></span>
+        <span class="js-filter-hide-text _hidden"><?=$_hide;?></span>
         <span class="js-hidden-filters-count"></span>
     </a>
 </div>
