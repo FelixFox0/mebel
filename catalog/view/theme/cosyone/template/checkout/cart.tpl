@@ -101,7 +101,11 @@
               </div>
             </div>
             <?php foreach($cart_options as $cart_option): ?>
-            <?php if ($cart_option['type'] == 'checkbox') { ?>
+            <?php if (
+                    $cart_option['type'] == 'checkbox' &&
+                    $cart_option['product_option_value'] &&
+                    is_array($cart_option['product_option_value'])
+                ) { ?>
             <div class="cart__item-delivery">
               <?php foreach ($cart_option['product_option_value'] as $option_value) { ?>
               <label class="checkbox _orange _inline">

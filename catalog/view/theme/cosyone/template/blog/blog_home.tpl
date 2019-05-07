@@ -96,7 +96,9 @@
                         <?php } ?>
                     </a>
                     <div class="blog__item-data">
-                        <h2 class="blog__item-title"><?php echo $blog['title']; ?></h2>
+                        <a href="<?php echo $blog['href']; ?>" >
+                            <h2 class="blog__item-title"><?php echo $blog['title']; ?></h2>
+                        </a>
                         <p class="blog__item-text"><?php echo $blog['short_description']; ?></p>
                     </div>
                 </div>

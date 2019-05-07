@@ -67,7 +67,7 @@ $colors[2] = '_blue';
     
     <div class="news__slider owl-carousel js-news-slider">
         <?php foreach ($posts as $key => $blog) { ?>
-        <a href="#" class="news__item <?=$colors[$key%3];?>">
+        <a href="<?php echo $blog['href']; ?>" class="news__item <?=$colors[$key%3];?>">
             <div class="news__item-text">
                 <div class="news__item-title"><?php echo $blog['title']; ?></div>
                 <div class="news__item-desc"><?php echo $blog['short_description']; ?></div>

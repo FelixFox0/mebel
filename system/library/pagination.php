@@ -64,7 +64,9 @@ class Pagination {
 				if ($page == $i) {
 					$output .= '<a href="#" class="pagination__item _active">' . $i . '</a>';
 				} else {if($i === 1){
-					$output .= '<a class="pagination__item" href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $i . '</a>';
+                    $url = str_replace('?page={page}', '', $this->url);
+                    $output .= '<a class="pagination__item" href="' . str_replace('&amp;page={page}', '', $url) . '">' . $i . '</a>';
+//					$output .= '<a class="pagination__item" href="' . str_replace('&amp;page={page}', '', $this->url) . '">' . $i . '</a>';
 				} else {
 					$output .= '<a class="pagination__item"  href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a>';
 				}

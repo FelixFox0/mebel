@@ -2284,6 +2284,7 @@ img.mfp-img {
 .blog {
   padding: 30px 0 125px; }
 .blog__container {
+  color: #323232;
   width: 940px;
   margin: 0 auto; }
 .blog__title {
